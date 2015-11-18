@@ -1,0 +1,24 @@
+; Tue Nov 17 22:54:38 CET 2015
+; 
+;+ (version "3.5")
+;+ (build "Build 660")
+
+([Classica] of  Narrativa
+)
+
+([Contemporanea] of  Narrativa
+)
+
+([Fantastica] of  Genero
+)
+
+([libro1] of  Novela
+
+	(Tipo [Fantastica])
+	(Titulo "Harry Potter y la Piedra Filosofal"))
+
+([Ontologia_Class14] of  %3AINSTANCE-ANNOTATION
+)
+
+([Policiaca] of  Genero
+)

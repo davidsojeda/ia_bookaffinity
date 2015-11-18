@@ -1,0 +1,39 @@
+; Tue Nov 17 22:54:38 CET 2015
+; 
+;+ (version "3.5")
+;+ (build "Build 660")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot Titulo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot Tipo
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write)))
+
+(defclass Genero
+	(is-a USER)
+	(role concrete))
+
+(defclass Narrativa
+	(is-a Genero)
+	(role concrete))
+
+(defclass Novela
+	(is-a USER)
+	(role concrete)
+	(single-slot Titulo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot Tipo
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write)))
