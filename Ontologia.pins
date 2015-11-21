@@ -1,24 +1,29 @@
-; Tue Nov 17 22:54:38 CET 2015
+; Sat Nov 21 17:19:17 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
 
-([Classica] of  Narrativa
-)
+([KB_872675_Class10] of  Genero
 
-([Contemporanea] of  Narrativa
-)
+	(nombre "Policiaca"))
 
-([Fantastica] of  Genero
-)
+([KB_872675_Class6] of  Narrativa
 
-([libro1] of  Novela
+	(nombre "Contemporanea"))
 
-	(Tipo [Fantastica])
-	(Titulo "Harry Potter y la Piedra Filosofal"))
+([KB_872675_Class7] of  Genero
 
-([Ontologia_Class14] of  %3AINSTANCE-ANNOTATION
-)
+	(nombre "Fantasia"))
 
-([Policiaca] of  Genero
-)
+([KB_872675_Class8] of  Genero
+
+	(nombre "Ciencia ficcion"))
+
+([KB_872675_Class9] of  Narrativa
+
+	(nombre "Clasica"))
+
+([prueba_Class11] of  Novela
+
+	(genero [KB_872675_Class8])
+	(titulo "Blade Runner"))

@@ -1,4 +1,4 @@
-; Tue Nov 17 22:54:38 CET 2015
+; Sat Nov 21 17:07:24 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -7,11 +7,15 @@
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
         (is-a USER)
         (role abstract)
-        (single-slot Titulo
+        (single-slot titulo
                 (type STRING)
 ;+              (cardinality 1 1)
                 (create-accessor read-write))
-        (multislot Tipo
+        (single-slot nombre
+                (type STRING)
+;+              (cardinality 1 1)
+                (create-accessor read-write))
+        (multislot genero
                 (type INSTANCE)
 ;+              (allowed-classes Genero)
                 (cardinality 1 ?VARIABLE)
@@ -19,7 +23,11 @@
 
 (defclass Genero
         (is-a USER)
-        (role concrete))
+        (role concrete)
+        (single-slot nombre
+                (type STRING)
+;+              (cardinality 1 1)
+                (create-accessor read-write)))
 
 (defclass Narrativa
         (is-a Genero)
@@ -28,11 +36,11 @@
 (defclass Novela
         (is-a USER)
         (role concrete)
-        (single-slot Titulo
+        (single-slot titulo
                 (type STRING)
 ;+              (cardinality 1 1)
                 (create-accessor read-write))
-        (multislot Tipo
+        (multislot genero
                 (type INSTANCE)
 ;+              (allowed-classes Genero)
                 (cardinality 1 ?VARIABLE)
@@ -42,30 +50,37 @@
 ;;;----------                                   INSTANCIAS                                                      ----------                                                              INSTANCIAS
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
 (definstances instancies 
-; Tue Nov 17 22:54:38 CET 2015
+; Sat Nov 21 17:07:24 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
 
-([Classica] of  Narrativa
-)
+([KB_872675_Class10] of  Genero
 
-([Contemporanea] of  Narrativa
-)
+        (nombre "Policiaca"))
 
-([Fantastica] of  Genero
-)
+([KB_872675_Class6] of  Narrativa
 
-([libro1] of  Novela
+        (nombre "Contemporanea"))
 
-        (Tipo [Fantastica])
-        (Titulo "Harry Potter y la Piedra Filosofal"))
+([KB_872675_Class7] of  Genero
 
-([Ontologia_Class14] of  %3AINSTANCE-ANNOTATION
-)
+        (nombre "Fantasia"))
 
-([Policiaca] of  Genero
-)
+([KB_872675_Class8] of  Genero
+
+        (nombre "Ciencia ficcion"))
+
+([KB_872675_Class9] of  Narrativa
+
+        (nombre "Clasica"))
+
+([prueba_Class11] of  Novela
+
+        (genero [KB_872675_Class8])
+        (titulo "Blade Runner"))
+
+
 
 
 ;;; CLOSE INSTANCIAS
@@ -130,14 +145,14 @@
 (defrule existe_alumno "regla para obtener una recomendacion sencilla"
     (nueva_recomendacion)
     =>
-    (bind ?nombre (pregunta-general "Nombre del género: "))
-        (while (not (any-instancep ((?alumno Estudiante)) (eq (str-compare ?alumno:nombre ?nombre) 0))) 
+    (bind ?nombre (pregunta-general "Nombre del genero: "))
+        (while (not (any-instancep ((?genero Genero)) (eq (str-compare ?genero:nombre ?nombre) 0))) 
                 do
-                        (printout t "No existe el estudiante." crlf)
-                        (bind ?nombre (pregunta-general "Nombre: ")) 
+                        (printout t "No existe el genero." crlf)
+                        (bind ?nombre (pregunta-general "Nombre del genero: ")) 
         ) 
     (assert (Genero ?nombre))   
-        (focus hacer_preguntas)     
+        ;;(focus hacer_preguntas)     
 )
 
 
