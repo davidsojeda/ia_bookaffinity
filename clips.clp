@@ -50,7 +50,7 @@
 ;;;----------                                   INSTANCIAS                                                      ----------                                                              INSTANCIAS
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
 (definstances instancies 
-; Sat Nov 21 17:07:24 CET 2015
+; Sat Nov 21 19:42:03 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -74,6 +74,16 @@
 ([KB_872675_Class9] of  Narrativa
 
         (nombre "Clasica"))
+
+([Ontologia_Class12] of  Novela
+
+        (genero [KB_872675_Class8])
+        (titulo "Ubik"))
+
+([Ontologia_Class13] of  Novela
+
+        (genero [KB_872675_Class8])
+        (titulo "El hombre en el castillo"))
 
 ([prueba_Class11] of  Novela
 
@@ -142,7 +152,7 @@
         (assert (nueva_recomendacion))             
 )
 
-(defrule existe_alumno "regla para obtener una recomendacion sencilla"
+(defrule recomendacion "regla para obtener una recomendacion sencilla"
     (nueva_recomendacion)
     =>
     (bind ?nombre (pregunta-general "Nombre del genero: "))
@@ -151,8 +161,32 @@
                         (printout t "No existe el genero." crlf)
                         (bind ?nombre (pregunta-general "Nombre del genero: ")) 
         ) 
-    (assert (Genero ?nombre))   
-        ;;(focus hacer_preguntas)     
+    (assert (genero ?nombre))   
+        (focus hacer_preguntas)     
+)
+
+;;;------------------------------------------------------------------------------------------------------------------------------------------------------
+;;;----------                           MODULO DE PREGUNTAS                                             ----------                                                      MODULO DE PREGUNTAS
+;;;------------------------------------------------------------------------------------------------------------------------------------------------------
+
+;; En este se le haran las preguntas al estudiantes 
+;; para obtener la informacion de sus restricciones y/o preferencias 
+
+(defmodule hacer_preguntas
+    (import MAIN ?ALL)
+    (export ?ALL)
 )
 
 
+(defrule recomendacion "Prueba sencilla de funcionamiento de defrule"
+    (genero Fantasia)
+    =>
+        (printout t "Te recomiendo El Hobbit." crlf)
+)
+
+(defrule recomendacion2 "Prueba sencilla de funcionamiento de defrule"
+    (genero "Ciencia ficcion")
+    ?instNovela <- (object (is-a Novela))
+    =>
+        (printout t "Te recomendamos " (instance-name ?instNovela) crlf)
+)

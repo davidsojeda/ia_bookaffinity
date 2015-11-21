@@ -1,4 +1,4 @@
-; Sat Nov 21 17:19:17 CET 2015
+; Sat Nov 21 19:42:03 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -22,6 +22,16 @@
 ([KB_872675_Class9] of  Narrativa
 
 	(nombre "Clasica"))
+
+([Ontologia_Class12] of  Novela
+
+	(genero [KB_872675_Class8])
+	(titulo "Ubik"))
+
+([Ontologia_Class13] of  Novela
+
+	(genero [KB_872675_Class8])
+	(titulo "El hombre en el castillo"))
 
 ([prueba_Class11] of  Novela
 
