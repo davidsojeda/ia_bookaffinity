@@ -50,46 +50,74 @@
 ;;;----------                                   INSTANCIAS                                                      ----------                                                              INSTANCIAS
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
 (definstances instancies 
-; Sat Nov 21 19:42:03 CET 2015
+; Sun Nov 22 12:21:27 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
 
 ([KB_872675_Class10] of  Genero
 
-        (nombre "Policiaca"))
+    (nombre "Policiaca"))
 
 ([KB_872675_Class6] of  Narrativa
 
-        (nombre "Contemporanea"))
+    (nombre "Contemporanea"))
 
 ([KB_872675_Class7] of  Genero
 
-        (nombre "Fantasia"))
+    (nombre "Fantasia"))
 
 ([KB_872675_Class8] of  Genero
 
-        (nombre "Ciencia ficcion"))
+    (nombre "Ciencia ficcion"))
 
 ([KB_872675_Class9] of  Narrativa
 
-        (nombre "Clasica"))
+    (nombre "Clasica"))
+
+([Ontologia_Class0] of  Novela
+
+    (genero [KB_872675_Class7])
+    (titulo "El Hobbit"))
+
+([Ontologia_Class1] of  Novela
+
+    (genero [KB_872675_Class7])
+    (titulo "El senor de los anillos. La comunidad del anillo."))
 
 ([Ontologia_Class12] of  Novela
 
-        (genero [KB_872675_Class8])
-        (titulo "Ubik"))
+    (genero [KB_872675_Class8])
+    (titulo "Ubik"))
 
 ([Ontologia_Class13] of  Novela
 
-        (genero [KB_872675_Class8])
-        (titulo "El hombre en el castillo"))
+    (genero [KB_872675_Class8])
+    (titulo "El hombre en el castillo"))
+
+([Ontologia_Class2] of  Novela
+
+    (genero [KB_872675_Class7])
+    (titulo "El senor de los anillos. Las dos torres."))
+
+([Ontologia_Class3] of  Novela
+
+    (genero [KB_872675_Class7])
+    (titulo "El senor de los anillos. El retorno del rey."))
+
+([Ontologia_Class4] of  Genero
+
+    (nombre "Terror"))
+
+([Ontologia_Class5] of  Novela
+
+    (genero [Ontologia_Class4])
+    (titulo "El resplandor"))
 
 ([prueba_Class11] of  Novela
 
-        (genero [KB_872675_Class8])
-        (titulo "Blade Runner"))
-
+    (genero [KB_872675_Class8])
+    (titulo "Blade Runner"))
 
 
 
@@ -113,6 +141,10 @@
 
 (defmessage-handler Novela imprime primary ()
         (printout t ?self:titulo crlf) 
+)
+
+(defmessage-handler Genero imprime primary ()
+        (printout t ?self:nombre crlf) 
 )
 
 
@@ -203,9 +235,10 @@
 
 (defrule recomendacion2 "Prueba sencilla de funcionamiento de defrule"
     (genero "Ciencia ficcion")
-    ?instNovela <- (object (is-a Novela))
+    ?instNovela <- (object (is-a Novela) (genero ?g))
+;;        (test (eq ( str-compare ?g "Ciencia ficcion") 0))
     =>
-        (printout t "Te recomendamos " (send ?instNovela imprime) crlf)
+        (printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
 )
 
 

@@ -1,4 +1,4 @@
-; Sat Nov 21 19:42:03 CET 2015
+; Sun Nov 22 12:21:27 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -23,6 +23,16 @@
 
 	(nombre "Clasica"))
 
+([Ontologia_Class0] of  Novela
+
+	(genero [KB_872675_Class7])
+	(titulo "El Hobbit"))
+
+([Ontologia_Class1] of  Novela
+
+	(genero [KB_872675_Class7])
+	(titulo "El senor de los anillos. La comunidad del anillo."))
+
 ([Ontologia_Class12] of  Novela
 
 	(genero [KB_872675_Class8])
@@ -32,6 +42,25 @@
 
 	(genero [KB_872675_Class8])
 	(titulo "El hombre en el castillo"))
+
+([Ontologia_Class2] of  Novela
+
+	(genero [KB_872675_Class7])
+	(titulo "El senor de los anillos. Las dos torres."))
+
+([Ontologia_Class3] of  Novela
+
+	(genero [KB_872675_Class7])
+	(titulo "El senor de los anillos. El retorno del rey."))
+
+([Ontologia_Class4] of  Genero
+
+	(nombre "Terror"))
+
+([Ontologia_Class5] of  Novela
+
+	(genero [Ontologia_Class4])
+	(titulo "El resplandor"))
 
 ([prueba_Class11] of  Novela
 
