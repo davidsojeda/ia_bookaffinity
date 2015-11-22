@@ -227,18 +227,29 @@
 )
 
 
-(defrule recomendacion "Prueba sencilla de funcionamiento de defrule"
-    (genero Fantasia)
-    =>
-        (printout t "Te recomiendo El Hobbit." crlf)
-)
+;;(defrule recomendacion "Prueba sencilla de funcionamiento de defrule"
+;;    (genero Fantasia)
+;;    =>
+;;        (printout t "Te recomiendo El Hobbit." crlf)
+;;)
 
-(defrule recomendacion2 "Prueba sencilla de funcionamiento de defrule"
-    (genero "Ciencia ficcion")
+;;(defrule recomendacion2 "Prueba sencilla de funcionamiento de defrule"
+;;    (genero "Ciencia ficcion")
+;;    ?instNovela <- (object (is-a Novela) (genero ?g))
+;;    (test (eq ( str-compare ?g:nombre Fantasia) 0))
+;;    =>
+;;        (printout t "Te recomendamos " (send ?instNovela imprime) crlf)
+;;         ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
+;;)
+
+(defrule recomendacionGenero "Prueba sencilla de funcionamiento de defrule"
+        (genero ?genero)
     ?instNovela <- (object (is-a Novela) (genero ?g))
-;;        (test (eq ( str-compare ?g "Ciencia ficcion") 0))
+;    (?g (nombre ?ng) ) 
+    (test (eq ( str-compare (send ?g get-nombre) ?genero) 0))
     =>
-        (printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
+        (printout t "Te recomendamos " (send ?instNovela get-titulo) crlf)
+         ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
 )
 
 
