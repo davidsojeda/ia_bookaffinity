@@ -1,4 +1,4 @@
-; Sun Nov 22 12:21:27 CET 2015
+; Mon Nov 23 09:53:46 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -23,6 +23,10 @@
 
 	(nombre "Clasica"))
 
+([Novela] of  %3ASTANDARD-CLASS
+
+	(%3ASLOT-CONSTRAINTS [Ontologia_Class10002]))
+
 ([Ontologia_Class0] of  Novela
 
 	(genero [KB_872675_Class7])
@@ -32,6 +36,9 @@
 
 	(genero [KB_872675_Class7])
 	(titulo "El senor de los anillos. La comunidad del anillo."))
+
+([Ontologia_Class10002] of  %3APAL-CONSTRAINT
+)
 
 ([Ontologia_Class12] of  Novela
 
@@ -64,5 +71,9 @@
 
 ([prueba_Class11] of  Novela
 
+	(complejidad mediana)
+	(edad adulto)
 	(genero [KB_872675_Class8])
+	(paginas 272)
+	(tipologia_sexual masculino)
 	(titulo "Blade Runner"))

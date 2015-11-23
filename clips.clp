@@ -209,7 +209,7 @@
                 do
                         (printout t "No existe el genero." crlf)
                         (bind ?nombre (pregunta-general "Nombre del genero: ")) 
-        ) 
+        )
     (assert (genero ?nombre))   
         (focus hacer_preguntas)     
 )
@@ -242,15 +242,28 @@
 ;;         ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
 ;;)
 
-(defrule recomendacionGenero "Prueba sencilla de funcionamiento de defrule"
+;;;(defrule recomendacionGeneroV1 "Prueba sencilla de funcionamiento de defrule"
+;;;        (genero ?genero)
+;;;    ?instNovela <- (object (is-a Novela) (genero ?g))
+;;;;    (?g (nombre ?ng) ) 
+;;;    (test (eq ( str-compare (send ?g get-nombre) ?genero) 0))
+;;;    =>
+;;;        (printout t "Te recomendamos " (send ?instNovela get-titulo) crlf)
+;;;         ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
+;;;)
+
+(defrule recomendacionGeneroV2 "Prueba sencilla de funcionamiento de defrule"
         (genero ?genero)
+        ?g <- (object (is-a Genero) (nombre ?genero))
     ?instNovela <- (object (is-a Novela) (genero ?g))
 ;    (?g (nombre ?ng) ) 
-    (test (eq ( str-compare (send ?g get-nombre) ?genero) 0))
+;    (test (eq ( str-compare (send ?g get-nombre) ?genero) 0))
     =>
         (printout t "Te recomendamos " (send ?instNovela get-titulo) crlf)
          ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
 )
+
+
 
 
 
