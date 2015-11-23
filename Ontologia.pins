@@ -1,4 +1,4 @@
-; Mon Nov 23 09:53:46 CET 2015
+; Mon Nov 23 23:04:41 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -29,12 +29,20 @@
 
 ([Ontologia_Class0] of  Novela
 
+	(complejidad facil)
+	(edad juvenil)
 	(genero [KB_872675_Class7])
+	(paginas 324)
+	(tipologia_sexual indiferente)
 	(titulo "El Hobbit"))
 
 ([Ontologia_Class1] of  Novela
 
+	(complejidad mediana)
+	(edad juvenil)
 	(genero [KB_872675_Class7])
+	(paginas 548)
+	(tipologia_sexual indiferente)
 	(titulo "El senor de los anillos. La comunidad del anillo."))
 
 ([Ontologia_Class10002] of  %3APAL-CONSTRAINT
@@ -42,22 +50,38 @@
 
 ([Ontologia_Class12] of  Novela
 
+	(complejidad mediana)
+	(edad adulto)
 	(genero [KB_872675_Class8])
+	(paginas 224)
+	(tipologia_sexual indiferente)
 	(titulo "Ubik"))
 
 ([Ontologia_Class13] of  Novela
 
+	(complejidad mediana)
+	(edad adulto)
 	(genero [KB_872675_Class8])
+	(paginas 208)
+	(tipologia_sexual indiferente)
 	(titulo "El hombre en el castillo"))
 
 ([Ontologia_Class2] of  Novela
 
+	(complejidad mediana)
+	(edad juvenil)
 	(genero [KB_872675_Class7])
+	(paginas 462)
+	(tipologia_sexual indiferente)
 	(titulo "El senor de los anillos. Las dos torres."))
 
 ([Ontologia_Class3] of  Novela
 
+	(complejidad mediana)
+	(edad juvenil)
 	(genero [KB_872675_Class7])
+	(paginas 414)
+	(tipologia_sexual indiferente)
 	(titulo "El senor de los anillos. El retorno del rey."))
 
 ([Ontologia_Class4] of  Genero
@@ -66,7 +90,11 @@
 
 ([Ontologia_Class5] of  Novela
 
+	(complejidad facil)
+	(edad adulto)
 	(genero [Ontologia_Class4])
+	(paginas 656)
+	(tipologia_sexual indiferente)
 	(titulo "El resplandor"))
 
 ([prueba_Class11] of  Novela
