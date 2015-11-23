@@ -128,7 +128,10 @@
 ;;;----------                                   TEMPLATES                                                       ----------                                                              TEMPLATES
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+(deftemplate  persona   "sexe de la persona a qui va dirigida el llibre"
+    (slot sexo  (type STRING))
+    (slot edad  (type INTEGER))
+)
 
 
 
@@ -263,15 +266,25 @@
          ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
 )
 
+(defrule preguntaGeneroNarrativa "regla per obtenir el subgenere de Narrativa"
+    (declare (salience 2))
+    (genero Terror)
+    =>
+    (bind ?nombre (pregunta-general "Que genero de Narrativa: "))
+        (while (not (any-instancep ((?genero Narrativa)) (eq (str-compare ?genero:nombre ?nombre) 0))) 
+                do
+                        (printout t "No existe el genero." crlf)
+                        (bind ?nombre (pregunta-general "Que genero de Narrativa: ")) 
+        )
+    (assert (Narrativa ?nombre))   
+        (focus hacer_preguntas)     
+)
 
-
-
-
-
-
-
-
-
-
-
-
+(defrule preguntaEdadSexo "regla para prguntar l'edat i el sexe"
+    (genero ?genero)
+    =>
+    (bind ?edad (pregunta-general "Quantos años tienes: "))
+    (bind ?sexo (pregunta-general "Hombre, mujer o unisex: "))
+    (assert (persona (edad ?edad)(sexo ?sexo)))   
+        (focus hacer_preguntas)     
+)
