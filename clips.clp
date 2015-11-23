@@ -255,16 +255,25 @@
 ;;;         ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
 ;;;)
 
-(defrule recomendacionGeneroV2 "Prueba sencilla de funcionamiento de defrule"
-        (genero ?genero)
-        ?g <- (object (is-a Genero) (nombre ?genero))
-    ?instNovela <- (object (is-a Novela) (genero ?g))
-;    (?g (nombre ?ng) ) 
-;    (test (eq ( str-compare (send ?g get-nombre) ?genero) 0))
+(defrule recomendacion2 "Prueba sencilla de funcionamiento de defrule"
+	(genero ?genero)
+    ?instNovela <- (object (is-a Genero))
     =>
-        (printout t "Te recomendamos " (send ?instNovela get-titulo) crlf)
-         ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
+        (printout t "Te recomendamos: " ;(instance-name ?instNovela)
+		(send ?instNovela imprime) crlf)
 )
+
+
+;(defrule recomendacionGeneroV2 "Prueba sencilla de funcionamiento de defrule"
+;        (genero ?genero)
+;        ?g <- (object (is-a Genero) (nombre ?genero))
+;    ?instNovela <- (object (is-a Novela) (genero ?g))
+;;    (?g (nombre ?ng) ) 
+;;    (test (eq ( str-compare (send ?g get-nombre) ?genero) 0))
+;    =>
+;        (printout t "Te recomendamos " (instance-name ?instNovela) ":" (send ?instNovela get-titulo) crlf)
+;         ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
+;)
 
 (defrule preguntaGeneroNarrativa "regla per obtenir el subgenere de Narrativa"
     (declare (salience 2))
