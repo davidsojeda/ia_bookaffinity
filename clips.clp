@@ -277,10 +277,9 @@
 
 (defrule preguntaGeneroNarrativa "regla per obtenir el subgenere de Narrativa"
     (declare (salience 2))
-    ;(genero Terror)
-	(narrativa ?nom)
+    (genero Terror)
     =>
-    (bind ?nombre (pregunta-general "Que genero de Narrativa: (Clasica o Contemporanea)"))
+    (bind ?nombre (pregunta-general "Que genero de Narrativa: "))
         (while (not (any-instancep ((?genero Narrativa)) (eq (str-compare ?genero:nombre ?nombre) 0))) 
                 do
                         (printout t "No existe el genero." crlf)
