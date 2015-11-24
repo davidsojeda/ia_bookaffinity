@@ -293,7 +293,7 @@
 (defrule preguntaEdadSexo "regla para prguntar l'edat i el sexe"
     (genero ?genero)
     =>
-    (bind ?edad (pregunta-general "Quantos años tienes: "))
+    (bind ?edad (pregunta-general "Cuantos años tienes: "))
     (bind ?sexo (pregunta-general "Hombre, mujer o unisex: "))
     (assert (persona (edad ?edad)(sexo ?sexo)))   
         (focus hacer_preguntas)     
