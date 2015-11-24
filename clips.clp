@@ -207,15 +207,24 @@
 (defrule recomendacion "regla para obtener una recomendacion sencilla"
     (nueva_recomendacion)
     =>
-    (bind ?nombre (pregunta-general "Nombre del genero: "))
-        (while (not (any-instancep ((?genero Genero)) (eq (str-compare ?genero:nombre ?nombre) 0))) 
+    (bind ?nombre (pregunta-general "Nombre del genero: (Narrativa, Fantasia, Ciencia ficcion...)"))
+		(if (eq (str-compare ?nombre "Narrativa") 0) then (assert(Narrativa))
+        else (while (not (any-instancep ((?genero Genero)) (eq (str-compare ?genero:nombre ?nombre) 0))) 
                 do
                         (printout t "No existe el genero." crlf)
                         (bind ?nombre (pregunta-general "Nombre del genero: ")) 
-        )
+        ))
     (assert (genero ?nombre))   
         (focus hacer_preguntas)     
 )
+
+;(bind ?trabaja (pregunta-general "¿Trabajas? (Manana(m)-Tarde(t)-Ninguno(n)(no trabaja)) " ))
+;	(if (eq (str-compare ?trabaja "n") 0) then (assert(noTrabaja))  
+;	else(if (or (eq (str-compare ?trabaja  "m")0) (eq (str-compare ?trabaja "t") 0))  then
+;			(bind ?restriccion (make-instance restriccionHorarioT of RestriccionHorario))
+;			(send ?restriccion put-trabaja ?trabaja)
+;			(switch (lowcase ?trabaja)
+;				(case "m" then (send ?restriccion put-prefHorario Tarde))
 
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
 ;;;----------                           MODULO DE PREGUNTAS                                             ----------                                                      MODULO DE PREGUNTAS
@@ -257,10 +266,11 @@
 
 (defrule recomendacion2 "Prueba sencilla de funcionamiento de defrule"
 	(genero ?genero)
+	;(not(narrativa)
     ?instNovela <- (object (is-a Genero))
     =>
-        (printout t "Te recomendamos: " ;(instance-name ?instNovela)
-		(send ?instNovela imprime) crlf)
+        ;(printout t "Te recomendamos: " ;(instance-name ?instNovela)
+		;(send ?instNovela imprime) crlf)
 )
 
 
@@ -277,7 +287,8 @@
 
 (defrule preguntaGeneroNarrativa "regla per obtenir el subgenere de Narrativa"
     (declare (salience 2))
-    (genero Terror)
+    ;(genero Terror)
+	(Narrativa)
     =>
     (bind ?nombre (pregunta-general "Que genero de Narrativa: "))
         (while (not (any-instancep ((?genero Narrativa)) (eq (str-compare ?genero:nombre ?nombre) 0))) 
