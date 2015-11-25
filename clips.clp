@@ -204,7 +204,7 @@
 
 (deftemplate  persona   "sexe de la persona a qui va dirigida el llibre"
     (slot sexo  (type STRING))
-    (slot edad  (type INTEGER))
+    ;(slot edad  (type INTEGER))
 )
 
 
@@ -367,22 +367,55 @@
         (focus hacer_preguntas)     
 )
 
-(defrule preguntaEdadSexo "regla para prguntar l'edat i el sexe"
+(defrule preguntaEdad "regla para prguntar l'edat"
     (genero ?genero)
     =>
-    (bind ?edad (pregunta-general "Cuantos años tienes: "))
+    (bind ?edad (pregunta-general "Cuantos años tienes: 1-15 (i), 16-25 (j), 26+ (a) "))
+	;(bind ?ed 0)
+	(switch (lowcase ?edad)
+			(case i then (assert(edad infantil)))
+			(case j then then (assert(edad juvenil)))
+			(case a then then (assert(edad adulto)))
+	)
+	
+	;(if (< ?edad 15) 
+	;		then (assert(edad infantil))
+	;		else (if (< ?edad 25) then (assert(edad juvenil)))
+	;		else(assert(edad ?ed))
+	;)  
+        (focus hacer_preguntas)     
+)
+
+
+(defrule preguntaSexo "regla para prguntar el sexe"
+    (genero ?genero)
+    =>
     (bind ?sexo (pregunta-general "Hombre, mujer o unisex: "))
-    (assert (persona (edad ?edad)(sexo ?sexo)))   
+    (assert (persona (sexo ?sexo)))   
         (focus hacer_preguntas)     
 )
 
 (defrule preguntaPaginas "regla para prguntar paginas"
-    (persona (edad ?x&:(> ?x 15)))
+	(edad ?edadVal)
+	;(test (eq(str-compare ?edad juvenil) 0))
     =>
-    (bind ?largo (pregunta-general "Como de largos te gustan los libros? (corto, medio, largo): "))
-    (assert (largaria ?largo))   
+    (if (eq(str-compare ?edadVal infantil) 0) 
+			then (bind ?long (pregunta-general "Paginas: <100 (c), 100-200(m), >200(l) ")))
+	(if (eq(str-compare ?edadVal juvenil) 0) 
+			then (bind ?long (pregunta-general "Paginas: <150 (c), 150-250(m), >250(l) ")))
+	(if (eq(str-compare ?edadVal adulto) 0)
+			then (bind ?long (pregunta-general "Paginas: <180 (c), 180-300(m), >300(l) ")))
+    (assert (largo ?long))   
         (focus hacer_preguntas)     
 )
+
+;(defrule preguntaPaginas "regla para prguntar paginas"
+;    (persona (edad ?x&:(> ?x 15)))
+;    =>
+;    (bind ?largo (pregunta-general "Como de largos te gustan los libros? (corto, medio, largo): "))
+;    (assert (largaria ?largo))   
+;        (focus hacer_preguntas)     
+;)
 
 
 
