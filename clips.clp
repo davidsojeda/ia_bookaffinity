@@ -416,19 +416,20 @@
 (defrule preguntaSitios "regla para prguntar los sitios donde lee"
     (genero ?genero)
     =>
-	(bind ?comodidad 0)
+	(bind ?comodidad 2) ;comodidad es como decir coste, + alto es peor
+	;inicial es 2 (me sirve para las combinaciones), si lee en alguno de los 2 primeros sitios, coste mejora
     (bind ?aki (pregunta-sino "Lees en casa (en silencio, como en la cama), bibliotecas u otros sitios silenciosos?"))
-	(if (neq ?aki FALSE) then (bind ?comodidad (= ?comodidad 1)))
+	(if (neq ?aki FALSE) then (bind ?comodidad 0))
 	
 	(bind ?aki2 (pregunta-sino "Lees en un parque o sitios del estilo, con ruido pero poco?"))
-	(if (neq ?aki2 FALSE) then (bind ?comodidad (= ?comodidad 2)))
+	(if (neq ?aki2 FALSE) then (bind ?comodidad 1))
 	
-	(bind ?aki3 (pregunta-sino "Lees en casa (en silencio, como en la cama), bibliotecas u otros sitios silenciosos?"))
-	(if (neq ?aki3 FALSE) then (bind ?comodidad (min (+ ?comodidad 1) (4)))) 
+	(bind ?aki3 (pregunta-sino "Lees en las salas de espera?"))
+	(if (neq ?aki3 FALSE) then (bind ?comodidad (+ ?comodidad 1))) 
 	;si solo lee en estos sitios, malo, si al menos lee tmbn en trankilos, menos coste
 	
-	(bind ?aki4 (pregunta-sino "Lees en casa (en silencio, como en la cama), bibliotecas u otros sitios silenciosos?"))
-	(if (neq ?aki4 FALSE) then (bind ?comodidad (min (+ ?comodidad 2) (5)))) 
+	(bind ?aki4 (pregunta-sino "Lees con ruido (como la tele), o en transporte publico?"))
+	(if (neq ?aki4 FALSE) then (bind ?comodidad (+ ?comodidad 2))) 
 	;si solo lee en estos sitios, malo, si al menos lee tmbn en trankilos, menos coste (igual k el anterior)
 	(assert(sitio ?comodidad))
         ;(focus inferir_datos)     
