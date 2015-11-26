@@ -475,8 +475,13 @@
 	(sitio ?comodidad)
 	=>
     ;(bind ?horas (pregunta-general "Cuantos horas lees a la semana?"))
-	(if (or (< ?horas 2) (> ?comodidad 2))
-		then (assert(pepe ?horas)))
+	(if (and (< ?horas 3) (> ?comodidad 1))
+		then (assert(complejidad facil))
+	else (if (or (and (< ?horas 3) (> ?horas 0)) (> ?comodidad 1))
+		then (assert(complejidad mediana)))
+	else (if (or (< ?horas 3) (> ?comodidad 1))
+		then (assert(complejidad mediana)))
+	)
         (focus inferir_datos)     
 )
 
