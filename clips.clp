@@ -309,21 +309,34 @@
 (defrule recomendacion "regla para obtener una recomendacion sencilla"
     (nueva_recomendacion)
     =>
-    (bind ?nombre (pregunta-general "Nombre del genero: (Narrativa, Fantasia, Ciencia ficcion...)"))
-		(if (eq (str-compare ?nombre "Narrativa") 0) then (assert(Narrativa))
-        else (while (not (any-instancep ((?genero Genero)) (eq (str-compare ?genero:nombre ?nombre) 0))) 
-                do
-                        (printout t "No existe el genero." crlf)
-                        (bind ?nombre (pregunta-general "Nombre del genero: ")) 
-        ))
-    (assert (genero ?nombre))   
-        (focus hacer_preguntas)     
+            (printout t crlf)
+            (printout t "Indiferente (i)" crlf)
+            (printout t "Ciencia Ficcion (c)" crlf)
+            (printout t "Terror (t)" crlf)
+            (printout t "Narrativa (n)" crlf)
+            (printout t "Policiaca (p)" crlf) 
+            (printout t "Fantasia (f)" crlf)       
+	(bind ?respuesta (pregunta "Que genero prefieres: " i c t n p f))
+            
+	(if (eq (lowcase ?respuesta) i)
+            then (assert (genero CienciaFiccion))
+                 (assert (genero Terror))
+                 (assert (genero Policiaca))  
+                 (assert (genero Fantasia))
+                 (assert (genero Clasica))
+                 (assert (genero Contemporanea))
+        else (if (eq (lowcase ?respuesta) c)
+            then (assert (genero CienciaFiccion))
+        else (if (eq (lowcase ?respuesta) t)
+            then (assert (genero Terror))
+        else (if (eq (lowcase ?respuesta) n)
+            then (assert (genero Narrativa))
+        else (if (eq (lowcase ?respuesta) p)
+            then (assert (genero Policiaca))  
+        else (if (eq (lowcase ?respuesta) f)
+            then (assert (genero Fantasia)))            
+	)))))
 )
-
-
-
-
-
 
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
 ;;;----------                           MODULO DE PREGUNTAS                                             ----------                                                      MODULO DE PREGUNTAS
@@ -359,7 +372,7 @@
 
 (defrule preguntaGeneroNarrativa "regla per obtenir el subgenere de Narrativa"
     (declare (salience 2))
-	(Narrativa)
+	(genero Narrativa)
     =>
     (bind ?nombre (pregunta-general "Que genero de Narrativa: "))
         (while (not (any-instancep ((?genero Narrativa)) (eq (str-compare ?genero:nombre ?nombre) 0))) 
