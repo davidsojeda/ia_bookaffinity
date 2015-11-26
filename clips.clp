@@ -306,13 +306,6 @@
     (export ?ALL)
 )
 
-
-;;(defrule recomendacion "Prueba sencilla de funcionamiento de defrule"
-;;    (genero Fantasia)
-;;    =>
-;;        (printout t "Te recomiendo El Hobbit." crlf)
-;;)
-
 ;;(defrule recomendacion2 "Prueba sencilla de funcionamiento de defrule"
 ;;    (genero "Ciencia ficcion")
 ;;    ?instNovela <- (object (is-a Novela) (genero ?g))
@@ -332,26 +325,6 @@
 ;;;         ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
 ;;;)
 
-(defrule recomendacion2 "Prueba sencilla de funcionamiento de defrule"
-	(genero ?genero)
-	;(not(narrativa)
-    ?instNovela <- (object (is-a Genero))
-    =>
-        ;(printout t "Te recomendamos: " ;(instance-name ?instNovela)
-		;(send ?instNovela imprime) crlf)
-)
-
-
-;(defrule recomendacionGeneroV2 "Prueba sencilla de funcionamiento de defrule"
-;        (genero ?genero)
-;        ?g <- (object (is-a Genero) (nombre ?genero))
-;    ?instNovela <- (object (is-a Novela) (genero ?g))
-;;    (?g (nombre ?ng) ) 
-;;    (test (eq ( str-compare (send ?g get-nombre) ?genero) 0))
-;    =>
-;        (printout t "Te recomendamos " (instance-name ?instNovela) ":" (send ?instNovela get-titulo) crlf)
-;         ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
-;)
 
 (defrule preguntaGeneroNarrativa "regla per obtenir el subgenere de Narrativa"
     (declare (salience 2))
@@ -364,7 +337,15 @@
                         (bind ?nombre (pregunta-general "Que genero de Narrativa: ")) 
         )
     (assert (Narrativa ?nombre))   
-        (focus hacer_preguntas)     
+        ;(focus hacer_preguntas)     
+)
+
+(defrule preguntaSexo "regla para prguntar el sexe"
+    (genero ?genero)
+    =>
+    (bind ?sexo (pregunta-general "Hombre, mujer o unisex: "))
+    (assert (persona (sexo ?sexo)))   
+        ;(focus hacer_preguntas)     
 )
 
 (defrule preguntaEdad "regla para prguntar l'edat"
@@ -377,23 +358,14 @@
 			(case j then then (assert(edad juvenil)))
 			(case a then then (assert(edad adulto)))
 	)
-	
 	;(if (< ?edad 15) 
 	;		then (assert(edad infantil))
 	;		else (if (< ?edad 25) then (assert(edad juvenil)))
 	;		else(assert(edad ?ed))
 	;)  
-        (focus hacer_preguntas)     
+        ;(focus hacer_preguntas)     
 )
 
-
-(defrule preguntaSexo "regla para prguntar el sexe"
-    (genero ?genero)
-    =>
-    (bind ?sexo (pregunta-general "Hombre, mujer o unisex: "))
-    (assert (persona (sexo ?sexo)))   
-        (focus hacer_preguntas)     
-)
 
 (defrule preguntaPaginas "regla para prguntar paginas"
 	(edad ?edadVal)
@@ -406,17 +378,26 @@
 	(if (eq(str-compare ?edadVal adulto) 0)
 			then (bind ?long (pregunta-general "Paginas: <180 (c), 180-300(m), >300(l) ")))
     (assert (largo ?long))   
-        (focus hacer_preguntas)     
+        ;(focus hacer_preguntas)     
 )
 
-;(defrule preguntaPaginas "regla para prguntar paginas"
-;    (persona (edad ?x&:(> ?x 15)))
-;    =>
-;    (bind ?largo (pregunta-general "Como de largos te gustan los libros? (corto, medio, largo): "))
-;    (assert (largaria ?largo))   
-;        (focus hacer_preguntas)     
-;)
 
+(defrule preguntaSitios "regla para prguntar los sitios donde lee"
+    (genero ?genero)
+    =>
+    (bind ?sitio (pregunta-general "En que sitios lees?"))
+	(assert(sitio ?sitio))
+        ;(focus inferir_datos)     
+)
+
+
+(defrule preguntaHoras "regla para prguntar las horas que lee"
+    (genero ?genero)
+    =>
+    (bind ?horas (pregunta-general "Cuantos horas lees a la semana?"))
+	(assert(horas ?horas))
+        (focus inferir_datos)     
+)
 
 
 
@@ -427,6 +408,33 @@
 ;			(send ?restriccion put-trabaja ?trabaja)
 ;			(switch (lowcase ?trabaja)
 ;				(case "m" then (send ?restriccion put-prefHorario Tarde))
+
+
+;;;------------------------------------------------------------------------------------------------------------------------------------------------------
+;;;----------  					MODULO DE INFERENCIAS DE DATOS				---------- 				MODULO DE INFERENCIAS DE DATOS					 		
+;;;------------------------------------------------------------------------------------------------------------------------------------------------------
+
+;; En este modulo se hace la abstraccion de los datos obtenidos del modulo de pregunatas
+
+(defmodule inferir_datos
+    (import MAIN ?ALL)
+    (import hacer_preguntas ?ALL)
+    (export ?ALL)
+)
+
+(defrule anadirComplejidad "en funcion de las respuestas de antes hacemos inferencia"
+	(horas ?horas)
+	(sitio ?sitio)
+	=>
+    ;(bind ?horas (pregunta-general "Cuantos horas lees a la semana?"))
+	(assert(pepe ?horas))
+        (focus inferir_datos)     
+)
+
+
+
+
+
 
 
 
