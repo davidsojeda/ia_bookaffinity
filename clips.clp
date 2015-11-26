@@ -490,5 +490,33 @@
 
 
 
+;;;------------------------------------------------------------------------------------------------------------------------------------------------------
+;;;----------  				MODULO DE RECOMENDACIONES		---------- 				MODULO DE RECOMENDACIONES		
+;;;------------------------------------------------------------------------------------------------------------------------------------------------------
+
+;; En este modulo se obtendran todas las solcuiones y se mostrara la solcuion
+;; si hay mas de 6 solcuiones se mostraran las 6 con valor cuantitativo mas alto y 
+;; si hay menos pues se mostraran todas  
+
+(defmodule recomendaciones
+	(import MAIN ?ALL) 
+	(import hacer_preguntas ?ALL)
+	(import inferir_datos ?ALL) 
+	(export ?ALL)
+)
+
+(defrule noHayRecomendaciones  "regla para saber que no se obtuvieron recomendacioness"
+	(declare (salience -1))
+	(genero ?genero)
+	=>	
+	(printout t "No tenemos recomendaciones para ti :[ " crlf)  
+	(assert (FIN))
+)
+
+
+
+
+
+
 
 
