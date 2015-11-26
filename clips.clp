@@ -482,7 +482,7 @@
 	else (if (or (< ?horas 3) (> ?comodidad 1))
 		then (assert(complejidad mediana)))
 	)
-        (focus inferir_datos)     
+        (focus recomendaciones)     
 )
 
 
