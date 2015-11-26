@@ -258,6 +258,34 @@
         ?res
 )
 
+(deffunction pregunta (?pregunta $?valores-permitidos)
+	 (progn$
+		(?var ?valores-permitidos)
+		(lowcase ?var))
+	 (format t "¿%s? (%s) " ?pregunta (implode$ ?valores-permitidos))
+	 (bind ?respuesta (read))
+	 (while (not (member (lowcase ?respuesta) ?valores-permitidos)) do
+		(format t "¿%s? (%s) " ?pregunta (implode$ ?valores-permitidos))
+		(bind ?respuesta (read))
+	 )
+	 ?respuesta
+ )
+
+
+
+(deffunction pregunta-sino (?pregunta)
+	;(format t "%s" ?pregunta)
+	(bind ?respuesta (pregunta ?pregunta si no s n))
+	(if (or (eq (lowcase ?respuesta) si) (eq (lowcase ?respuesta) s))
+		then TRUE
+		else FALSE
+	 )
+)
+
+
+
+
+
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
 ;;;----------                                    MAIN                                                   ----------                                                              MAIN
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -291,6 +319,9 @@
     (assert (genero ?nombre))   
         (focus hacer_preguntas)     
 )
+
+
+
 
 
 
@@ -385,8 +416,21 @@
 (defrule preguntaSitios "regla para prguntar los sitios donde lee"
     (genero ?genero)
     =>
-    (bind ?sitio (pregunta-general "En que sitios lees?"))
-	(assert(sitio ?sitio))
+	(bind ?comodidad 0)
+    (bind ?aki (pregunta-sino "Lees en casa (en silencio, como en la cama), bibliotecas u otros sitios silenciosos?"))
+	(if (neq ?aki FALSE) then (bind ?comodidad (= ?comodidad 1)))
+	
+	(bind ?aki2 (pregunta-sino "Lees en un parque o sitios del estilo, con ruido pero poco?"))
+	(if (neq ?aki2 FALSE) then (bind ?comodidad (= ?comodidad 2)))
+	
+	(bind ?aki3 (pregunta-sino "Lees en casa (en silencio, como en la cama), bibliotecas u otros sitios silenciosos?"))
+	(if (neq ?aki3 FALSE) then (bind ?comodidad (min (+ ?comodidad 1) (4)))) 
+	;si solo lee en estos sitios, malo, si al menos lee tmbn en trankilos, menos coste
+	
+	(bind ?aki4 (pregunta-sino "Lees en casa (en silencio, como en la cama), bibliotecas u otros sitios silenciosos?"))
+	(if (neq ?aki4 FALSE) then (bind ?comodidad (min (+ ?comodidad 2) (5)))) 
+	;si solo lee en estos sitios, malo, si al menos lee tmbn en trankilos, menos coste (igual k el anterior)
+	(assert(sitio ?comodidad))
         ;(focus inferir_datos)     
 )
 
@@ -394,7 +438,7 @@
 (defrule preguntaHoras "regla para prguntar las horas que lee"
     (genero ?genero)
     =>
-    (bind ?horas (pregunta-general "Cuantos horas lees a la semana?"))
+    (bind ?horas (pregunta-numerica "Cuantas horas lees a la semana?" 0 70))
 	(assert(horas ?horas))
         (focus inferir_datos)     
 )
@@ -408,6 +452,9 @@
 ;			(send ?restriccion put-trabaja ?trabaja)
 ;			(switch (lowcase ?trabaja)
 ;				(case "m" then (send ?restriccion put-prefHorario Tarde))
+
+
+
 
 
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -424,10 +471,11 @@
 
 (defrule anadirComplejidad "en funcion de las respuestas de antes hacemos inferencia"
 	(horas ?horas)
-	(sitio ?sitio)
+	(sitio ?comodidad)
 	=>
     ;(bind ?horas (pregunta-general "Cuantos horas lees a la semana?"))
-	(assert(pepe ?horas))
+	(if (or (< ?horas 2) (> ?comodidad 2))
+		then (assert(pepe ?horas)))
         (focus inferir_datos)     
 )
 
