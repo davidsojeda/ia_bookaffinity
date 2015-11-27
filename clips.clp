@@ -583,7 +583,7 @@
 	(genero ?genero)
 	=> 
 	(bind ?pos 1)
-	;(bind $?recomendaciones (find-all-instances ((?inst Recomendacion)) TRUE))
+	;(bind $?recomendaciones (find-all-instances ((?inst valoracionNovela)) TRUE))
 	(printout t crlf)
 	(printout t "Todas las posibles recomendaciones: " crlf)
 	(printout t "----------------------------------- " crlf)
