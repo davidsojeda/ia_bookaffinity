@@ -210,6 +210,10 @@
 (deftemplate  valoracionNovela   "novela tiene puntuacion"
     (slot novela  (type INSTANCE))
     (slot puntuacion  (type INTEGER))
+	(slot sexo  (type SYMBOL) (default FALSE))
+	(slot edad  (type SYMBOL) (default FALSE))
+	(slot genero  (type SYMBOL) (default FALSE))
+	(slot dificultad  (type SYMBOL) (default FALSE))
 )
 
 
@@ -324,14 +328,12 @@
 	(bind ?respuesta (pregunta "Que genero prefieres: " i c t n p f))
             
 	(if (eq (lowcase ?respuesta) i)
-            then (assert (genero CienciaFiccion))
-                 (assert (genero Terror))
-                 (assert (genero Policiaca))  
-                 (assert (genero Fantasia))
-                 (assert (genero Clasica))
-                 (assert (genero Contemporanea))
+            then 
+			(bind ?lista (create$ 
+				"Ciencia ficcion" Terror Policiaca Fantasia Clasica Contemporanea))
+			(assert (genero ?lista))
         else (if (eq (lowcase ?respuesta) c)
-            then (assert (genero CienciaFiccion))
+            then (assert (genero "Ciencia ficcion"))
         else (if (eq (lowcase ?respuesta) t)
             then (assert (genero Terror))
         else (if (eq (lowcase ?respuesta) n)
@@ -356,14 +358,6 @@
     (export ?ALL)
 )
 
-;;(defrule recomendacion2 "Prueba sencilla de funcionamiento de defrule"
-;;    (genero "Ciencia ficcion")
-;;    ?instNovela <- (object (is-a Novela) (genero ?g))
-;;    (test (eq ( str-compare ?g:nombre Fantasia) 0))
-;;    =>
-;;        (printout t "Te recomendamos " (send ?instNovela imprime) crlf)
-;;         ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
-;;)
 
 ;;;(defrule recomendacionGeneroV1 "Prueba sencilla de funcionamiento de defrule"
 ;;;        (genero ?genero)
@@ -503,7 +497,7 @@
 	else (if (or (< ?horas 3) (> ?comodidad 1))
 		then (assert(complejidad mediana)))
 	)
-        (focus recomendaciones)     
+        ;(focus recomendaciones)     
 )
 
 
@@ -518,17 +512,30 @@
 
 (defrule setValorLibro "en funcion de las respuestas de antes hacemos inferencia"
         (genero ?genero)
-        ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt))
+        ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(genero FALSE))
 	=>        
-        (bind ?gen (send ?nov get-genero))
-        (printout t ?gen "-------JOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO" crlf)
-        (bind ?genNom (send ?gen get-nombre))
+		(bind ?gen (nth$ 1 (send ?nov get-genero)))
+		(bind $?genNom (send (instance-address * ?gen) get-nombre))
+		
         ;(if (any-instancep ((?instGenero ?gen)) ) then
         ;    (bind ?genNom (send ?instGenero get-nombre))
         ;)
-        ;(bind $?genNom (send (instance-address * ?gen) get-nombre))
         (if(eq (str-compare ?genero ?genNom) 0) then (bind ?punt (+ ?punt 1)))
-        (modify ?vn (novela ?nov)(puntuacion ?punt))
+        (modify ?vn (novela ?nov)(puntuacion ?punt)(genero TRUE))
+            
+)
+
+
+(defrule setValorLibro2 "en funcion de las respuestas de antes hacemos inferencia"
+        (genero $?genero)
+        ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(genero FALSE))
+	=>        
+		(bind ?gen (nth$ 1 (send ?nov get-genero)))
+		(bind $?genNom (send (instance-address * ?gen) get-nombre))
+		;(printout t ?genNom "-XXXXXXXXXXX---" crlf)
+		;(printout t (nth$ 1 ?genero) "-YYYYYYYYYYY---" crlf)
+        (if(eq (str-compare (nth$ 1 ?genero) ?genNom) 0) then (bind ?punt (+ ?punt 1)))
+        (modify ?vn (novela ?nov)(puntuacion ?punt)(genero TRUE))
             
 )
 
