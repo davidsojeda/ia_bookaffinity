@@ -207,6 +207,11 @@
     ;(slot edad  (type INTEGER))
 )
 
+(deftemplate  valoracionNovela   "novela tiene puntuacion"
+    (slot novela  (type INSTANCE))
+    (slot puntuacion  (type INTEGER))
+)
+
 
 
 
@@ -336,6 +341,7 @@
         else (if (eq (lowcase ?respuesta) f)
             then (assert (genero Fantasia)))            
 	)))))
+        (focus hacer_preguntas)
 )
 
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -385,15 +391,17 @@
 )
 
 (defrule preguntaSexo "regla para prguntar el sexe"
-    (genero ?genero)
+    ;(declare (salience 1))
+    (not (sexo))
     =>
     (bind ?sexo (pregunta-general "Hombre, mujer o unisex: "))
     (assert (persona (sexo ?sexo)))   
+    (assert (sexo))
         ;(focus hacer_preguntas)     
 )
 
 (defrule preguntaEdad "regla para prguntar l'edat"
-    (genero ?genero)
+    (not (edad))
     =>
     (bind ?edad (pregunta-general "Cuantos años tienes: 1-15 (i), 16-25 (j), 26+ (a) "))
 	;(bind ?ed 0)
@@ -402,17 +410,13 @@
 			(case j then then (assert(edad juvenil)))
 			(case a then then (assert(edad adulto)))
 	)
-	;(if (< ?edad 15) 
-	;		then (assert(edad infantil))
-	;		else (if (< ?edad 25) then (assert(edad juvenil)))
-	;		else(assert(edad ?ed))
-	;)  
-        ;(focus hacer_preguntas)     
+	(assert (edad))   
 )
 
 
 (defrule preguntaPaginas "regla para prguntar paginas"
 	(edad ?edadVal)
+        (not (paginas))
 	;(test (eq(str-compare ?edad juvenil) 0))
     =>
     (if (eq(str-compare ?edadVal infantil) 0) 
@@ -421,13 +425,15 @@
 			then (bind ?long (pregunta-general "Paginas: <150 (c), 150-250(m), >250(l) ")))
 	(if (eq(str-compare ?edadVal adulto) 0)
 			then (bind ?long (pregunta-general "Paginas: <180 (c), 180-300(m), >300(l) ")))
-    (assert (largo ?long))   
+    (assert (largo ?long)) 
+    (assert (paginas))
         ;(focus hacer_preguntas)     
 )
 
 
 (defrule preguntaSitios "regla para prguntar los sitios donde lee"
-    (genero ?genero)
+    (not(sitios))
+    ;(genero ?genero)
     =>
 	(bind ?comodidad 2) ;comodidad es como decir coste, + alto es peor
 	;inicial es 2 (me sirve para las combinaciones), si lee en alguno de los 2 primeros sitios, coste mejora
@@ -445,15 +451,17 @@
 	(if (neq ?aki4 FALSE) then (bind ?comodidad (+ ?comodidad 2))) 
 	;si solo lee en estos sitios, malo, si al menos lee tmbn en trankilos, menos coste (igual k el anterior)
 	(assert(sitio ?comodidad))
+        (assert(sitios))
         ;(focus inferir_datos)     
 )
 
 
 (defrule preguntaHoras "regla para prguntar las horas que lee"
-    (genero ?genero)
+    (not(horass))
     =>
     (bind ?horas (pregunta-numerica "Cuantas horas lees a la semana?" 0 70))
 	(assert(horas ?horas))
+        (assert(horass))
         (focus inferir_datos)     
 )
 
@@ -499,6 +507,51 @@
 )
 
 
+(defrule crearLibros "en funcion de las respuestas de antes hacemos inferencia"
+        (declare (salience 2))
+	?novela <- (object (is-a Novela)(titulo ?t) )
+        =>
+        ;(printout t ?t "----------" crlf)
+        (assert (valoracionNovela (novela ?novela)(puntuacion 0)))
+)
+
+
+(defrule setValorLibro "en funcion de las respuestas de antes hacemos inferencia"
+        (genero ?genero)
+        ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt))
+	=>        
+        (bind ?gen (send ?nov get-genero))
+        (printout t ?gen "-------JOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO" crlf)
+        (bind ?genNom (send ?gen get-nombre))
+        ;(if (any-instancep ((?instGenero ?gen)) ) then
+        ;    (bind ?genNom (send ?instGenero get-nombre))
+        ;)
+        ;(bind $?genNom (send (instance-address * ?gen) get-nombre))
+        (if(eq (str-compare ?genero ?genNom) 0) then (bind ?punt (+ ?punt 1)))
+        (modify ?vn (novela ?nov)(puntuacion ?punt))
+            
+)
+
+
+(defrule next "en funcion de las respuestas de antes hacemos inferencia"
+        (declare (salience -1))
+        => (focus recomendaciones) 
+)
+    
+
+;(defrule setValorLibro "en funcion de las respuestas de antes hacemos inferencia"
+;	?novela <- (object (is-a Novela) (genero ?g) 
+ ;       (genero ?genero)
+;	=>
+ ;       (bind ?nombreG (send ?g get-nombre))
+  ;      (bind ?punt 0)
+   ;     
+    ;    (while (any-instancep ((?genero genero))) do
+     ;       (if(eq (str-compare ?genero ?nombreG) 0) then (bind ?punt (+ ?punt 1))))
+      ;  (assert (valoracionNovela (novela ?novela)(puntuacion ?punt))
+       ; (focus recomendaciones)     
+;)
+
 
 
 
@@ -518,9 +571,30 @@
 	(export ?ALL)
 )
 
+
+(defrule obtenerRecomendaciones "regla para obtener todas las recomendaciones que ha conseguido el sistema"
+	(genero ?genero)
+	=> 
+	(bind ?pos 1)
+	;(bind $?recomendaciones (find-all-instances ((?inst Recomendacion)) TRUE))
+	(printout t crlf)
+	(printout t "Todas las posibles recomendaciones: " crlf)
+	(printout t "----------------------------------- " crlf)
+	;(progn$ (?i ?recomendaciones)
+	;	(assert (solucionOrdenada (posicion ?pos) (recomendacion ?i)))	
+	;	(bind ?grado (send ?i get-gradoRecomendacion))
+	;	(printout t " "(instance-name ?i) " " ?grado crlf)
+	;	(bind ?pos (+ ?pos 1))		
+	;)  
+	;(if(> ?pos 1) then (assert (PrimeraPos 1)) (assert (numeroR (- ?pos 1))) (assert(MaxGradoRec 0)))
+	(printout t crlf)
+	(printout t "------------------------  LIBROS RECOMENDADOS -----------------------" crlf)
+	(printout t crlf)
+)
+
 (defrule noHayRecomendaciones  "regla para saber que no se obtuvieron recomendacioness"
 	(declare (salience -1))
-	(genero ?genero)
+	;(genero ?genero)
 	=>	
 	(printout t "No tenemos recomendaciones para ti :[ " crlf)  
 	(assert (FIN))
