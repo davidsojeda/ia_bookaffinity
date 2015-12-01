@@ -516,27 +516,21 @@
 	=>        
 		(bind ?gen (nth$ 1 (send ?nov get-genero)))
 		(bind $?genNom (send (instance-address * ?gen) get-nombre))
-		
-        ;(if (any-instancep ((?instGenero ?gen)) ) then
-        ;    (bind ?genNom (send ?instGenero get-nombre))
-        ;)
         (if(eq (str-compare ?genero ?genNom) 0) then (bind ?punt (+ ?punt 1)))
         (modify ?vn (novela ?nov)(puntuacion ?punt)(genero TRUE))
             
 )
 
 
+;en el caso de que hayamos dicho genero indiferente, tendremos lista de generos
 (defrule setValorLibro2 "en funcion de las respuestas de antes hacemos inferencia"
         (genero $?genero)
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(genero FALSE))
 	=>        
 		(bind ?gen (nth$ 1 (send ?nov get-genero)))
 		(bind $?genNom (send (instance-address * ?gen) get-nombre))
-		;(printout t ?genNom "-XXXXXXXXXXX---" crlf)
-		;(printout t (nth$ 1 ?genero) "-YYYYYYYYYYY---" crlf)
         (if(eq (str-compare (nth$ 1 ?genero) ?genNom) 0) then (bind ?punt (+ ?punt 1)))
-        (modify ?vn (novela ?nov)(puntuacion ?punt)(genero TRUE))
-            
+        (modify ?vn (novela ?nov)(puntuacion ?punt)(genero TRUE))     
 )
 
 
@@ -580,9 +574,10 @@
 
 (defrule calcula-max "devuelve el siguiente libro con mas puntuacion"
 	?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt))
+	(test (> ?punt 0))
 	 (forall (valoracionNovela (novela ?nov2&~?nov)(puntuacion ?punt2)) (test (>= ?punt ?punt2)))
 	 ?ps <- (pos ?x)
-	 (test (< ?x 4))
+	 (test (< ?x 3))
 	 =>
 	 (printout t "Titulo: " (send ?nov get-titulo) crlf)
 	 (bind ?x (+ ?x 1))
@@ -603,7 +598,8 @@
 	(printout t crlf)
 	(printout t "------------------------  LIBROS RECOMENDADOS -----------------------" crlf)
 	(printout t crlf)
-) ;(forall (persona (nombre ?n) (edad ?x)) (test (> ?x 18)))
+) 
+
 
 ;aqui recomendamos bestSellers
 (defrule noHayRecomendaciones  "regla para saber que no se obtuvieron recomendacioness"
