@@ -359,16 +359,6 @@
 )
 
 
-;;;(defrule recomendacionGeneroV1 "Prueba sencilla de funcionamiento de defrule"
-;;;        (genero ?genero)
-;;;    ?instNovela <- (object (is-a Novela) (genero ?g))
-;;;;    (?g (nombre ?ng) ) 
-;;;    (test (eq ( str-compare (send ?g get-nombre) ?genero) 0))
-;;;    =>
-;;;        (printout t "Te recomendamos " (send ?instNovela get-titulo) crlf)
-;;;         ;;(printout t "Te recomendamos " (send ?instNovela imprime) " Genero " (send ?g imprime) crlf)
-;;;)
-
 
 (defrule preguntaGeneroNarrativa "regla per obtenir el subgenere de Narrativa"
     (declare (salience 2))
@@ -388,7 +378,7 @@
     ;(declare (salience 1))
     (not (sexo))
     =>
-    (bind ?sexo (pregunta-general "Hombre, mujer o unisex: "))
+    (bind ?sexo (pregunta-general "masculino, femenino, indiferente: "))
     (assert (persona (sexo ?sexo)))   
     (assert (sexo))
         ;(focus hacer_preguntas)     
@@ -496,8 +486,7 @@
 		then (assert(complejidad mediana)))
 	else (if (or (< ?horas 3) (> ?comodidad 1))
 		then (assert(complejidad mediana)))
-	)
-        ;(focus recomendaciones)     
+	)  
 )
 
 
@@ -510,7 +499,33 @@
 )
 
 
-(defrule setValorLibro "en funcion de las respuestas de antes hacemos inferencia"
+(defrule next "en funcion de las respuestas de antes hacemos inferencia"
+        (declare (salience -1))
+        => (focus puntuar_libros) 
+)
+    
+
+
+
+
+
+
+
+
+;;;------------------------------------------------------------------------------------------------------------------------------------------------------
+;;;----------  					MODULO DE PUNTUAR LIBROS				---------- 				MODULO DE PUNTUAR LIBROS					 		
+;;;------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+(defmodule puntuar_libros
+    (import MAIN ?ALL)
+    (import hacer_preguntas ?ALL)
+	(import inferir_datos ?ALL)
+    (export ?ALL)
+)
+
+
+(defrule setValorLibroGenero "en funcion de las respuestas de antes hacemos inferencia"
         (genero ?genero)
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(genero FALSE))
 	=>        
@@ -523,7 +538,7 @@
 
 
 ;en el caso de que hayamos dicho genero indiferente, tendremos lista de generos
-(defrule setValorLibro2 "en funcion de las respuestas de antes hacemos inferencia"
+(defrule setValorLibroGenero2 "en funcion de las respuestas de antes hacemos inferencia"
         (genero $?genero)
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(genero FALSE))
 	=>        
@@ -534,24 +549,47 @@
 )
 
 
-(defrule next "en funcion de las respuestas de antes hacemos inferencia"
+(defrule setValorLibroEdad "en funcion de las respuestas de antes hacemos inferencia"
+        (edad ?edad)
+        ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(edad FALSE))
+	=>        
+		(bind ?age (send ?nov get-edad))
+        (if(eq (str-compare ?edad ?age) 0) then (bind ?punt (+ ?punt 1)))
+        (modify ?vn (novela ?nov)(puntuacion ?punt)(edad TRUE))       
+)
+
+
+
+(defrule setValorLibroComplejidad "en funcion de las respuestas de antes hacemos inferencia"
+        (complejidad ?dificil)
+        ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(dificultad FALSE))
+	=>        
+		(bind ?dif (send ?nov get-complejidad))
+        (if(eq (str-compare ?dificil ?dif) 0) then (bind ?punt (+ ?punt 1)))
+        (modify ?vn (novela ?nov)(puntuacion ?punt)(dificultad TRUE))       
+)
+
+
+(defrule setValorLibroSexo "en funcion de las respuestas de antes hacemos inferencia"
+        (persona (sexo ?sexo))
+        ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(sexo FALSE))
+	=>        
+		(bind ?sex (send ?nov get-tipologia_sexual))
+        (if(eq (str-compare ?sexo ?sex) 0) then (bind ?punt (+ ?punt 1)))
+        (modify ?vn (novela ?nov)(puntuacion ?punt)(sexo TRUE))       
+)
+
+
+(defrule next2 "en funcion de las respuestas de antes hacemos inferencia"
         (declare (salience -1))
         => (focus recomendaciones) 
 )
-    
 
-;(defrule setValorLibro "en funcion de las respuestas de antes hacemos inferencia"
-;	?novela <- (object (is-a Novela) (genero ?g) 
- ;       (genero ?genero)
-;	=>
- ;       (bind ?nombreG (send ?g get-nombre))
-  ;      (bind ?punt 0)
-   ;     
-    ;    (while (any-instancep ((?genero genero))) do
-     ;       (if(eq (str-compare ?genero ?nombreG) 0) then (bind ?punt (+ ?punt 1))))
-      ;  (assert (valoracionNovela (novela ?novela)(puntuacion ?punt))
-       ; (focus recomendaciones)     
-;)
+
+
+
+
+
 
 
 
@@ -569,6 +607,7 @@
 	(import MAIN ?ALL) 
 	(import hacer_preguntas ?ALL)
 	(import inferir_datos ?ALL) 
+	(import puntuar_libros ?ALL)
 	(export ?ALL)
 )
 
