@@ -578,30 +578,38 @@
 	(export ?ALL)
 )
 
+(defrule calcula-max "devuelve el siguiente libro con mas puntuacion"
+	?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt))
+	 (forall (valoracionNovela (novela ?nov2&~?nov)(puntuacion ?punt2)) (test (>= ?punt ?punt2)))
+	 ?ps <- (pos ?x)
+	 (test (< ?x 4))
+	 =>
+	 (printout t "Titulo: " (send ?nov get-titulo) crlf)
+	 (bind ?x (+ ?x 1))
+	 (retract ?ps)
+	 (assert (pos ?x))
+	 (printout t ?punt crlf)
+	 (retract ?vn)
+)
 
 (defrule obtenerRecomendaciones "regla para obtener todas las recomendaciones que ha conseguido el sistema"
-	(genero ?genero)
+	(declare (salience 10))
+	(not (pos ?))
 	=> 
-	(bind ?pos 1)
-	;(bind $?recomendaciones (find-all-instances ((?inst valoracionNovela)) TRUE))
+	(assert (pos 0))
 	(printout t crlf)
 	(printout t "Todas las posibles recomendaciones: " crlf)
 	(printout t "----------------------------------- " crlf)
-	;(progn$ (?i ?recomendaciones)
-	;	(assert (solucionOrdenada (posicion ?pos) (recomendacion ?i)))	
-	;	(bind ?grado (send ?i get-gradoRecomendacion))
-	;	(printout t " "(instance-name ?i) " " ?grado crlf)
-	;	(bind ?pos (+ ?pos 1))		
-	;)  
-	;(if(> ?pos 1) then (assert (PrimeraPos 1)) (assert (numeroR (- ?pos 1))) (assert(MaxGradoRec 0)))
 	(printout t crlf)
 	(printout t "------------------------  LIBROS RECOMENDADOS -----------------------" crlf)
 	(printout t crlf)
-)
+) ;(forall (persona (nombre ?n) (edad ?x)) (test (> ?x 18)))
 
+;aqui recomendamos bestSellers
 (defrule noHayRecomendaciones  "regla para saber que no se obtuvieron recomendacioness"
 	(declare (salience -1))
-	;(genero ?genero)
+	(pos ?x)
+	(test (= ?x 0))
 	=>	
 	(printout t "No tenemos recomendaciones para ti :[ " crlf)  
 	(assert (FIN))
