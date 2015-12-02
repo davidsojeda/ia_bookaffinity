@@ -214,6 +214,7 @@
 	(slot edad  (type SYMBOL) (default FALSE))
 	(slot genero  (type SYMBOL) (default FALSE))
 	(slot dificultad  (type SYMBOL) (default FALSE))
+	(slot extension  (type SYMBOL) (default FALSE))
 )
 
 
@@ -413,27 +414,7 @@
     (assert (paginas))    
 )
 
-;    (if (eq(str-compare ?edadVal infantil) 0) 
-;			then (bind ?long (pregunta-general "Paginas: <100 (c), 100-200(m), >200(l) ")))
-;	(if (eq(str-compare ?edadVal juvenil) 0) 
-;			then (bind ?long (pregunta-general "Paginas: <150 (c), 150-250(m), >250(l) ")))
-;	(if (eq(str-compare ?edadVal adulto) 0)
-;			then (bind ?long (pregunta-general "Paginas: <180 (c), 180-300(m), >300(l) ")))
 
-
-;(defrule preguntaPaginas "regla para prguntar paginas"
-;	(edad ?edadVal)
-;        (not (paginas))
-	;(test (eq(str-compare ?edad juvenil) 0))
-;    =>
-;    (bind ?long (pregunta-numerica "¿Como de largas te gustan las novelas?"  1 4))
-;    (switch ?long
-;                       (case 1 then (assert(largo c)))
-;                       (case 2 then (assert(largo m)))
-;                       (case 3 then (assert(largo l)))
-;)
-;    (assert (paginas))    
-;)
 
 
 (defrule preguntaSitios "regla para prguntar los sitios donde lee"
@@ -489,10 +470,10 @@
 )
 
 (defrule anadirComplejidad "en funcion de las respuestas de antes hacemos inferencia"
+	(not (infComplejidad))
 	(horas ?horas)
 	(sitio ?comodidad)
 	=>
-    ;(bind ?horas (pregunta-general "Cuantos horas lees a la semana?"))
 	(if (and (< ?horas 3) (> ?comodidad 1))
 		then (assert(complejidad facil))
 	else (if (or (and (< ?horas 3) (> ?horas 0)) (> ?comodidad 1))
@@ -500,7 +481,46 @@
 	else (if (or (< ?horas 3) (> ?comodidad 1))
 		then (assert(complejidad mediana)))
 	)  
+	(assert (infComplejidad))
 )
+
+
+(defrule decidirExtension "decidimos la extension. Los rangos se solapan para que simule algo analogico en vez de ser a saltos"
+	(not (infExtens))
+	(edad ?edadVal)
+	(largo ?extension)
+	=>
+	(if (eq(str-compare ?edadVal infantil) 0) 
+			then (if (eq ?extension corto) then
+				(assert (extensionMax 15)) (assert (extensionMin 0))
+			else (if (eq ?extension medio) then
+				(assert (extensionMax 35)) (assert (extensionMin 12))
+			else (if (eq ?extension largo) then
+				(assert (extensionMax 100001)) (assert (extensionMin 30))
+			) ) )
+	
+	else (if (eq(str-compare ?edadVal juvenil) 0) 
+			then (if (eq ?extension corto) then
+				(assert (extensionMax 110)) (assert (extensionMin 0))
+			else (if (eq ?extension medio) then
+				(assert (extensionMax 220)) (assert (extensionMin 100))
+			else (if (eq ?extension largo) then
+				(assert (extensionMax 100002)) (assert (extensionMin 200))
+			) ) ) )
+			
+	else (if (eq(str-compare ?edadVal adulto) 0) 
+			then (if (eq ?extension corto) then
+				(assert (extensionMax 150)) (assert (extensionMin 0))
+			else (if (eq ?extension medio) then
+				(assert (extensionMax 280)) (assert (extensionMin 130))
+			else (if (eq ?extension largo) then
+				(assert (extensionMax 100003)) (assert (extensionMin 250))
+			) ) ) )
+	)
+	(assert (infExtens))
+
+)
+
 
 
 (defrule crearLibros "en funcion de las respuestas de antes hacemos inferencia"
@@ -589,6 +609,17 @@
 		(bind ?sex (send ?nov get-tipologia_sexual))
         (if(eq (str-compare ?sexo ?sex) 0) then (bind ?punt (+ ?punt 1)))
         (modify ?vn (novela ?nov)(puntuacion ?punt)(sexo TRUE))       
+)
+
+
+(defrule setValorLibroExtension "en funcion de las respuestas de antes hacemos inferencia"
+        (extensionMax ?pagsMax)
+		(extensionMin ?pagsMin)
+        ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(extension FALSE))
+	=>        
+		(bind ?paginas (send ?nov get-paginas))
+		(if (and (> ?pagsMax ?paginas) (< ?pagsMin ?paginas)) then (bind ?punt (+ ?punt 1)))
+        (modify ?vn (novela ?nov)(puntuacion ?punt)(extension TRUE))       
 )
 
 
