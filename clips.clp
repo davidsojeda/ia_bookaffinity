@@ -369,19 +369,26 @@
                         (printout t "No existe el genero." crlf)
                         (bind ?nombre (pregunta-general "Que genero de Narrativa: ")) 
         )
-    (assert (Narrativa ?nombre))   
-        ;(focus hacer_preguntas)     
+    (assert (Narrativa ?nombre))       
 )
 
 (defrule preguntaSexo "regla para prguntar el sexe"
-    ;(declare (salience 1))
-    (not (sexo))
+	(declare (salience 1))
+	(not (sexo))
     =>
-    (bind ?sexo (pregunta-general "masculino, femenino, indiferente: "))
-    (assert (persona (sexo ?sexo)))   
-    (assert (sexo))
-        ;(focus hacer_preguntas)     
+	(printout t crlf)
+	(printout t "1. Masculino" crlf)
+	(printout t "2. Femenino" crlf)
+	(printout t "3. Neutro / indiferente" crlf)
+    (bind ?sexo (pregunta-numerica "Que estilo prefieres: " 1 3))
+	(switch ?sexo
+			(case 1 then (assert (persona (sexo "masculino"))))
+			(case 2 then (assert (persona (sexo "femenino"))))
+			(case 3 then (assert (persona (sexo "indiferente"))))
+    )
+    (assert (sexo))    
 )
+
 
 (defrule preguntaEdad "regla para preguntar l'edat"
     (not (edad))
@@ -392,39 +399,41 @@
         else (if (< ?edad 18) 
                 then (assert(edad juvenil))
         else (assert(edad adulto))
-        ))
-
- ;(bind ?edad (pregunta-general "Cuantos años tienes: 1-15 (i), 16-25 (j), 26+ (a) "))
-;	(switch (lowcase ?edad)
-;			(case i then (assert(edad infantil)))
-;			(case j then then (assert(edad juvenil)))
-;			(case a then then (assert(edad adulto)))
-;	)
-	;(assert (edad))   
+        )) 
 )
+
 
 
 (defrule preguntaPaginas "regla para prguntar paginas"
 	(edad ?edadVal)
-        (not (paginas))
-	;(test (eq(str-compare ?edad juvenil) 0))
+	(not (paginas))
     =>
-    (bind ?long (pregunta-numerica "¿Como de largas te gustan las novelas?"  1 4))
-    (switch ?long
-                       (case 1 then (assert(largo c)))
-                       (case 2 then (assert(largo m)))
-                       (case 3 then (assert(largo l)))
+	(bind ?long (pregunta "Que extension prefieres: " corto medio largo))
+    (assert (largo ?long)) 
+    (assert (paginas))    
 )
+
 ;    (if (eq(str-compare ?edadVal infantil) 0) 
 ;			then (bind ?long (pregunta-general "Paginas: <100 (c), 100-200(m), >200(l) ")))
 ;	(if (eq(str-compare ?edadVal juvenil) 0) 
 ;			then (bind ?long (pregunta-general "Paginas: <150 (c), 150-250(m), >250(l) ")))
 ;	(if (eq(str-compare ?edadVal adulto) 0)
 ;			then (bind ?long (pregunta-general "Paginas: <180 (c), 180-300(m), >300(l) ")))
-;    (assert (largo ?long)) 
-    (assert (paginas))
-        ;(focus hacer_preguntas)     
-)
+
+
+;(defrule preguntaPaginas "regla para prguntar paginas"
+;	(edad ?edadVal)
+;        (not (paginas))
+	;(test (eq(str-compare ?edad juvenil) 0))
+;    =>
+;    (bind ?long (pregunta-numerica "¿Como de largas te gustan las novelas?"  1 4))
+;    (switch ?long
+;                       (case 1 then (assert(largo c)))
+;                       (case 2 then (assert(largo m)))
+;                       (case 3 then (assert(largo l)))
+;)
+;    (assert (paginas))    
+;)
 
 
 (defrule preguntaSitios "regla para prguntar los sitios donde lee"
@@ -447,12 +456,12 @@
 	(if (neq ?aki4 FALSE) then (bind ?comodidad (+ ?comodidad 2))) 
 	;si solo lee en estos sitios, malo, si al menos lee tmbn en trankilos, menos coste (igual k el anterior)
 	(assert(sitio ?comodidad))
-        (assert(sitios))
-        ;(focus inferir_datos)     
+        (assert(sitios))    
 )
 
 
 (defrule preguntaHoras "regla para prguntar las horas que lee"
+	(declare (salience -10))
     (not(horass))
     =>
     (bind ?horas (pregunta-numerica "Cuantas horas lees a la semana?" 0 70))
@@ -462,14 +471,6 @@
 )
 
 
-
-;(bind ?trabaja (pregunta-general "¿Trabajas? (Manana(m)-Tarde(t)-Ninguno(n)(no trabaja)) " ))
-;	(if (eq (str-compare ?trabaja "n") 0) then (assert(noTrabaja))  
-;	else(if (or (eq (str-compare ?trabaja  "m")0) (eq (str-compare ?trabaja "t") 0))  then
-;			(bind ?restriccion (make-instance restriccionHorarioT of RestriccionHorario))
-;			(send ?restriccion put-trabaja ?trabaja)
-;			(switch (lowcase ?trabaja)
-;				(case "m" then (send ?restriccion put-prefHorario Tarde))
 
 
 
@@ -506,7 +507,6 @@
         (declare (salience 2))
 	?novela <- (object (is-a Novela)(titulo ?t) )
         =>
-        ;(printout t ?t "----------" crlf)
         (assert (valoracionNovela (novela ?novela)(puntuacion 0)))
 )
 
@@ -612,7 +612,7 @@
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ;; En este modulo se obtendran todas las solcuiones y se mostrara la solcuion
-;; si hay mas de 6 solcuiones se mostraran las 6 con valor cuantitativo mas alto y 
+;; si hay mas de 3 solcuiones se mostraran las 3 con valor cuantitativo mas alto y 
 ;; si hay menos pues se mostraran todas  
 
 (defmodule recomendaciones
