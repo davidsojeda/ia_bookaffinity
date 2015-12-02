@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Books API Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script>
+      function handleResponse(response) {
+        console.log(response);
+      for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        // in production code, item.text should have the HTML entities escaped.
+        if(item.volumeInfo.language=='es'){
+          if("undefined" != typeof item.volumeInfo.industryIdentifiers){
+            //console.log(item.volumeInfo.industryIdentifiers[0]);
+
+            console.log(item);
+            document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
+            isbn = item.volumeInfo.industryIdentifiers[0].identifier;
+            titulo = item.volumeInfo.title;
+            fecha = item.volumeInfo.publishedDate.substring(0,4);
+            autor = item.volumeInfo.authors[0];
+            paginas = item.volumeInfo.pageCount;
+            edad = ['infantil','juvenil','adulto'][1];
+            tipologia_sexual = ['masculino', 'femenino', 'indiferente'][2];
+            console.log(isbn, titulo, fecha, autor, paginas, edad, tipologia_sexual);
+            getInfoFromIsbndb(isbn);
+
+
+          }
+          
+        }
+        
+      }
+    }
+
+      function getInfoFromIsbndb(isbn){
+        //apiKey = "TB6SCJCO";
+        apiKey="";
+        $.ajax({
+          url: "http://isbndb.com/api/v2/json/"+apiKey+"/book/"+isbn,
+          crossDomain: true,
+          dataType: 'jsonp',
+        }).done(function(response){
+            console.log(response);
+        });
+      }
+    </script>
+    <script src="https://www.googleapis.com/books/v1/volumes?q=inauthor:rowling&maxResults=40&printType=books&projection=full&callback=handleResponse"></script>
+  </body>
+</html>
