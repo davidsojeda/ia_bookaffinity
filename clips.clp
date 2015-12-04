@@ -320,6 +320,7 @@
 	(slot genero  (type SYMBOL) (default FALSE))
 	(slot dificultad  (type SYMBOL) (default FALSE))
 	(slot extension  (type SYMBOL) (default FALSE))
+	(slot autor (type SYMBOL) (default FALSE))
 )
 
 
@@ -546,6 +547,25 @@
 )
 
 
+(defrule preguntaAutorSN "regla para prguntar si prefiere algun autor"
+    (not(autorPrefSN))
+    =>
+    (bind ?autorSN (pregunta-sino "Tienes algun autor preferido?"))
+	(if (neq ?autorSN FALSE) then (assert(autorS)))  
+	(assert(autorPrefSN))    
+)
+
+
+(defrule preguntaAutor "regla para prguntar que autor prefiere"
+    (not(autorPref))
+	(autorS)
+    =>
+    (bind ?autorSN (pregunta-general "Que autor prefieres?"))
+	(assert(autor ?autorSN))  
+	(assert(autorPref))    
+)
+
+
 (defrule preguntaHoras "regla para prguntar las horas que lee"
 	(declare (salience -10))
     (not(horass))
@@ -581,11 +601,14 @@
 	=>
 	(if (and (< ?horas 3) (> ?comodidad 1))
 		then (assert(complejidad facil))
-	else (if (or (and (< ?horas 3) (> ?horas 0)) (> ?comodidad 1))
+	else (if (or (< ?horas 2) (> ?comodidad 2))
+		then (assert(complejidad facil)))
+	else (if (or (and (< ?horas 3) (> ?horas 1)) (> ?comodidad 1))
 		then (assert(complejidad mediana)))
-	else (if (or (< ?horas 3) (> ?comodidad 1))
-		then (assert(complejidad mediana)))
+	else (if (and (> ?horas 5) (< ?comodidad 2))
+		then (assert(complejidad dificil)))
 	)  
+	else (assert(complejidad mediana))
 	(assert (infComplejidad))
 )
 
@@ -628,7 +651,7 @@
 
 
 
-(defrule crearLibros "en funcion de las respuestas de antes hacemos inferencia"
+(defrule crearLibros "creamos hechos de los libros para puntuarlos"
         (declare (salience 2))
 	?novela <- (object (is-a Novela)(titulo ?t) )
         =>
@@ -728,6 +751,16 @@
 )
 
 
+(defrule setValorLibroAutor "en funcion de las respuestas de antes hacemos inferencia"
+        (autor ?autor)
+        ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(autor FALSE))
+	=>        
+		(bind ?aut (send ?nov get-autor))
+        (if(eq ?autor ?aut) then (bind ?punt (+ ?punt 1)))
+        (modify ?vn (novela ?nov)(puntuacion ?punt)(autor TRUE))       
+)
+
+
 (defrule next2 "en funcion de las respuestas de antes hacemos inferencia"
         (declare (salience -1))
         => (focus recomendaciones) 
@@ -768,7 +801,7 @@
 	 =>
 	 (printout t "Titulo: " (send ?nov get-titulo) crlf)
 	 (bind ?x (+ ?x 1))
-	 (retract ?ps)
+	 (retract ?ps) ;nos cargamos el hecho de posicion y lo volvemos a meter porque funcionaba mal el modify
 	 (assert (pos ?x))
 	 (printout t ?punt crlf)
 	 (retract ?vn)
