@@ -1,27 +1,23 @@
-; Tue Nov 24 19:23:09 CET 2015
+; Fri Dec 04 11:41:32 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
 
-([KB_872675_Class10] of  Genero
-
-	(nombre "Policiaca"))
-
-([KB_872675_Class6] of  Narrativa
-
-	(nombre "Contemporanea"))
-
-([KB_872675_Class7] of  Genero
-
-	(nombre "Fantasia"))
-
-([KB_872675_Class8] of  Genero
+([CienciaFiccion] of  Genero
 
 	(nombre "Ciencia ficcion"))
 
-([KB_872675_Class9] of  Narrativa
+([Clasica] of  Narrativa
 
 	(nombre "Clasica"))
+
+([Contemporanea] of  Narrativa
+
+	(nombre "Contemporanea"))
+
+([Fantasia] of  Genero
+
+	(nombre "Fantasia"))
 
 ([Novela] of  %3ASTANDARD-CLASS
 
@@ -31,7 +27,7 @@
 
 	(complejidad facil)
 	(edad juvenil)
-	(genero [KB_872675_Class7])
+	(genero [Fantasia])
 	(paginas 324)
 	(tipologia_sexual indiferente)
 	(titulo "El Hobbit"))
@@ -40,7 +36,7 @@
 
 	(complejidad mediana)
 	(edad juvenil)
-	(genero [KB_872675_Class7])
+	(genero [Fantasia])
 	(paginas 548)
 	(tipologia_sexual indiferente)
 	(titulo "El senor de los anillos. La comunidad del anillo."))
@@ -52,7 +48,7 @@
 
 	(complejidad mediana)
 	(edad adulto)
-	(genero [KB_872675_Class8])
+	(genero [CienciaFiccion])
 	(paginas 224)
 	(tipologia_sexual indiferente)
 	(titulo "Ubik"))
@@ -61,7 +57,7 @@
 
 	(complejidad mediana)
 	(edad adulto)
-	(genero [KB_872675_Class8])
+	(genero [CienciaFiccion])
 	(paginas 208)
 	(tipologia_sexual indiferente)
 	(titulo "El hombre en el castillo"))
@@ -70,7 +66,7 @@
 
 	(complejidad mediana)
 	(edad juvenil)
-	(genero [KB_872675_Class7])
+	(genero [Fantasia])
 	(paginas 462)
 	(tipologia_sexual indiferente)
 	(titulo "El senor de los anillos. Las dos torres."))
@@ -79,29 +75,33 @@
 
 	(complejidad mediana)
 	(edad juvenil)
-	(genero [KB_872675_Class7])
+	(genero [Fantasia])
 	(paginas 414)
 	(tipologia_sexual indiferente)
 	(titulo "El senor de los anillos. El retorno del rey."))
-
-([Ontologia_Class4] of  Genero
-
-	(nombre "Terror"))
 
 ([Ontologia_Class5] of  Novela
 
 	(complejidad facil)
 	(edad adulto)
-	(genero [Ontologia_Class4])
+	(genero [Terror])
 	(paginas 656)
 	(tipologia_sexual indiferente)
 	(titulo "El resplandor"))
+
+([Policiaca] of  Genero
+
+	(nombre "Policiaca"))
 
 ([prueba_Class11] of  Novela
 
 	(complejidad mediana)
 	(edad adulto)
-	(genero [KB_872675_Class8])
+	(genero [CienciaFiccion])
 	(paginas 272)
 	(tipologia_sexual masculino)
 	(titulo "Blade Runner"))
+
+([Terror] of  Genero
+
+	(nombre "Terror"))

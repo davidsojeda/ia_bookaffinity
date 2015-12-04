@@ -61,7 +61,8 @@
                 edad : edadDefecto,
                 tipologia_sexual : tipologia_sexualDefecto,
                 complejidad : complejidadDefecto,
-                genero : generoDefecto
+                genero : generoDefecto,
+                bestseller: "FALSE"
               };
               addNovela(novela);
               document.getElementById("content").innerHTML += parseToClips(novela);
@@ -81,13 +82,16 @@
       function parseToClips(novela){
         novela.isbn = novela.isbn.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
         novela.titulo = removeDiacritics(novela.titulo);
+        novela.autor = removeDiacritics(novela.autor);
         return "([Novela_"+novela.isbn+"] of  Novela<br>"+
                 "(complejidad "+novela.complejidad+")<br>"+
                 "(edad "+novela.edad+")<br>"+
                 "(genero ["+novela.genero+"])<br>"+
                 "(paginas "+novela.paginas+")<br>"+
-                "(tipologia_sexual "+tipologia_sexualDefecto+")<br>"+
+                "(tipologia_sexual "+novela.tipologia_sexual+")<br>"+
                 "(titulo \""+novela.titulo+"\")<br>"+
+                "(autor \""+novela.autor+"\")<br>"+
+                "(bestseller "+novela.bestseller+")<br>"+
                 ")<br><br>";
       }
 

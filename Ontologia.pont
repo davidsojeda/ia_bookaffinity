@@ -1,4 +1,4 @@
-; Tue Nov 24 19:23:09 CET 2015
+; Fri Dec 04 11:41:32 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -7,6 +7,10 @@
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
+	(single-slot autor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot edad
 		(type SYMBOL)
 		(allowed-values infantil juvenil adulto)
@@ -18,6 +22,10 @@
 		(create-accessor read-write))
 	(single-slot titulo
 		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot bestseller
+		(type SYMBOL)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot tipologia_sexual
@@ -55,6 +63,10 @@
 (defclass Novela
 	(is-a USER)
 	(role concrete)
+	(single-slot autor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot titulo
 		(type STRING)
 ;+		(cardinality 1 1)
@@ -81,5 +93,9 @@
 	(single-slot complejidad
 		(type SYMBOL)
 		(allowed-values facil mediana dificil)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot bestseller
+		(type SYMBOL)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))

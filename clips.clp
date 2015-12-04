@@ -55,6 +55,10 @@
 (defclass Novela
 	(is-a USER)
 	(role concrete)
+        (single-slot autor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot titulo
 		(type STRING)
 ;+		(cardinality 1 1)
@@ -81,6 +85,10 @@
 	(single-slot complejidad
 		(type SYMBOL)
 		(allowed-values facil mediana dificil)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+        (single-slot bestseller
+		(type SYMBOL)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
@@ -115,82 +123,179 @@
 	(nombre "Clasica"))
 
 
-([Ontologia_Class0] of  Novela
 
-	(complejidad facil)
-	(edad juvenil)
-	(genero [KB_872675_Class7])
-	(paginas 324)
-	(tipologia_sexual indiferente)
-	(titulo "El Hobbit"))
-
-([Ontologia_Class1] of  Novela
-
-	(complejidad mediana)
-	(edad juvenil)
-	(genero [KB_872675_Class7])
-	(paginas 548)
-	(tipologia_sexual indiferente)
-	(titulo "El senor de los anillos. La comunidad del anillo."))
-
-
-([Ontologia_Class12] of  Novela
-
-	(complejidad mediana)
-	(edad adulto)
-	(genero [KB_872675_Class8])
-	(paginas 224)
-	(tipologia_sexual indiferente)
-	(titulo "Ubik"))
-
-([Ontologia_Class13] of  Novela
-
-	(complejidad mediana)
-	(edad adulto)
-	(genero [KB_872675_Class8])
-	(paginas 208)
-	(tipologia_sexual indiferente)
-	(titulo "El hombre en el castillo"))
-
-([Ontologia_Class2] of  Novela
-
-	(complejidad mediana)
-	(edad juvenil)
-	(genero [KB_872675_Class7])
-	(paginas 462)
-	(tipologia_sexual indiferente)
-	(titulo "El senor de los anillos. Las dos torres."))
-
-([Ontologia_Class3] of  Novela
-
-	(complejidad mediana)
-	(edad juvenil)
-	(genero [KB_872675_Class7])
-	(paginas 414)
-	(tipologia_sexual indiferente)
-	(titulo "El senor de los anillos. El retorno del rey."))
 
 ([Ontologia_Class4] of  Genero
 
 	(nombre "Terror"))
 
-([Ontologia_Class5] of  Novela
+([CienciaFiccion] of  Genero
 
-	(complejidad facil)
-	(edad adulto)
-	(genero [Ontologia_Class4])
-	(paginas 656)
-	(tipologia_sexual indiferente)
-	(titulo "El resplandor"))
+	(nombre "Ciencia ficcion"))
 
-([prueba_Class11] of  Novela
+([Clasica] of  Narrativa
 
-	(complejidad mediana)
-	(edad adulto)
-	(genero [KB_872675_Class8])
-	(paginas 272)
-	(tipologia_sexual masculino)
-	(titulo "Blade Runner"))
+	(nombre "Clasica"))
+
+([Contemporanea] of  Narrativa
+
+	(nombre "Contemporanea"))
+
+([Fantasia] of  Genero
+
+	(nombre "Fantasia"))
+
+([Policiaca] of  Genero
+
+	(nombre "Policiaca"))
+
+([Terror] of  Genero
+
+	(nombre "Terror"))
+
+
+([Novela_8445075748] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 476)
+(tipologia_sexual indiferente)
+(titulo "El Senor de los anillos")
+(autor "J. R. R. Tolkien")
+(bestseller FALSE)
+)
+
+([Novela_0061756776] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 608)
+(tipologia_sexual indiferente)
+(titulo "El senor de los anillos: El retorno del rey")
+(autor "J. R. R. Tolkien")
+(bestseller FALSE)
+)
+
+([Novela_1507624476] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 414)
+(tipologia_sexual indiferente)
+(titulo "El Senor de los Anillos")
+(autor "J. R. R. Tolkien")
+(bestseller FALSE)
+)
+
+([Novela_OCLC11706289] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 201)
+(tipologia_sexual indiferente)
+(titulo "El Senor de los anillos")
+(autor "John Ronald Reuel Tolkien")
+(bestseller FALSE)
+)
+
+([Novela_9505470673] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 547)
+(tipologia_sexual indiferente)
+(titulo "El Senor De Los Anillos : LA Comunidad Del Anillo / Lord of the Rings : The Fellowship of the Ring")
+(autor "John Ronald Reuel Tolkien")
+(bestseller FALSE)
+)
+
+([Novela_8445074857] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 360)
+(tipologia_sexual indiferente)
+(titulo "El Hobbit, o, Historia de una Ida y de una Vuelta")
+(autor "J. R. R. Tolkien")
+(bestseller FALSE)
+)
+
+([Novela_844507248X] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 158)
+(tipologia_sexual indiferente)
+(titulo "Egidio, el granjero de Ham / Hoja de Niggle / El herrero de Wootton Mayor")
+(autor "J. R. R. Tolkien")
+(bestseller FALSE)
+)
+
+([Novela_8445073737] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 408)
+(tipologia_sexual indiferente)
+(titulo "El Senor de Los Anillos, Ii")
+(autor "J. R. R. Tolkien")
+(bestseller FALSE)
+)
+
+([Novela_9788445001462] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 258)
+(tipologia_sexual indiferente)
+(titulo "La caida de Arturo")
+(autor "J. R. R. Tolkien")
+(bestseller FALSE)
+)
+
+([Novela_8445000659] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 309)
+(tipologia_sexual indiferente)
+(titulo "El hobbit")
+(autor "John Ronald Reuel Tolkien")
+(bestseller FALSE)
+)
+
+([Novela_8445072978] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 144)
+(tipologia_sexual indiferente)
+(titulo "Roverandom")
+(autor "J. R. R. Tolkien")
+(bestseller FALSE)
+)
+
+([Novela_8445071386] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 362)
+(tipologia_sexual indiferente)
+(titulo "El libro de los cuentos perdidos")
+(autor "J. R. R. Tolkien")
+(bestseller FALSE)
+)
+
+([Novela_8435002608] of Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 461)
+(tipologia_sexual indiferente)
+(titulo "El Senor de los Anillos. 2, Las dos torres")
+(autor "J. R. R. Tolkien")
+(bestseller FALSE)
+)
 
 
 
