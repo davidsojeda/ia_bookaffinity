@@ -21,6 +21,13 @@
       <button style="margin-left:500px;float:left;" id="borrarResultados">Borrar resultados</button><br/><br/>
 
     </div>
+    <div>
+    <label for='autores'>JSON import</label><br/>
+    <textarea style="min-width:700px;min-height:100px;" name='json-import'>
+      [{"autor":"lovecraft"}, {"autor":"edgar allan poe"}]
+    </textarea><br/>
+    <button id="importButton">Importar y ejecutar</button>
+    </div>
     <br/>
     <div id="info">
       <span class="numNovelas"></span>
@@ -38,6 +45,7 @@
       var edadDefecto;
       var tipologia_sexualDefecto;
       var complejidadDefecto;
+      var jsonImport;
 
       // Callback Google Books
       function handleResponse(response) {
@@ -188,6 +196,14 @@
         $("#exportButton").click(function(){
          exportNovelas();
         });
+
+        $('#importButton').click(function(){
+          importRaw = $('[name=json-import]').val();
+          jsonImport = eval("(" + importRaw + ")");
+          for(i in jsonImport){
+            googleBook(jsonImport[i].autor);
+          }
+        })
 
         
       });
