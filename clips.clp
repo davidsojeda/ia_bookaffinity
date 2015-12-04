@@ -307,11 +307,14 @@
 ;;;----------                                   TEMPLATES                                                       ----------                                                              TEMPLATES
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
 
+;ibamos a usarlo para guardar sexo y edad juntos pero luego nos era mas problema que mejora, pero lo dejamos con persona sexo al menos
 (deftemplate  persona   "sexe de la persona a qui va dirigida el llibre"
     (slot sexo  (type STRING))
     ;(slot edad  (type INTEGER))
 )
 
+;aqui tenemos este template que sirve para crear tantos hechos como instancias de novela
+;y asi podemos puntuarlas en funcion de las respuestas y la inferencia
 (deftemplate  valoracionNovela   "novela tiene puntuacion"
     (slot novela  (type INSTANCE))
     (slot puntuacion  (type INTEGER))
@@ -333,6 +336,7 @@
 
 ;;; Mensajes a las clases 
 
+;por si queremos imprimir el titulo de la novela o nombre del genero
 (defmessage-handler Novela imprime primary ()
         (printout t ?self:titulo crlf) 
 )
@@ -349,7 +353,7 @@
 ;;;----------                                   FUNCIONES                                                       ----------                                                              EXTRAS
 ;;;-------------------------------------------------------------------------------------------------------------------------------------------------------
 
-;;; Funcion para hacer una pregunta general 
+;;; Funcion para hacer una pregunta general que admite cualquier tipo de respuesta
 (deffunction pregunta-general (?pregunta) 
         (format t "%s" ?pregunta) 
         (bind ?respuesta (read)) 
@@ -375,6 +379,7 @@
         ?res
 )
 
+;funcion para preguntar con unos valores predefinidos en los que la respuesta ha de ser uno de ellos
 (deffunction pregunta (?pregunta $?valores-permitidos)
 	 (progn$
 		(?var ?valores-permitidos)
@@ -390,6 +395,7 @@
 
 
 
+ ;Funcion para preguntar rapidamente si o no
 (deffunction pregunta-sino (?pregunta)
 	;(format t "%s" ?pregunta)
 	(bind ?respuesta (pregunta ?pregunta si no s n))
@@ -407,8 +413,7 @@
 ;;;----------                                    MAIN                                                   ----------                                                              MAIN
 ;;;------------------------------------------------------------------------------------------------------------------------------------------------------
 
-;; Este es el modulo principal, en este se comprobara l existencia del estudiante 
-;; en el conjunto de instancias del sistema
+;; Este es el modulo principal, en este se hara la primera pregunta a partir de la cual seguira todo el proceso
 
 (defmodule MAIN (export ?ALL))
 
@@ -423,7 +428,7 @@
         (assert (nueva_recomendacion))             
 )
 
-(defrule recomendacion "regla para obtener una recomendacion sencilla"
+(defrule recomendacion "regla para preguntar el genero preferido o si no te importa"
     (nueva_recomendacion)
     =>
         (printout t crlf)
@@ -466,12 +471,12 @@
 )
 
 
-
+;en el caso de que prefieras narrativa, escoge subgenero
 (defrule preguntaGeneroNarrativa "regla per obtenir el subgenere de Narrativa"
     (declare (salience 2))
 	(genero Narrativa)
     =>
-    (bind ?nombre (pregunta-general "Que genero de Narrativa: "))
+    (bind ?nombre (pregunta-general "Que genero de Narrativa (Clasica o Contemporanea): "))
         (while (not (any-instancep ((?genero Narrativa)) (eq (str-compare ?genero:nombre ?nombre) 0))) 
                 do
                         (printout t "No existe el genero." crlf)
@@ -511,7 +516,7 @@
 )
 
 
-
+;esta pregunta es relativa porque despues haremos inferencia en funcion de esta respuesta y la edad
 (defrule preguntaPaginas "regla para prguntar paginas"
 	(edad ?edadVal)
 	(not (paginas))
@@ -523,7 +528,7 @@
 
 
 
-
+;aqui tenemos un algoritmo para decir con que comodidad suele leer para decidir la complejidad del libro
 (defrule preguntaSitios "regla para prguntar los sitios donde lee"
     (not(sitios))
     ;(genero ?genero)
@@ -548,6 +553,7 @@
 )
 
 
+;preguntar si tiene algun autor que prefiera
 (defrule preguntaAutorSN "regla para prguntar si prefiere algun autor"
     (not(autorPrefSN))
     =>
@@ -557,6 +563,7 @@
 )
 
 
+;aqui, si ha dicho que si, le preguntamos que autor
 (defrule preguntaAutor "regla para prguntar que autor prefiere"
     (not(autorPref))
 	(autorS)
@@ -567,6 +574,7 @@
 )
 
 
+;esto nos ayudara a decidir la complejidad del libro
 (defrule preguntaHoras "regla para prguntar las horas que lee"
 	(declare (salience -10))
     (not(horass))
@@ -595,7 +603,7 @@
     (export ?ALL)
 )
 
-(defrule anadirComplejidad "en funcion de las respuestas de antes hacemos inferencia"
+(defrule anadirComplejidad "en funcion de las respuestas de las horas que lee y la comodidad decidimos la complejidad"
 	(not (infComplejidad))
 	(horas ?horas)
 	(sitio ?comodidad)
@@ -686,7 +694,7 @@
 )
 
 
-(defrule setValorLibroGenero "en funcion de las respuestas de antes hacemos inferencia"
+(defrule setValorLibroGenero "en funcion de las respuestas puntuamos"
         (genero ?genero)
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(genero FALSE))
 	=>        
@@ -699,7 +707,7 @@
 
 
 ;en el caso de que hayamos dicho genero indiferente, tendremos lista de generos
-(defrule setValorLibroGenero2 "en funcion de las respuestas de antes hacemos inferencia"
+(defrule setValorLibroGenero2 "en funcion de las respuestas puntuamos"
         (genero $?genero)
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(genero FALSE))
 	=>        
@@ -710,7 +718,7 @@
 )
 
 
-(defrule setValorLibroEdad "en funcion de las respuestas de antes hacemos inferencia"
+(defrule setValorLibroEdad "en funcion de las respuestas puntuamos"
         (edad ?edad)
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(edad FALSE))
 	=>        
@@ -722,7 +730,7 @@
 
 
 
-(defrule setValorLibroComplejidad "en funcion de las respuestas de antes hacemos inferencia"
+(defrule setValorLibroComplejidad "en funcion de las respuestas puntuamos"
         (complejidad ?dificil)
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(dificultad FALSE))
 	=>        
@@ -732,7 +740,7 @@
 )
 
 
-(defrule setValorLibroSexo "en funcion de las respuestas de antes hacemos inferencia"
+(defrule setValorLibroSexo "en funcion de las respuestas puntuamos"
         (persona (sexo ?sexo))
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(sexo FALSE))
 	=>        
@@ -742,7 +750,8 @@
 )
 
 
-(defrule setValorLibroExtension "en funcion de las respuestas de antes hacemos inferencia"
+;escogemos un rango de paginas para decidir si sumamos puntos o no
+(defrule setValorLibroExtension "en funcion de las respuestas puntuamos"
         (extensionMax ?pagsMax)
 		(extensionMin ?pagsMin)
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(extension FALSE))
@@ -753,7 +762,7 @@
 )
 
 
-(defrule setValorLibroAutor "en funcion de las respuestas de antes hacemos inferencia"
+(defrule setValorLibroAutor "en funcion de las respuestas puntuamos"
         (autor ?autor)
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(autor FALSE))
 	=>        
@@ -802,11 +811,14 @@
 	 (test (< ?x 3))
 	 =>
 	 (printout t "Te recomendamos este libro. Titulo: " (send ?nov get-titulo) crlf)
-	 (bind ?x (+ ?x 1))
-	 (retract ?ps) ;nos cargamos el hecho de posicion y lo volvemos a meter porque funcionaba mal el modify
-	 (assert (pos ?x))
-	 (printout t ?punt crlf)
-	 (retract ?vn)
+	 (bind ?leido (pregunta-sino "Lo has leido?"))
+	 (if (eq ?leido FALSE) then  
+		 (bind ?x (+ ?x 1))
+		 (retract ?ps) ;nos cargamos el hecho de posicion y lo volvemos a meter porque funcionaba mal el modify
+		 (assert (pos ?x))
+		 (printout t "puntuacion: " ?punt crlf)
+		 (retract ?vn)
+	 else (retract ?vn))
 )
 
 (defrule obtenerRecomendaciones "regla para obtener todas las recomendaciones que ha conseguido el sistema"
@@ -831,12 +843,22 @@
 	?nov <- (valoracionNovela (novela ?novela)(bestseller TRUE))
 	=>	
 	(printout t "Te recomendamos el bestseller con Titulo: " (send ?novela get-titulo) crlf)
-	 (bind ?x (+ ?x 1))
-	 (retract ?ps) ;nos cargamos el hecho de posicion y lo volvemos a meter porque funcionaba mal el modify
-	 (assert (pos ?x))
-	 (retract ?nov) ;asi hacemos que no vuelva a recomendar el mismo bestseller
-	;(printout t "No tenemos recomendaciones para ti :[ " crlf)  
+	(bind ?leido (pregunta-sino "Lo has leido?"))
+	 (if (eq ?leido FALSE) then  
+		 (bind ?x (+ ?x 1))
+		 (retract ?ps) ;nos cargamos el hecho de posicion y lo volvemos a meter porque funcionaba mal el modify
+		 (assert (pos ?x))
+		 (retract ?nov) ;asi hacemos que no vuelva a recomendar el mismo bestseller
+	else (retract ?nov))
 
+)
+
+(defrule noHayRecomendacionesNiBests  "regla para saber que no se obtuvieron recomendacioness"
+	(declare (salience -2))
+	(pos ?x)
+	(test (< ?x 3))
+	=>	
+	(printout t "No tenemos mas libros para ti, lo siento" crlf)
 )
 
 
