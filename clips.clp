@@ -206,7 +206,7 @@
 (tipologia_sexual indiferente)
 (titulo "El Senor De Los Anillos : LA Comunidad Del Anillo / Lord of the Rings : The Fellowship of the Ring")
 (autor "John Ronald Reuel Tolkien")
-(bestseller FALSE)
+(bestseller TRUE)
 )
 
 ([Novela_8445074857] of Novela
@@ -217,7 +217,7 @@
 (tipologia_sexual indiferente)
 (titulo "El Hobbit, o, Historia de una Ida y de una Vuelta")
 (autor "J. R. R. Tolkien")
-(bestseller FALSE)
+(bestseller TRUE)
 )
 
 ([Novela_844507248X] of Novela
@@ -228,7 +228,7 @@
 (tipologia_sexual indiferente)
 (titulo "Egidio, el granjero de Ham / Hoja de Niggle / El herrero de Wootton Mayor")
 (autor "J. R. R. Tolkien")
-(bestseller FALSE)
+(bestseller TRUE)
 )
 
 ([Novela_8445073737] of Novela
@@ -239,7 +239,7 @@
 (tipologia_sexual indiferente)
 (titulo "El Senor de Los Anillos, Ii")
 (autor "J. R. R. Tolkien")
-(bestseller FALSE)
+(bestseller TRUE)
 )
 
 ([Novela_9788445001462] of Novela
@@ -261,7 +261,7 @@
 (tipologia_sexual indiferente)
 (titulo "El hobbit")
 (autor "John Ronald Reuel Tolkien")
-(bestseller FALSE)
+(bestseller TRUE)
 )
 
 ([Novela_8445072978] of Novela
@@ -321,6 +321,7 @@
 	(slot dificultad  (type SYMBOL) (default FALSE))
 	(slot extension  (type SYMBOL) (default FALSE))
 	(slot autor (type SYMBOL) (default FALSE))
+	(slot bestseller (type SYMBOL) (default FALSE))
 )
 
 
@@ -653,9 +654,9 @@
 
 (defrule crearLibros "creamos hechos de los libros para puntuarlos"
         (declare (salience 2))
-	?novela <- (object (is-a Novela)(titulo ?t) )
+	?novela <- (object (is-a Novela)(bestseller ?best) )
         =>
-        (assert (valoracionNovela (novela ?novela)(puntuacion 0)))
+        (assert (valoracionNovela (novela ?novela)(puntuacion 0)(bestseller ?best)))
 )
 
 
@@ -691,7 +692,7 @@
 	=>        
 		(bind ?gen (nth$ 1 (send ?nov get-genero)))
 		(bind $?genNom (send (instance-address * ?gen) get-nombre))
-        (if(eq (str-compare ?genero ?genNom) 0) then (bind ?punt (+ ?punt 1)))
+        (if(eq (str-compare ?genero ?genNom) 0) then (bind ?punt (+ ?punt 2)))
         (modify ?vn (novela ?nov)(puntuacion ?punt)(genero TRUE))
             
 )
@@ -704,7 +705,7 @@
 	=>        
 		(bind ?gen (nth$ 1 (send ?nov get-genero)))
 		(bind $?genNom (send (instance-address * ?gen) get-nombre))
-        (if(eq (str-compare (nth$ 1 ?genero) ?genNom) 0) then (bind ?punt (+ ?punt 1)))
+        (if(eq (str-compare (nth$ 1 ?genero) ?genNom) 0) then (bind ?punt (+ ?punt 1))) ;aqui solo sumamos 1 porque al ser genero indiferente, no le damos tanta importancia
         (modify ?vn (novela ?nov)(puntuacion ?punt)(genero TRUE))     
 )
 
@@ -714,7 +715,8 @@
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(edad FALSE))
 	=>        
 		(bind ?age (send ?nov get-edad))
-        (if(eq (str-compare ?edad ?age) 0) then (bind ?punt (+ ?punt 1)))
+        (if(eq (str-compare ?edad ?age) 0) then (bind ?punt (+ ?punt 2))
+		else (bind ?punt (- ?punt 1)))
         (modify ?vn (novela ?nov)(puntuacion ?punt)(edad TRUE))       
 )
 
@@ -735,7 +737,7 @@
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(sexo FALSE))
 	=>        
 		(bind ?sex (send ?nov get-tipologia_sexual))
-        (if(eq (str-compare ?sexo ?sex) 0) then (bind ?punt (+ ?punt 1)))
+        (if(eq (str-compare ?sexo ?sex) 0) then (bind ?punt (+ ?punt 2)))
         (modify ?vn (novela ?nov)(puntuacion ?punt)(sexo TRUE))       
 )
 
@@ -756,7 +758,7 @@
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(autor FALSE))
 	=>        
 		(bind ?aut (send ?nov get-autor))
-        (if(eq ?autor ?aut) then (bind ?punt (+ ?punt 1)))
+        (if(eq ?autor ?aut) then (bind ?punt (+ ?punt 3)))
         (modify ?vn (novela ?nov)(puntuacion ?punt)(autor TRUE))       
 )
 
@@ -794,12 +796,12 @@
 
 (defrule calcula-max "devuelve el siguiente libro con mas puntuacion"
 	?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt))
-	(test (> ?punt 0))
+	(test (> ?punt 3))
 	 (forall (valoracionNovela (novela ?nov2&~?nov)(puntuacion ?punt2)) (test (>= ?punt ?punt2)))
 	 ?ps <- (pos ?x)
 	 (test (< ?x 3))
 	 =>
-	 (printout t "Titulo: " (send ?nov get-titulo) crlf)
+	 (printout t "Te recomendamos este libro. Titulo: " (send ?nov get-titulo) crlf)
 	 (bind ?x (+ ?x 1))
 	 (retract ?ps) ;nos cargamos el hecho de posicion y lo volvemos a meter porque funcionaba mal el modify
 	 (assert (pos ?x))
@@ -824,11 +826,17 @@
 ;aqui recomendamos bestSellers
 (defrule noHayRecomendaciones  "regla para saber que no se obtuvieron recomendacioness"
 	(declare (salience -1))
-	(pos ?x)
-	(test (= ?x 0))
+	?ps <- (pos ?x)
+	(test (< ?x 3))
+	?nov <- (valoracionNovela (novela ?novela)(bestseller TRUE))
 	=>	
-	(printout t "No tenemos recomendaciones para ti :[ " crlf)  
-	(assert (FIN))
+	(printout t "Te recomendamos el bestseller con Titulo: " (send ?novela get-titulo) crlf)
+	 (bind ?x (+ ?x 1))
+	 (retract ?ps) ;nos cargamos el hecho de posicion y lo volvemos a meter porque funcionaba mal el modify
+	 (assert (pos ?x))
+	 (retract ?nov) ;asi hacemos que no vuelva a recomendar el mismo bestseller
+	;(printout t "No tenemos recomendaciones para ti :[ " crlf)  
+
 )
 
 
