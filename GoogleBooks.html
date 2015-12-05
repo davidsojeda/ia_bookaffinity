@@ -17,15 +17,22 @@
       <select name="complejidad"></select>
       <br/>
       <button id="fetchNovelas">Generar</button>
-      <button id="exportButton">Exportar</button>
+      
       <button style="margin-left:500px;float:left;" id="borrarResultados">Borrar resultados</button><br/><br/>
 
     </div>
     <div>
     <label for='autores'>JSON import</label><br/>
     <textarea style="min-width:700px;min-height:100px;" name='json-import'>
-      [{"autor":"lovecraft"}, {"autor":"edgar allan poe"}]
+      [
+        {"autor":"lovecraft", "autorName": "H.P. Lovecraft", "genero" : "Terror"}, 
+        {"autor":"edgar allan poe", "autorName" : "Edgar Allan Poe", "genero" : "Terror"},
+        {"autor": "rowling", "autorName" : "J.K. Rowling", "genero" : "Fantasia"},
+        {"autor": "tolkien", "autorName" : "J.R.R. Tolkien", "genero" : "Fantasia"},
+        {"autor": "stephenie meyer", "autorName" : "Stephenie Meyer", "genero" : "Romantica", "complejidad" : "facil", "bestseller" : "TRUE", "tipologia_sexual" : "femenino"}
+      ]
     </textarea><br/>
+    <button id="exportButton">Exportar</button>
     <button id="importButton">Importar y ejecutar</button>
     </div>
     <br/>
@@ -46,40 +53,53 @@
       var tipologia_sexualDefecto;
       var complejidadDefecto;
       var jsonImport;
+      var currentFilter;
 
       // Callback Google Books
-      function handleResponse(response) {
+      function handleResponse(response, i) {
+        filter = jsonImport[i];
+        autorDefecto = response.items[0].volumeInfo.authors[0];
         for (var i = 0; i < response.items.length; i++) {
           var item = response.items[i];
           if(item.volumeInfo.language=='es'){
             if("undefined" != typeof item.volumeInfo.industryIdentifiers && "undefined" != typeof item.volumeInfo.pageCount){
               if("undefined" != typeof item.volumeInfo.publishedDate){
-              //document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
-              isbn = item.volumeInfo.industryIdentifiers[0].identifier;
-              titulo = item.volumeInfo.title;
-              fecha = item.volumeInfo.publishedDate.substring(0,4);
-              autor = item.volumeInfo.authors[0];
-              paginas = item.volumeInfo.pageCount;
-              var novela = {
-                isbn : isbn,
-                titulo : titulo,
-                fecha : fecha,
-                autor : autor,
-                paginas : paginas,
-                edad : edadDefecto,
-                tipologia_sexual : tipologia_sexualDefecto,
-                complejidad : complejidadDefecto,
-                genero : generoDefecto,
-                bestseller: "FALSE"
-              };
-              addNovela(novela);
-              document.getElementById("content").innerHTML += parseToClips(novela);
-              
-              //getInfoFromIsbndb(isbn);
+                
+                isbn = item.volumeInfo.industryIdentifiers[0].identifier;
+                titulo = item.volumeInfo.title;
+                fecha = item.volumeInfo.publishedDate.substring(0,4);
+                paginas = item.volumeInfo.pageCount;
+                autor = getValue(filter.autorName, autorDefecto );
+                // Fetch de datos sacados del filtro
+                complejidad = getValue(filter.complejidad, complejidadDefecto);
+                tipologia_sexual = getValue(filter.tipologia_sexual, tipologia_sexualDefecto);
+                edad = getValue(filter.edad, edadDefecto);
+                genero = getValue(filter.genero, generoDefecto);
+                bestseller = getValue(filter.bestseller, "FALSE");
+                var novela = {
+                  isbn : isbn,
+                  titulo : titulo,
+                  fecha : fecha,
+                  autor : autor,
+                  paginas : paginas,
+                  edad : edad,
+                  tipologia_sexual : tipologia_sexual,
+                  complejidad : complejidad,
+                  genero : genero,
+                  bestseller: bestseller
+                };
+                addNovela(novela);
+                document.getElementById("content").innerHTML += parseToClips(novela);
               }
             }
           }
         }
+      }
+
+      function getValue(value, defaultValue){
+        console.log(value, defaultValue);
+        //console.log(("undefined" == typeof value) ? defaultValue : value);
+        return ("undefined" == typeof value) ? defaultValue : value;
       }
 
       function addNovela(novela){
@@ -108,10 +128,18 @@
           window.open('data:text;charset=utf-8,' + escape(output));
       }
 
-      function googleBook(autor){
+      function googleBook(autor, i){
+          if("undefined" != typeof i){
+            // Creamos dinámicamente las funciones que indicarán a handleResponse qué autor es
+            callbackName = "handleResponse" + i;
+            var code = "window."+callbackName+"= function " +  callbackName + "(response) {handleResponse(response,"+i+")}";
+            eval(code);
+          }else{
+            callbackName = handleResponse;
+          }
           var s = document.createElement("script");
           s.type = "text/javascript";
-          s.src = "https://www.googleapis.com/books/v1/volumes?q=inauthor:"+autor+"&maxResults=40&printType=books&projection=full&callback=handleResponse";
+          s.src = "https://www.googleapis.com/books/v1/volumes?q=inauthor:"+autor+"&maxResults=40&printType=books&projection=full&callback="+callbackName;
           $("head").append(s);
       }
 
@@ -190,6 +218,7 @@
         });
 
         $("#borrarResultados").click(function(){
+          novelas = [];
           $('#content').html('');
         });
 
@@ -201,7 +230,8 @@
           importRaw = $('[name=json-import]').val();
           jsonImport = eval("(" + importRaw + ")");
           for(i in jsonImport){
-            googleBook(jsonImport[i].autor);
+            currentFilter = jsonImport[i];
+            googleBook(jsonImport[i].autor, i);
           }
         })
 

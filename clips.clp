@@ -700,7 +700,7 @@
 	=>        
 		(bind ?gen (nth$ 1 (send ?nov get-genero)))
 		(bind $?genNom (send (instance-address * ?gen) get-nombre))
-        (if(eq (str-compare ?genero ?genNom) 0) then (bind ?punt (+ ?punt 2)))
+        (if(eq (str-compare ?genero ?genNom) 0) then (bind ?punt (+ ?punt 5)))
         (modify ?vn (novela ?nov)(puntuacion ?punt)(genero TRUE))
             
 )
