@@ -1,4 +1,4 @@
-; Fri Dec 04 11:41:32 CET 2015
+; Sat Dec 05 20:07:21 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -101,6 +101,10 @@
 	(paginas 272)
 	(tipologia_sexual masculino)
 	(titulo "Blade Runner"))
+
+([Romantica] of  Genero
+
+	(nombre "Romantica"))
 
 ([Terror] of  Genero
 

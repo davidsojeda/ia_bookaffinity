@@ -4,17 +4,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
   <body>
-    <div>
+    <div style="display:none;">
       <label for='autores'>Autores (separados por comas)</label><br/>
       <textarea style="min-width:700px;min-height:100px;" name='autores'></textarea><br/>
-      <label for="genero">Genero</label>
-      <select name="genero"></select>
-      <label for="tipologia">Sexo</label>
-      <select name="tipologia"></select>
-      <label for="edad">Edad</label>
-      <select name="edad"></select>
-      <label for="complejidad">Complejidad</label>
-      <select name="complejidad"></select>
       <br/>
       <button id="fetchNovelas">Generar</button>
       
@@ -22,14 +14,27 @@
 
     </div>
     <div>
+    <h4>Busqueda</h4>
+    Valores por defecto: 
+    <label for="genero">Genero</label>
+      <select name="genero"></select>
+      <label for="tipologia">Sexo</label>
+      <select name="tipologia"></select>
+      <label for="edad">Edad</label>
+      <select name="edad"></select>
+      <label for="complejidad">Complejidad</label>
+      <select name="complejidad"></select>
+    </div>
+    <div>
     <label for='autores'>JSON import</label><br/>
-    <textarea style="min-width:700px;min-height:100px;" name='json-import'>
+    <textarea style="width:100%;min-height:200px;" name='json-import'>
       [
         {"autor":"lovecraft", "autorName": "H.P. Lovecraft", "genero" : "Terror"}, 
         {"autor":"edgar allan poe", "autorName" : "Edgar Allan Poe", "genero" : "Terror"},
         {"autor": "rowling", "autorName" : "J.K. Rowling", "genero" : "Fantasia"},
         {"autor": "tolkien", "autorName" : "J.R.R. Tolkien", "genero" : "Fantasia"},
-        {"autor": "stephenie meyer", "autorName" : "Stephenie Meyer", "genero" : "Romantica", "complejidad" : "facil", "bestseller" : "TRUE", "tipologia_sexual" : "femenino"}
+        {"autor": "stephenie meyer", "autorName" : "Stephenie Meyer", "genero" : "Romantica", "complejidad" : "facil", "bestseller" : "TRUE", "tipologia_sexual" : "femenino"},
+        {"autor": "philip k dick", "autorName" : "Philip K. Dick", "genero" : "CienciaFiccion"},
       ]
     </textarea><br/>
     <button id="exportButton">Exportar</button>
@@ -37,14 +42,18 @@
     </div>
     <br/>
     <div id="info">
-      <span class="numNovelas"></span>
+      <span class="numNovelas"></span><br/>
+      <div class='estadisticas'></div><br/>
+      <span id="errores" style="height: 101px; float: left; overflow: scroll; width: 100%;margin-bottom:30px;">Errores:<br/></span>
+      <br/>
     </div>
-    <br/>
-    <div id="content"></div>
+    <br/><br>
+    <h3>Resultados</h3>
+    <textarea id="content" style="width:100%;min-height:1000px;"></textarea>
     <script type="text/javascript">
     // Pido disculpas por este código tan guarro. Las prisas son malas :'D
       var novelas = [];
-      var generos = ["Terror", "CienciaFiccion", "Drama"];
+      var generos = ["Terror", "CienciaFiccion", "Drama", "Romantica"];
       var tipologia_sexual = ['masculino', 'femenino', 'indiferente'];
       var edades = ['infantil','juvenil','adulto'];
       var complejidad = ['facil', 'mediana', 'dificil'];
@@ -56,20 +65,21 @@
       var currentFilter;
 
       // Callback Google Books
-      function handleResponse(response, i) {
-        filter = jsonImport[i];
-        autorDefecto = response.items[0].volumeInfo.authors[0];
+      function handleResponse(response, autorIndex) {
+        filter = jsonImport[autorIndex];
+        //autorDefecto = response.items[0].volumeInfo.authors[0];
+        numNovelas = 0;
         for (var i = 0; i < response.items.length; i++) {
           var item = response.items[i];
           if(item.volumeInfo.language=='es'){
             if("undefined" != typeof item.volumeInfo.industryIdentifiers && "undefined" != typeof item.volumeInfo.pageCount){
               if("undefined" != typeof item.volumeInfo.publishedDate){
-                
+                                
                 isbn = item.volumeInfo.industryIdentifiers[0].identifier;
                 titulo = item.volumeInfo.title;
                 fecha = item.volumeInfo.publishedDate.substring(0,4);
                 paginas = item.volumeInfo.pageCount;
-                autor = getValue(filter.autorName, autorDefecto );
+                autor = filter.autorName;
                 // Fetch de datos sacados del filtro
                 complejidad = getValue(filter.complejidad, complejidadDefecto);
                 tipologia_sexual = getValue(filter.tipologia_sexual, tipologia_sexualDefecto);
@@ -90,15 +100,16 @@
                 };
                 addNovela(novela);
                 document.getElementById("content").innerHTML += parseToClips(novela);
+                numNovelas++;
               }
             }
           }
         }
+        $('.estadisticas #'+autorIndex+' .numNov').html(numNovelas);
+
       }
 
       function getValue(value, defaultValue){
-        console.log(value, defaultValue);
-        //console.log(("undefined" == typeof value) ? defaultValue : value);
         return ("undefined" == typeof value) ? defaultValue : value;
       }
 
@@ -107,20 +118,30 @@
         $('.numNovelas').html(novelas.length + ' novelas');
       }
 
+      function errores(mensaje){
+        $('#errores').append(mensaje+"<br>");
+      }
+
       function parseToClips(novela){
         novela.isbn = novela.isbn.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
         novela.titulo = removeDiacritics(novela.titulo);
         novela.autor = removeDiacritics(novela.autor);
-        return "([Novela_"+novela.isbn+"] of  Novela<br>"+
-                "(complejidad "+novela.complejidad+")<br>"+
-                "(edad "+novela.edad+")<br>"+
-                "(genero ["+novela.genero+"])<br>"+
-                "(paginas "+novela.paginas+")<br>"+
-                "(tipologia_sexual "+novela.tipologia_sexual+")<br>"+
-                "(titulo \""+novela.titulo+"\")<br>"+
-                "(autor \""+novela.autor+"\")<br>"+
-                "(bestseller "+novela.bestseller+")<br>"+
-                ")<br><br>";
+        if(generos.indexOf(novela.genero) == -1) errores(novela.autor + ' Genero no existe:' +novela.genero);
+        if(edades.indexOf(novela.edad) == -1) errores(novela.autor + ' Edad no existe:' +novela.edad);
+        if(complejidad.indexOf(novela.complejidad) == -1) errores(novela.autor + ' Complejidad no existe:' +novela.complejidad);
+        if(tipologia_sexual.indexOf(novela.tipologia_sexual) == -1) errores(novela.autor + ' Tipologia no existe:' +novela.tipologia_sexual);
+        if(novela.bestseller!="TRUE" && novela.bestseller!="FALSE") errores(novela.autor + ' Bestseller no existe:' +novela.bestseller);
+
+        return "([Novela_"+novela.isbn+"] of  Novela\n"+
+                "(complejidad "+novela.complejidad+")\n"+
+                "(edad "+novela.edad+")\n"+
+                "(genero ["+novela.genero+"])\n"+
+                "(paginas "+novela.paginas+")\n"+
+                "(tipologia_sexual "+novela.tipologia_sexual+")\n"+
+                "(titulo \""+novela.titulo+"\")\n"+
+                "(autor \""+novela.autor+"\")\n"+
+                "(bestseller "+novela.bestseller+")\n"+
+                ")\n\n";
       }
 
       function exportNovelas() {
@@ -230,6 +251,7 @@
           importRaw = $('[name=json-import]').val();
           jsonImport = eval("(" + importRaw + ")");
           for(i in jsonImport){
+            $('.estadisticas').append("<div id='"+i+"'>"+jsonImport[i].autor+" <span class='numNov'>0</span></div>");
             currentFilter = jsonImport[i];
             googleBook(jsonImport[i].autor, i);
           }
