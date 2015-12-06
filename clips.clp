@@ -959,7 +959,7 @@
 	(slot extension  (type SYMBOL) (default FALSE))
 	(slot autor (type SYMBOL) (default FALSE))
 	(slot bestseller (type SYMBOL) (default FALSE));;bool para ver si hemos valorado el libro según si es bestseller o no
-        (slot esBestseller (type SYMBOL) (default FALSE));;shortcut para saber si es bestseller
+    (slot esBestseller (type SYMBOL) (default FALSE));;shortcut para saber si es bestseller
 )
 
 
@@ -1308,7 +1308,7 @@
 
 (defrule crearLibros "creamos hechos de los libros para puntuarlos"
         (declare (salience 2))
-	?novela <- (object (is-a Novela)(esBestseller ?best) )
+	?novela <- (object (is-a Novela)(bestseller ?best) )
         =>
         (assert (valoracionNovela (novela ?novela)(puntuacion 0)(esBestseller ?best)))
 )
@@ -1346,7 +1346,7 @@
 	=>        
 		(bind ?gen (nth$ 1 (send ?nov get-genero)))
 		(bind $?genNom (send (instance-address * ?gen) get-nombre))
-        (if(eq (str-compare ?genero ?genNom) 0) then (bind ?punt (+ ?punt 5)))
+        (if(eq (str-compare ?genero ?genNom) 0) then (bind ?punt (+ ?punt 3)))
         (modify ?vn (novela ?nov)(puntuacion ?punt)(genero TRUE))
 )
 
@@ -1368,10 +1368,11 @@
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(edad FALSE))
 	=>        
 		(bind ?age (send ?nov get-edad))
-        (if(eq (str-compare ?edad ?age) 0) then (bind ?punt (+ ?punt 2))
-		else (bind ?punt (- ?punt 1)))
-        (modify ?vn (novela ?nov)(puntuacion ?punt)(edad TRUE))       
-)
+        (if(eq (str-compare ?edad ?age) 0) then (bind ?punt (+ ?punt 2)) (modify ?vn (novela ?nov)(puntuacion ?punt)(edad TRUE))
+		else (if (and(not (eq ?edad infantil) ) (eq ?age infantil)) then retract ?vn)
+		else (modify ?vn (novela ?nov)(puntuacion ?punt)(edad TRUE)))
+               
+)		;else (bind ?punt (- ?punt 1)))
 
 
 
@@ -1398,8 +1399,8 @@
         (bestseller ?bestseller)
         ?vn <- (valoracionNovela (novela ?nov)(puntuacion ?punt)(bestseller FALSE))
         =>        
-                (bind ?bs (send ?nov get-bestseller))
-        (if(eq (str-compare ?bestseller ?best) 0) then (bind ?punt (+ ?punt 2)))
+        (bind ?bs (send ?nov get-bestseller))
+        (if(eq ?bestseller ?bs) then (bind ?punt (+ ?punt 1)))
         (modify ?vn (novela ?nov)(puntuacion ?punt)(bestseller TRUE))       
 )
 
