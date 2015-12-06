@@ -29,12 +29,8 @@
     <label for='autores'>JSON import</label><br/>
     <textarea style="width:100%;min-height:200px;" name='json-import'>
       [
-        {"autor":"lovecraft", "autorName": "H.P. Lovecraft", "genero" : "Terror"}, 
-        {"autor":"edgar allan poe", "autorName" : "Edgar Allan Poe", "genero" : "Terror"},
-        {"autor": "rowling", "autorName" : "J.K. Rowling", "genero" : "Fantasia"},
-        {"autor": "tolkien", "autorName" : "J.R.R. Tolkien", "genero" : "Fantasia"},
-        {"autor": "stephenie meyer", "autorName" : "Stephenie Meyer", "genero" : "Romantica", "complejidad" : "facil", "bestseller" : "TRUE", "tipologia_sexual" : "femenino"},
-        {"autor": "philip k dick", "autorName" : "Philip K. Dick", "genero" : "CienciaFiccion"},
+        {"autor":"terry pratchett", "autorName": "Terry Pratchett", "genero" : [ "Fantasia", "Comedia"], "complejidad" : "baja", "edad" : "adulto", bestseller : "TRUE"},
+        {"autor":"Douglas Adams", "autorName": "Douglas Adams", "genero" : [ "CienciaFiccion", "Comedia"], "complejidad" : "baja", "edad" : "adulto"},
       ]
     </textarea><br/>
     <button id="exportButton">Exportar</button>
@@ -53,7 +49,7 @@
     <script type="text/javascript">
     // Pido disculpas por este código tan guarro. Las prisas son malas :'D
       var novelas = [];
-      var generos = ["Terror", "CienciaFiccion", "Drama", "Romantica"];
+      var generos = ["Terror", "CienciaFiccion", "Drama", "Romantica", "Fantasia", "Policiaca", "Aventuras", "Comedia"];
       var tipologia_sexual = ['masculino', 'femenino', 'indiferente'];
       var edades = ['infantil','juvenil','adulto'];
       var complejidad = ['facil', 'mediana', 'dificil'];
@@ -66,14 +62,22 @@
 
       // Callback Google Books
       function handleResponse(response, autorIndex) {
+
         filter = jsonImport[autorIndex];
+        if(typeof response.items == "undefined"){
+          console.log(response.error.message);
+          return;
+        }
+        console.log("Handle para "+filter.autor + " ("+response.items.length+" libros)", response);
         //autorDefecto = response.items[0].volumeInfo.authors[0];
         numNovelas = 0;
         for (var i = 0; i < response.items.length; i++) {
           var item = response.items[i];
-          if(item.volumeInfo.language=='es'){
-            if("undefined" != typeof item.volumeInfo.industryIdentifiers && "undefined" != typeof item.volumeInfo.pageCount){
-              if("undefined" != typeof item.volumeInfo.publishedDate){
+          if(item.volumeInfo.language=='es' && 
+            "undefined" != typeof item.volumeInfo.industryIdentifiers &&
+            "undefined" != typeof item.volumeInfo.pageCount &&
+            "undefined" != typeof item.volumeInfo.publishedDate){
+            
                                 
                 isbn = item.volumeInfo.industryIdentifiers[0].identifier;
                 titulo = item.volumeInfo.title;
@@ -101,11 +105,14 @@
                 addNovela(novela);
                 document.getElementById("content").innerHTML += parseToClips(novela);
                 numNovelas++;
-              }
-            }
+              
           }
         }
         $('.estadisticas #'+autorIndex+' .numNov').html(numNovelas);
+        if(numNovelas<10 && response.totalItems>40){
+
+          //callGoogleBook(filter.url, 40);
+        }
 
       }
 
@@ -132,10 +139,20 @@
         if(tipologia_sexual.indexOf(novela.tipologia_sexual) == -1) errores(novela.autor + ' Tipologia no existe:' +novela.tipologia_sexual);
         if(novela.bestseller!="TRUE" && novela.bestseller!="FALSE") errores(novela.autor + ' Bestseller no existe:' +novela.bestseller);
 
+        if(isArray(novela.genero)){
+          gs = novela.genero;
+          novela.genero = "";
+          for(g in gs){
+            novela.genero += "\n[" + gs[g] + "]";
+          }
+        }else{
+          novela.genero = "[" + novela.genero + "]";
+        }
+
         return "([Novela_"+novela.isbn+"] of  Novela\n"+
                 "(complejidad "+novela.complejidad+")\n"+
                 "(edad "+novela.edad+")\n"+
-                "(genero ["+novela.genero+"])\n"+
+                "(genero "+novela.genero+")\n"+
                 "(paginas "+novela.paginas+")\n"+
                 "(tipologia_sexual "+novela.tipologia_sexual+")\n"+
                 "(titulo \""+novela.titulo+"\")\n"+
@@ -149,6 +166,10 @@
           window.open('data:text;charset=utf-8,' + escape(output));
       }
 
+      function isArray(what) {
+          return Object.prototype.toString.call(what) === '[object Array]';
+      }
+
       function googleBook(autor, i){
           if("undefined" != typeof i){
             // Creamos dinámicamente las funciones que indicarán a handleResponse qué autor es
@@ -158,9 +179,20 @@
           }else{
             callbackName = handleResponse;
           }
-          var s = document.createElement("script");
+          jsonImport[i].url = "https://www.googleapis.com/books/v1/volumes?q=inauthor:"+autor+"&maxResults=40&printType=books&projection=full&callback="+callbackName+"&langRestrict=es&key=AIzaSyDF0MOP79HPLrhYi4DNtcLi6BWapeuphbY";
+          callGoogleBook(jsonImport[i].url);
+          
+      }
+
+      function callGoogleBook(url, page){
+        console.log(url,page);
+        if("undefined" == typeof page){
+          page = 0;
+        }
+        var s = document.createElement("script");
           s.type = "text/javascript";
-          s.src = "https://www.googleapis.com/books/v1/volumes?q=inauthor:"+autor+"&maxResults=40&printType=books&projection=full&callback="+callbackName;
+          
+          s.src = url;// + "&startIndex="+page;
           $("head").append(s);
       }
 

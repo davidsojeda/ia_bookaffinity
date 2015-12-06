@@ -1,4 +1,4 @@
-; Sat Dec 05 20:06:18 CET 2015
+; Sun Dec 06 21:23:13 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -20,12 +20,12 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[Ontologia_ProjectKB_Class10085]
-		[Ontologia_ProjectKB_Class10086]
-		[Ontologia_ProjectKB_Class10087]
-		[Ontologia_ProjectKB_Class10088]
-		[Ontologia_ProjectKB_Class10089]
-		[Ontologia_ProjectKB_Class10090]))
+		[Ontologia_ProjectKB_Class20110]
+		[Ontologia_ProjectKB_Class20111]
+		[Ontologia_ProjectKB_Class20112]
+		[Ontologia_ProjectKB_Class20113]
+		[Ontologia_ProjectKB_Class20114]
+		[Ontologia_ProjectKB_Class20115]))
 
 ([CLSES_TAB] of  Widget
 
@@ -66,9 +66,6 @@
 
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
-([KB_104643_Class3] of  Map
-)
-
 ([KB_563188_Class0] of  String
 
 	(name "factory_class_name")
@@ -77,9 +74,9 @@
 ([KB_563188_Class1] of  Map
 
 	(entries
-		[Ontologia_ProjectKB_Class10091]
-		[Ontologia_ProjectKB_Class10092]
-		[Ontologia_ProjectKB_Class10093]))
+		[Ontologia_ProjectKB_Class20116]
+		[Ontologia_ProjectKB_Class20117]
+		[Ontologia_ProjectKB_Class20118]))
 
 ([KB_563188_Class109] of  String
 
@@ -173,6 +170,9 @@
 
 	(properties [prueba_ProjectKB_Class111]))
 
+([KB_641518_Class3] of  Map
+)
+
 ([LAYOUT_PROPERTIES] of  Property_List
 
 	(name "layout properties")
@@ -183,57 +183,6 @@
 	(is_hidden TRUE)
 	(property_list [Ontologia_ProjectKB_Class11])
 	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
-
-([Ontologia_ProjectKB_Class10085] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([Ontologia_ProjectKB_Class10086] of  String
-
-	(name "Novela")
-	(string_value "titulo"))
-
-([Ontologia_ProjectKB_Class10087] of  String
-
-	(name "Genero")
-	(string_value "nombre"))
-
-([Ontologia_ProjectKB_Class10088] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([Ontologia_ProjectKB_Class10089] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([Ontologia_ProjectKB_Class10090] of  String
-
-	(name "Narrativa")
-	(string_value "nombre"))
-
-([Ontologia_ProjectKB_Class10091] of  Map_Entry
-
-	(key "suppress_instance_counting")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
-
-([Ontologia_ProjectKB_Class10092] of  Map_Entry
-
-	(key "add_name_on_instance_form")
-	(key_class "java.lang.String")
-	(value "true")
-	(value_class "java.lang.String"))
-
-([Ontologia_ProjectKB_Class10093] of  Map_Entry
-
-	(key "change_tracking_active")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
 
 ([Ontologia_ProjectKB_Class11] of  Property_List
 )
@@ -279,6 +228,57 @@
 	(is_hidden TRUE)
 	(property_list [Ontologia_ProjectKB_Class21])
 	(widget_class_name "edu.stanford.smi.protege.widget.ClsesAndInstancesTab"))
+
+([Ontologia_ProjectKB_Class20110] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([Ontologia_ProjectKB_Class20111] of  String
+
+	(name "Novela")
+	(string_value "titulo"))
+
+([Ontologia_ProjectKB_Class20112] of  String
+
+	(name "Genero")
+	(string_value "nombre"))
+
+([Ontologia_ProjectKB_Class20113] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([Ontologia_ProjectKB_Class20114] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([Ontologia_ProjectKB_Class20115] of  String
+
+	(name "Narrativa")
+	(string_value "nombre"))
+
+([Ontologia_ProjectKB_Class20116] of  Map_Entry
+
+	(key "suppress_instance_counting")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([Ontologia_ProjectKB_Class20117] of  Map_Entry
+
+	(key "add_name_on_instance_form")
+	(key_class "java.lang.String")
+	(value "true")
+	(value_class "java.lang.String"))
+
+([Ontologia_ProjectKB_Class20118] of  Map_Entry
+
+	(key "change_tracking_active")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
 
 ([Ontologia_ProjectKB_Class21] of  Property_List
 )
