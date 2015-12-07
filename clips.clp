@@ -4208,6 +4208,7 @@
 		(bind ?age (send ?nov get-edad))
         (if(eq (str-compare ?edad ?age) 0) then (bind ?punt (+ ?punt 2)) (modify ?vn (novela ?nov)(puntuacion ?punt)(edad TRUE))
 		else (if (and(not (eq ?edad infantil) ) (eq ?age infantil)) then retract ?vn)
+		else (if (and(not (eq ?age infantil) ) (eq ?edad infantil)) then retract ?vn)
 		else (modify ?vn (novela ?nov)(puntuacion ?punt)(edad TRUE)))
                
 )		;else (bind ?punt (- ?punt 1)))
