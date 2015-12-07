@@ -1,4 +1,4 @@
-; Sun Dec 06 21:23:13 CET 2015
+; Mon Dec 07 17:22:53 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -98,6 +98,7 @@
 
 ([prueba_Class11] of  Novela
 
+	(bestseller TRUE)
 	(complejidad mediana)
 	(edad adulto)
 	(genero [CienciaFiccion])

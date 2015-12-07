@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Books API Example</title>
+    <title>Generador de instancias de novela</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
   <body>
@@ -31,25 +31,26 @@
       [
         {"autor":"lovecraft", "autorName": "H.P. Lovecraft", "genero" : "Terror", "complejidad" : "alta", "edad" : "adulto"}, 
         {"autor":"edgar allan poe", "autorName" : "Edgar Allan Poe", "genero" : "Terror", "complejidad": "media", "edad" : "adulto"},
-        {"autor":"stephen king", "autorName": "Stephen King", "genero" : "Terror", "complejidad" : "baja", "edad" : "adulto"},
-        {"autor": "rowling", "autorName" : "J.K. Rowling", "genero" : "Fantasia"},
-        {"autor": "tolkien", "autorName" : "J.R.R. Tolkien", "genero" : "Fantasia"},
+        {"autor":"stephen king", "autorName": "Stephen King", "genero" : "Terror", "complejidad" : "baja", "edad" : "adulto", bestseller: "TRUE"},
+        {"autor": "rowling", "autorName" : "J.K. Rowling", "genero" : "Fantasia", bestseller: "TRUE"},
+        {"autor": "tolkien", "autorName" : "J.R.R. Tolkien", "genero" : "Fantasia", bestseller: "TRUE"},
         {"autor": "stephenie meyer", "autorName" : "Stephenie Meyer", "genero" : "Romantica", "complejidad" : "facil", "bestseller" : "TRUE", "tipologia_sexual" : "femenino"},
         {"autor": "philip k dick", "autorName" : "Philip K. Dick", "genero" : "CienciaFiccion", "complejidad" : "media", "edad":"adulto"},
-        {"autor": "stanislaw lem", "autorName" : "Stanislaw Lem", "genero" : "CienciaFiccion", "complejidad" : "dificil", "edad":"adulto"},
-        {"autor": "isaac asimov", "autorName" : "Isaac Asimov", "genero" : "CienciaFiccion", "complejidad" : "facil", "edad":"adulto"},
-        {"autor": "mario puzo", "autorName" : "Mario Puzo", "genero" : "Policiaca", "complejidad" : "facil", "edad":"adulto"},
+        {"autor": "stanislaw lem", "autorName" : "Stanislaw Lem", "genero" : "CienciaFiccion", "complejidad" : ["media","dificil"], "edad":"adulto"},
+        {"autor": "isaac asimov", "autorName" : "Isaac Asimov", "genero" : "CienciaFiccion", "complejidad" : ["facil", "media"], "edad":"adulto"},
+        {"autor": "mario puzo", "autorName" : "Mario Puzo", "genero" : "Policiaca", "complejidad" : "facil", "edad":"adulto", bestseller: "TRUE"},
         {"autor": "James Ellroy", "autorName" : "James Ellroy", "genero" : "Policiaca", "complejidad" : "media", "edad":"adulto"},
         {"autor": "dashiell hammett", "autorName" : "Dashiell Hammett", "genero" : "Policiaca", "complejidad" : "media", "edad":"adulto"},
         {"autor": "Maurice Sendak", "autorName" : "Maurice Sendak", "edad" : "infantil", "genero" : "Fantasia", "complejidad" : "facil"},
         {"autor" : "Roald Dahl", "autorName" : "Roald Dahl", "edad" : "infantil", "genero": "Fantasia", complejidad: "dificil"},
         {"autor" : "Georgia Byng", "autorName" : "Georgia Byng", "edad" : "infantil", "genero" : "Fantasia", "complejidad" : "media"},
         {"autor" : "Elvira Lindo", "autorName" : "Elvira Lindo", "edad" : "infantil", "genero" : "Comedia", "complejidad" : "dificil"},
-        {"autor" : "Lewis Carroll", "autorName" : "Lewis Carroll", "edad" : "infantil", "genero" : "Fantasia", "complejidad" : "media"},
+        {"autor" : "Lewis Carroll", "autorName" : "Lewis Carroll", "edad" : "infantil", "genero" : "Fantasia", "complejidad" : ["media", "dificil"]},
         {"autor" : "Katherine Paterson", "autorName" : "Katherine Paterson", "edad" : "infantil", "genero" : "Fantasia", "complejidad" : "media"},
         {"autor" : "Violeta Denou", "autorName" : "Violeta Denou", "edad" : "infantil", "genero" : "Aventuras", "complejidad" : "facil"},
         {"autor":"terry pratchett", "autorName": "Terry Pratchett", "genero" : [ "Fantasia", "Comedia"], "complejidad" : "baja", "edad" : "adulto", bestseller : "TRUE"},
         {"autor":"Douglas Adams", "autorName": "Douglas Adams", "genero" : [ "CienciaFiccion", "Comedia"], "complejidad" : "baja", "edad" : "adulto"},
+        {"autor":"Dan Brown", "autorName": "Dan Brown", "genero" : "Aventuras", "complejidad" : "baja", "edad" : "adulto", bestseller : "TRUE"},
       ]
     </textarea><br/>
     <button id="exportButton">Exportar</button>
@@ -105,6 +106,11 @@
                 autor = filter.autorName;
                 // Fetch de datos sacados del filtro
                 complejidad = getValue(filter.complejidad, complejidadDefecto);
+                // Nos quedamos al azar con alguna de las complejidades definidas del autor
+                if(isArray(complejidad)){
+                  complejidad = complejidad[Math.floor(Math.random() * complejidad.length)];
+                }
+
                 tipologia_sexual = getValue(filter.tipologia_sexual, tipologia_sexualDefecto);
                 edad = getValue(filter.edad, edadDefecto);
                 genero = getValue(filter.genero, generoDefecto);
@@ -406,6 +412,7 @@
             for(var i=0; i<changes.length; i++) {
                 str = str.replace(changes[i].letters, changes[i].base);
             }
+            str = str.replace('"', "");
             return str;
         }
     </script>
