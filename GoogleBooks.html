@@ -29,28 +29,30 @@
     <label for='autores'>JSON import</label><br/>
     <textarea style="width:100%;min-height:200px;" name='json-import'>
       [
-        {"autor":"lovecraft", "autorName": "H.P. Lovecraft", "genero" : "Terror", "complejidad" : "alta", "edad" : "adulto"}, 
-        {"autor":"edgar allan poe", "autorName" : "Edgar Allan Poe", "genero" : "Terror", "complejidad": "media", "edad" : "adulto"},
-        {"autor":"stephen king", "autorName": "Stephen King", "genero" : "Terror", "complejidad" : "baja", "edad" : "adulto", bestseller: "TRUE"},
+        {"autor":"lovecraft", "autorName": "H.P. Lovecraft", "genero" : "Terror", "complejidad" : "dificil", "edad" : "adulto"}, 
+        {"autor":"edgar allan poe", "autorName" : "Edgar Allan Poe", "genero" : "Terror", "complejidad": "mediana", "edad" : "adulto"},
+        {"autor":"stephen king", "autorName": "Stephen King", "genero" : "Terror", "complejidad" : "facil", "edad" : "adulto", bestseller: "TRUE"},
         {"autor": "rowling", "autorName" : "J.K. Rowling", "genero" : "Fantasia", bestseller: "TRUE"},
         {"autor": "tolkien", "autorName" : "J.R.R. Tolkien", "genero" : "Fantasia", bestseller: "TRUE"},
-        {"autor": "stephenie meyer", "autorName" : "Stephenie Meyer", "genero" : "Romantica", "complejidad" : "facil", "bestseller" : "TRUE", "tipologia_sexual" : "femenino"},
-        {"autor": "philip k dick", "autorName" : "Philip K. Dick", "genero" : "CienciaFiccion", "complejidad" : "media", "edad":"adulto"},
-        {"autor": "stanislaw lem", "autorName" : "Stanislaw Lem", "genero" : "CienciaFiccion", "complejidad" : ["media","dificil"], "edad":"adulto"},
-        {"autor": "isaac asimov", "autorName" : "Isaac Asimov", "genero" : "CienciaFiccion", "complejidad" : ["facil", "media"], "edad":"adulto"},
+        {"autor": "stephenie meyer", "autorName" : "Stephenie Meyer", "genero" : "Romantica", "complejidad" : "facil", "bestseller" : "TRUE", "tipologia_sexual" : "femenino", "edad" : "juvenil"},
+        {"autor": "e.l. james", "autorName" : "E.L. James", "genero" : "Romantica", "complejidad" : "facil", "bestseller" : "TRUE", "tipologia_sexual" : "femenino", "edad" :"adulto", "maxResults":"3"},
+        {"autor": "philip k dick", "autorName" : "Philip K. Dick", "genero" : "CienciaFiccion", "complejidad" : "mediana", "edad":"adulto"},
+        {"autor": "frank herbert", "autorName" : "Frank Herbert", "genero" : ["CienciaFiccion", "Fantasia"], "complejidad" : "dificil", "edad":"adulto"},
+        {"autor": "stanislaw lem", "autorName" : "Stanislaw Lem", "genero" : "CienciaFiccion", "complejidad" : ["mediana","dificil"], "edad":"adulto"},
+        {"autor": "isaac asimov", "autorName" : "Isaac Asimov", "genero" : "CienciaFiccion", "complejidad" : ["facil", "mediana"], "edad":"adulto"},
         {"autor": "mario puzo", "autorName" : "Mario Puzo", "genero" : "Policiaca", "complejidad" : "facil", "edad":"adulto", bestseller: "TRUE"},
-        {"autor": "James Ellroy", "autorName" : "James Ellroy", "genero" : "Policiaca", "complejidad" : "media", "edad":"adulto"},
-        {"autor": "dashiell hammett", "autorName" : "Dashiell Hammett", "genero" : "Policiaca", "complejidad" : "media", "edad":"adulto"},
+        {"autor": "James Ellroy", "autorName" : "James Ellroy", "genero" : "Policiaca", "complejidad" : "mediana", "edad":"adulto"},
+        {"autor": "dashiell hammett", "autorName" : "Dashiell Hammett", "genero" : "Policiaca", "complejidad" : "mediana", "edad":"adulto"},
         {"autor": "Maurice Sendak", "autorName" : "Maurice Sendak", "edad" : "infantil", "genero" : "Fantasia", "complejidad" : "facil"},
         {"autor" : "Roald Dahl", "autorName" : "Roald Dahl", "edad" : "infantil", "genero": "Fantasia", complejidad: "dificil"},
-        {"autor" : "Georgia Byng", "autorName" : "Georgia Byng", "edad" : "infantil", "genero" : "Fantasia", "complejidad" : "media"},
+        {"autor" : "Georgia Byng", "autorName" : "Georgia Byng", "edad" : "infantil", "genero" : "Fantasia", "complejidad" : "mediana"},
         {"autor" : "Elvira Lindo", "autorName" : "Elvira Lindo", "edad" : "infantil", "genero" : "Comedia", "complejidad" : "dificil"},
-        {"autor" : "Lewis Carroll", "autorName" : "Lewis Carroll", "edad" : "infantil", "genero" : "Fantasia", "complejidad" : ["media", "dificil"]},
-        {"autor" : "Katherine Paterson", "autorName" : "Katherine Paterson", "edad" : "infantil", "genero" : "Fantasia", "complejidad" : "media"},
+        {"autor" : "Lewis Carroll", "autorName" : "Lewis Carroll", "edad" : "infantil", "genero" : "Fantasia", "complejidad" : ["mediana", "dificil"]},
+        {"autor" : "Katherine Paterson", "autorName" : "Katherine Paterson", "edad" : "infantil", "genero" : "Fantasia", "complejidad" : "mediana"},
         {"autor" : "Violeta Denou", "autorName" : "Violeta Denou", "edad" : "infantil", "genero" : "Aventuras", "complejidad" : "facil"},
-        {"autor":"terry pratchett", "autorName": "Terry Pratchett", "genero" : [ "Fantasia", "Comedia"], "complejidad" : "baja", "edad" : "adulto", bestseller : "TRUE"},
-        {"autor":"Douglas Adams", "autorName": "Douglas Adams", "genero" : [ "CienciaFiccion", "Comedia"], "complejidad" : "baja", "edad" : "adulto"},
-        {"autor":"Dan Brown", "autorName": "Dan Brown", "genero" : "Aventuras", "complejidad" : "baja", "edad" : "adulto", bestseller : "TRUE"},
+        {"autor":"terry pratchett", "autorName": "Terry Pratchett", "genero" : [ "Fantasia", "Comedia"], "complejidad" : "facil", "edad" : "adulto", bestseller : "TRUE"},
+        {"autor":"Douglas Adams", "autorName": "Douglas Adams", "genero" : [ "CienciaFiccion", "Comedia"], "complejidad" : "facil", "edad" : "adulto"},
+        {"autor":"Dan Brown", "autorName": "Dan Brown", "genero" : "Aventuras", "complejidad" : "facil", "edad" : "adulto", bestseller : "TRUE"},
       ]
     </textarea><br/>
     <button id="exportButton">Exportar</button>
@@ -130,6 +132,9 @@
                 addNovela(novela);
                 document.getElementById("content").innerHTML += parseToClips(novela);
                 numNovelas++;
+                if("undefined" != typeof filter.maxResults && filter.maxResults==numNovelas){
+                  break;
+                }
               
           }
         }
@@ -205,6 +210,11 @@
             callbackName = handleResponse;
           }
           jsonImport[i].url = "https://www.googleapis.com/books/v1/volumes?q=inauthor:"+autor+"&maxResults=40&printType=books&projection=full&callback="+callbackName+"&langRestrict=es&key=AIzaSyDF0MOP79HPLrhYi4DNtcLi6BWapeuphbY";
+          /*if("undefined" != typeof jsonImport[i].maxResults){
+            jsonImport[i].url+="&maxResults="+jsonImport[i].maxResults;
+          }else{
+            jsonImport[i].url+="&maxResults=40";
+          }*/
           callGoogleBook(jsonImport[i].url);
           
       }

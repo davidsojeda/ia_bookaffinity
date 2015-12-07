@@ -138,64 +138,9 @@
 
         (nombre "Comedia"))
 
-([Novela_842040554X] of  Novela
-(complejidad facil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 40)
-(tipologia_sexual indiferente)
-(titulo "DONDE VIVEN LOS MONSTRUOS RUSTICA")
-(autor "Maurice Sendak")
-(bestseller FALSE)
-)
-
-([Novela_8484648583] of  Novela
-(complejidad facil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 48)
-(tipologia_sexual indiferente)
-(titulo "Donde viven los monstruos")
-(autor "Maurice Sendak")
-(bestseller FALSE)
-)
-
-([Novela_8467531096] of  Novela
-(complejidad media)
-(edad infantil)
-(genero [Fantasia])
-(paginas 395)
-(tipologia_sexual indiferente)
-(titulo "Pack Molly Moon")
-(autor "Georgia Byng")
-(bestseller FALSE)
-)
-
-([Novela_8467518456] of  Novela
-(complejidad media)
-(edad infantil)
-(genero [Fantasia])
-(paginas 62)
-(tipologia_sexual indiferente)
-(titulo "Las vacaciones hipnoticas de Molly Moon")
-(autor "Georgia Byng")
-(bestseller FALSE)
-)
-
-([Novela_8467547146] of  Novela
-(complejidad media)
-(edad infantil)
-(genero [Fantasia])
-(paginas 354)
-(tipologia_sexual indiferente)
-(titulo "Molly Moon y el increible libro del hipnotismo / Molly Moon's Incredible Book of Hypnotism")
-(autor "Georgia Byng")
-(bestseller FALSE)
-)
-
 ([Novela_9788420499055] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 832)
 (tipologia_sexual femenino)
@@ -206,7 +151,7 @@
 
 ([Novela_8420405698] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 312)
 (tipologia_sexual femenino)
@@ -217,7 +162,7 @@
 
 ([Novela_9788420499062] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 512)
 (tipologia_sexual femenino)
@@ -228,7 +173,7 @@
 
 ([Novela_1417795131] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 574)
 (tipologia_sexual femenino)
@@ -239,7 +184,7 @@
 
 ([Novela_1941999638] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 832)
 (tipologia_sexual femenino)
@@ -250,7 +195,7 @@
 
 ([Novela_1603960228] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 637)
 (tipologia_sexual femenino)
@@ -261,7 +206,7 @@
 
 ([Novela_8420409855] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 232)
 (tipologia_sexual femenino)
@@ -272,7 +217,7 @@
 
 ([Novela_0882723243] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 762)
 (tipologia_sexual femenino)
@@ -283,7 +228,7 @@
 
 ([Novela_8420406139] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 224)
 (tipologia_sexual femenino)
@@ -294,7 +239,7 @@
 
 ([Novela_8420471933] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 512)
 (tipologia_sexual femenino)
@@ -305,7 +250,7 @@
 
 ([Novela_8483651807] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 760)
 (tipologia_sexual femenino)
@@ -316,7 +261,7 @@
 
 ([Novela_1514231638] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 244)
 (tipologia_sexual femenino)
@@ -327,7 +272,7 @@
 
 ([Novela_8420472360] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 574)
 (tipologia_sexual femenino)
@@ -338,13 +283,178 @@
 
 ([Novela_842047388X] of  Novela
 (complejidad facil)
-(edad adulto)
+(edad juvenil)
 (genero [Romantica])
 (paginas 792)
 (tipologia_sexual femenino)
 (titulo "A trenc d'alba")
 (autor "Stephenie Meyer")
 (bestseller TRUE)
+)
+
+([Novela_8435015955] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 262)
+(tipologia_sexual indiferente)
+(titulo "Blade runner")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_9788445001332] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 256)
+(tipologia_sexual indiferente)
+(titulo "Esperando el ano pasado")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_1517251052] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 268)
+(tipologia_sexual indiferente)
+(titulo "Deus Irae")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_8445076353] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 240)
+(tipologia_sexual indiferente)
+(titulo "Los tres estigmas de Palmer Eldritch")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_844507623X] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 480)
+(tipologia_sexual indiferente)
+(titulo "Cuentos completos / Beyond Lies the Wub")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_9505815824] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 292)
+(tipologia_sexual indiferente)
+(titulo "La Mente Alien")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_8445077740] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 304)
+(tipologia_sexual indiferente)
+(titulo "El hombre en el castillo")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_8445076329] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 224)
+(tipologia_sexual indiferente)
+(titulo "Simulacra")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_1517250226] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 226)
+(tipologia_sexual indiferente)
+(titulo "Planetas Morales")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_151724966X] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 374)
+(tipologia_sexual indiferente)
+(titulo "Radio Libre Albemuth")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_1517244080] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 350)
+(tipologia_sexual indiferente)
+(titulo "La Penultima Verdad")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_9788445000502] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 224)
+(tipologia_sexual indiferente)
+(titulo "Tiempo desarticulado")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_8435022072] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 288)
+(tipologia_sexual indiferente)
+(titulo "Un Ojo en el Cielo")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_9788445001356] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 256)
+(tipologia_sexual indiferente)
+(titulo "La invasion divina")
+(autor "Philip K. Dick")
+(bestseller FALSE)
+)
+
+([Novela_9788445001189] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 272)
+(tipologia_sexual indiferente)
+(titulo "Dr. Bloodmoney : o como nos las apanamos despues de la bomba")
+(autor "Philip K. Dick")
+(bestseller FALSE)
 )
 
 ([Novela_8498723523] of  Novela
@@ -380,118 +490,8 @@
 (bestseller TRUE)
 )
 
-([Novela_1512378666] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 148)
-(tipologia_sexual indiferente)
-(titulo "Harry Potter")
-(autor "J.K. Rowling")
-(bestseller TRUE)
-)
-
-([Novela_8498381959] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 118)
-(tipologia_sexual indiferente)
-(titulo "Los cuentos de Beedle el Bardo")
-(autor "J.K. Rowling")
-(bestseller TRUE)
-)
-
-([Novela_8478889019] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 893)
-(tipologia_sexual indiferente)
-(titulo "Harry Potter")
-(autor "J.K. Rowling")
-(bestseller TRUE)
-)
-
-([Novela_8498721016] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 475)
-(tipologia_sexual indiferente)
-(titulo "Mis Rincones Oscuros")
-(autor "James Ellroy")
-(bestseller FALSE)
-)
-
-([Novela_9788439726258] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 240)
-(tipologia_sexual indiferente)
-(titulo "A la caza de la mujer")
-(autor "James Ellroy")
-(bestseller FALSE)
-)
-
-([Novela_8440699662] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 880)
-(tipologia_sexual indiferente)
-(titulo "Seis de Los Grandes")
-(autor "James Ellroy")
-(bestseller FALSE)
-)
-
-([Novela_846663844X] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 288)
-(tipologia_sexual indiferente)
-(titulo "Noches en Hollywood/ Hollywood Nocturnes")
-(autor "James Ellroy")
-(bestseller FALSE)
-)
-
-([Novela_8498721229] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 544)
-(tipologia_sexual indiferente)
-(titulo "L.A CONFIDENTIAL")
-(autor "James Ellroy")
-(bestseller FALSE)
-)
-
-([Novela_8466602445] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 411)
-(tipologia_sexual indiferente)
-(titulo "Clandestino")
-(autor "James Ellroy")
-(bestseller FALSE)
-)
-
-([Novela_8466600817] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 276)
-(tipologia_sexual indiferente)
-(titulo "Tierras fronterizas")
-(autor "James Ellroy")
-(bestseller FALSE)
-)
-
 ([Novela_8420658936] of  Novela
-(complejidad dificil)
+(complejidad mediana)
 (edad adulto)
 (genero [CienciaFiccion])
 (paginas 464)
@@ -546,7 +546,7 @@
 )
 
 ([Novela_8415130104] of  Novela
-(complejidad media)
+(complejidad dificil)
 (edad adulto)
 (genero [CienciaFiccion])
 (paginas 248)
@@ -557,7 +557,7 @@
 )
 
 ([Novela_8420659746] of  Novela
-(complejidad dificil)
+(complejidad mediana)
 (edad adulto)
 (genero [CienciaFiccion])
 (paginas 568)
@@ -568,7 +568,7 @@
 )
 
 ([Novela_8493760129] of  Novela
-(complejidad media)
+(complejidad dificil)
 (edad adulto)
 (genero [CienciaFiccion])
 (paginas 144)
@@ -578,498 +578,1053 @@
 (bestseller FALSE)
 )
 
-([Novela_843397310X] of  Novela
-(complejidad baja)
+([Novela_8441410666] of  Novela
+(complejidad dificil)
 (edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 296)
-(tipologia_sexual indiferente)
-(titulo "Guia del autoestopista galactico")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_9788433935922] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 192)
-(tipologia_sexual indiferente)
-(titulo "La vida, el universo y todo lo demas")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_8433973282] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 203)
-(tipologia_sexual indiferente)
-(titulo "El restaurante del fin del mundo")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_843397680X] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 160)
-(tipologia_sexual indiferente)
-(titulo "Hasta luego, y gracias por el pescado")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_9789682323973] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 221)
-(tipologia_sexual indiferente)
-(titulo "Democracia radical")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_UTEXAS059173006307077] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 422)
-(tipologia_sexual indiferente)
-(titulo "Memoria Critica")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_UCALB2791455] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 113)
-(tipologia_sexual indiferente)
-(titulo "Los problemas de la comunicacion publica en el Peru")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_UTEXAS059173023446852] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 325)
-(tipologia_sexual indiferente)
-(titulo "Promoviendo la democracia")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_0373684177] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 156)
-(tipologia_sexual indiferente)
-(titulo "Angel de Amor")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_UTEXAS059172131566371] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 128)
-(tipologia_sexual indiferente)
-(titulo "Pintura venezolana en la coleccion de La Casona")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_UCSC32106018072014] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 394)
-(tipologia_sexual indiferente)
-(titulo "Globalizacion y drogas")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_UTEXAS059173024153226] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 334)
-(tipologia_sexual indiferente)
-(titulo "Teorias del desarrollo nacional")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_UTEXAS059173018611520] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 236)
-(tipologia_sexual indiferente)
-(titulo "Tilantongo")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_STANFORD36105008548948] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero 
-[CienciaFiccion]
-[Comedia])
-(paginas 397)
-(tipologia_sexual indiferente)
-(titulo "Los Ausentes")
-(autor "Douglas Adams")
-(bestseller FALSE)
-)
-
-([Novela_STANFORD36105043083208] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 181)
-(tipologia_sexual indiferente)
-(titulo "Cuando uno esta de suerte")
-(autor "Dashiell Hammett")
-(bestseller FALSE)
-)
-
-([Novela_8420653594] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 384)
-(tipologia_sexual indiferente)
-(titulo "El agente de la Continental")
-(autor "Dashiell Hammett")
-(bestseller FALSE)
-)
-
-([Novela_STANFORD36105002255300] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 182)
-(tipologia_sexual indiferente)
-(titulo "Muerte y Cia")
-(autor "Dashiell Hammett")
-(bestseller FALSE)
-)
-
-([Novela_STANFORD36105024222080] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 180)
-(tipologia_sexual indiferente)
-(titulo "Ciudad de pesadilla")
-(autor "Dashiell Hammett")
-(bestseller FALSE)
-)
-
-([Novela_8420637572] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 238)
-(tipologia_sexual indiferente)
-(titulo "El hombre delgado")
-(autor "Dashiell Hammett")
-(bestseller FALSE)
-)
-
-([Novela_8420684732] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 314)
-(tipologia_sexual indiferente)
-(titulo "El halcon maltes")
-(autor "Dashiell Hammett")
-(bestseller FALSE)
-)
-
-([Novela_8420640875] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
+(genero [Terror])
 (paginas 256)
 (tipologia_sexual indiferente)
-(titulo "La maldicion de los Dain")
-(autor "Dashiell Hammett")
+(titulo "La sombra sobre Onnsmouth")
+(autor "H.P. Lovecraft")
 (bestseller FALSE)
 )
 
-([Novela_STANFORD36105006065804] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 151)
-(tipologia_sexual indiferente)
-(titulo "El precio del delito")
-(autor "Dashiell Hammett")
-(bestseller FALSE)
-)
-
-([Novela_8420617024] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 242)
-(tipologia_sexual indiferente)
-(titulo "La maldicion de los Dain")
-(autor "Dashiell Hammett")
-(bestseller FALSE)
-)
-
-([Novela_STANFORD36105020310590] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 48)
-(tipologia_sexual indiferente)
-(titulo "La herradura dorada")
-(autor "Dashiell Hammett")
-(bestseller FALSE)
-)
-
-([Novela_UTEXAS059173023651931] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Policiaca])
-(paginas 99)
-(tipologia_sexual indiferente)
-(titulo "Quien mato a Bob Teal?")
-(autor "Dashiell Hammett")
-(bestseller FALSE)
-)
-
-([Novela_9788420403410] of  Novela
+([Novela_8420643343] of  Novela
 (complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 920)
+(edad adulto)
+(genero [Terror])
+(paginas 736)
 (tipologia_sexual indiferente)
-(titulo "Cuentos completos de Roald Dahl")
-(autor "Roald Dahl")
+(titulo "Los mitos de Cthulhu")
+(autor "H.P. Lovecraft")
 (bestseller FALSE)
 )
 
-([Novela_8498256690] of  Novela
+([Novela_8478339787] of  Novela
 (complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 20)
+(edad adulto)
+(genero [Terror])
+(paginas 120)
 (tipologia_sexual indiferente)
-(titulo "Charlie y la Fabrica de Chocolate")
-(autor "Roald Dahl")
+(titulo "Lovecraft: Desde el mas alla")
+(autor "H.P. Lovecraft")
 (bestseller FALSE)
 )
 
-([Novela_9788420498423] of  Novela
+([Novela_9789635230792] of  Novela
 (complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 248)
+(edad adulto)
+(genero [Terror])
+(paginas 42)
 (tipologia_sexual indiferente)
-(titulo "Matilda")
-(autor "Roald Dahl")
+(titulo "El Horror de Dunwich")
+(autor "H.P. Lovecraft")
 (bestseller FALSE)
 )
 
-([Novela_9788420411781] of  Novela
+([Novela_8415530188] of  Novela
 (complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
+(edad adulto)
+(genero [Terror])
+(paginas 128)
+(tipologia_sexual indiferente)
+(titulo "En las montanas de la locura")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_8498851394] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 112)
+(tipologia_sexual indiferente)
+(titulo "La guarida del horror")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_849283739X] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 128)
+(tipologia_sexual indiferente)
+(titulo "La llamada de Cthulhu")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_8420691917] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 307)
+(tipologia_sexual indiferente)
+(titulo "Dagon y otros cuentos macabros")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_8495994135] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 157)
+(tipologia_sexual indiferente)
+(titulo "El color surgido del espacio; dagon; la sombra sobre innsmouth")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_8441413789] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
 (paginas 96)
 (tipologia_sexual indiferente)
-(titulo "Los mimpins")
-(autor "Roald Dahl")
+(titulo "La Casa Maldita")
+(autor "H.P. Lovecraft")
 (bestseller FALSE)
 )
 
-([Novela_9788420490168] of  Novela
+([Novela_OCLC3354339] of  Novela
 (complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
+(edad adulto)
+(genero [Terror])
+(paginas 207)
+(tipologia_sexual indiferente)
+(titulo "Viajes al otro mundo")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_9788441422841] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 328)
+(tipologia_sexual indiferente)
+(titulo "La llamada de Cthulhu y otros cuentos de terror")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_9509546844] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 115)
+(tipologia_sexual indiferente)
+(titulo "El horror sobrenatural en la literatura")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_8492837756] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
 (paginas 184)
 (tipologia_sexual indiferente)
-(titulo "James y el melocoton gigante")
-(autor "Roald Dahl")
+(titulo "La busqueda en suenos de Kadath la desconocida")
+(autor "H.P. Lovecraft")
 (bestseller FALSE)
 )
 
-([Novela_8433920863] of  Novela
+([Novela_8441414548] of  Novela
 (complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 316)
+(edad adulto)
+(genero [Terror])
+(paginas 96)
 (tipologia_sexual indiferente)
-(titulo "Relatos de lo inesperado")
-(autor "Roald Dahl")
+(titulo "Polaris")
+(autor "H.P. Lovecraft")
 (bestseller FALSE)
 )
 
-([Novela_8420401439] of  Novela
+([Novela_8476409869] of  Novela
 (complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 202)
+(edad adulto)
+(genero [Terror])
+(paginas 368)
 (tipologia_sexual indiferente)
-(titulo "El gran gigante bonachon")
-(autor "Roald Dahl")
+(titulo "El intruso")
+(autor "H.P. Lovecraft")
 (bestseller FALSE)
 )
 
-([Novela_8420444707] of  Novela
+([Novela_8476407548] of  Novela
 (complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 285)
+(edad adulto)
+(genero [Terror])
+(paginas 552)
 (tipologia_sexual indiferente)
-(titulo "Los mejores relatos de Roald Dahl")
-(autor "Roald Dahl")
+(titulo "Los que acechan en el abismo")
+(autor "H.P. Lovecraft")
 (bestseller FALSE)
 )
 
-([Novela_8434856840] of  Novela
+([Novela_9788026802266] of  Novela
 (complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 48)
+(edad adulto)
+(genero [Terror])
+(paginas 480)
 (tipologia_sexual indiferente)
-(titulo "El vicario que hablaba al reves")
-(autor "Roald Dahl")
+(titulo "La Llamada de Cthulhu (texto completo, con indice activo)")
+(autor "H.P. Lovecraft")
 (bestseller FALSE)
 )
 
-([Novela_9788420490762] of  Novela
+([Novela_8441414998] of  Novela
 (complejidad dificil)
-(edad infantil)
+(edad adulto)
+(genero [Terror])
+(paginas 96)
+(tipologia_sexual indiferente)
+(titulo "La busqueda Onirica de la Desconocida Kadath")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_8441408955] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 264)
+(tipologia_sexual indiferente)
+(titulo "El que susurra en la oscuridad")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_8476404778] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 176)
+(tipologia_sexual indiferente)
+(titulo "Noche del oceano y otros escritos ineditos")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_8420672564] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 232)
+(tipologia_sexual indiferente)
+(titulo "La habitacion cerrada y otros cuentos de terror")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_8477025878] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 960)
+(tipologia_sexual indiferente)
+(titulo "Narrativa completa")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_8441413762] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 96)
+(tipologia_sexual indiferente)
+(titulo "La llave de plata")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_8441413797] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 96)
+(tipologia_sexual indiferente)
+(titulo "La ultima prueba")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_1517329744] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 60)
+(tipologia_sexual indiferente)
+(titulo "Herber West Reanimador")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_8490721963] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 136)
+(tipologia_sexual indiferente)
+(titulo "LAS ALAS DE LA DIOSA")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_9781497691728] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 196)
+(tipologia_sexual indiferente)
+(titulo "Relatos de los mitos de Cthulhu")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_1517329825] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero [Terror])
+(paginas 64)
+(tipologia_sexual indiferente)
+(titulo "Encerrado con los faraones")
+(autor "H.P. Lovecraft")
+(bestseller FALSE)
+)
+
+([Novela_OCLC55311681] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 610)
+(tipologia_sexual indiferente)
+(titulo "El retorno de la sombra")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8445075748] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 476)
+(tipologia_sexual indiferente)
+(titulo "El Senor de los anillos")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_0061756776] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 608)
+(tipologia_sexual indiferente)
+(titulo "El senor de los anillos: El retorno del rey")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_844507430X] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 476)
+(tipologia_sexual indiferente)
+(titulo "El senor de los anillos 2")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_OCLC11706289] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 201)
+(tipologia_sexual indiferente)
+(titulo "El Senor de los anillos")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_9505470673] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 547)
+(tipologia_sexual indiferente)
+(titulo "El Senor De Los Anillos : LA Comunidad Del Anillo / Lord of the Rings : The Fellowship of the Ring")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8445074857] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 360)
+(tipologia_sexual indiferente)
+(titulo "El Hobbit, o, Historia de una Ida y de una Vuelta")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_844507248X] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 158)
+(tipologia_sexual indiferente)
+(titulo "Egidio, el granjero de Ham / Hoja de Niggle / El herrero de Wootton Mayor")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8445071416] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 309)
+(tipologia_sexual indiferente)
+(titulo "El hobbit")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_9788445001462] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 258)
+(tipologia_sexual indiferente)
+(titulo "La caida de Arturo")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_0606244263] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 309)
+(tipologia_sexual indiferente)
+(titulo "El Hobbit / the Hobbit")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8445071386] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 362)
+(tipologia_sexual indiferente)
+(titulo "El libro de los cuentos perdidos")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8445072978] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 144)
+(tipologia_sexual indiferente)
+(titulo "Roverandom")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_0606244255] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 413)
+(tipologia_sexual indiferente)
+(titulo "El Senor De Los Anillos / the Lord of the Rings")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8435002608] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 461)
+(tipologia_sexual indiferente)
+(titulo "El Senor de los Anillos. 2, Las dos torres")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_0606305645] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 461)
+(tipologia_sexual indiferente)
+(titulo "DOS Torres (Two Towers)")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8435002799] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 413)
+(tipologia_sexual indiferente)
+(titulo "El Senor de los Anillos. 3, El retorno del Rey")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8445072919] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 574)
+(tipologia_sexual indiferente)
+(titulo "Cuentos inconclusos de Numenor y la Tierra Media")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8476697619] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 111)
+(tipologia_sexual indiferente)
+(titulo "Cartas de Papa Noel")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8445072064] of  Novela
+(complejidad mediana)
+(edad adulto)
 (genero [Fantasia])
 (paginas 96)
 (tipologia_sexual indiferente)
-(titulo "El Superzorro")
-(autor "Roald Dahl")
+(titulo "Poemas")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8445077503] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 480)
+(tipologia_sexual indiferente)
+(titulo "El Senor de los Anillos II. Las Dos Torres")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_9788445073971] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 249)
+(tipologia_sexual indiferente)
+(titulo "La Lengua de los Elfos")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8445000659] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 309)
+(tipologia_sexual indiferente)
+(titulo "El hobbit")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8466609792] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 298)
+(tipologia_sexual indiferente)
+(titulo "Tolkien")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8445077279] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 336)
+(tipologia_sexual indiferente)
+(titulo "Los hijos de Hurin")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_844507637X] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 350)
+(tipologia_sexual indiferente)
+(titulo "Narn i chin Hurin")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8445071726] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 540)
+(tipologia_sexual indiferente)
+(titulo "La Guerra Del Anillo")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8445077821] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 40)
+(tipologia_sexual indiferente)
+(titulo "La ultima cancion de Bilbo")
+(autor "J.R.R. Tolkien")
+(bestseller TRUE)
+)
+
+([Novela_8490629978] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [Romantica])
+(paginas 588)
+(tipologia_sexual femenino)
+(titulo "Cincuenta sombras mas oscuras")
+(autor "E.L. James")
+(bestseller TRUE)
+)
+
+([Novela_9788425349874] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [Romantica])
+(paginas 656)
+(tipologia_sexual femenino)
+(titulo "Cincuenta sombras liberadas (version argentina) (Cincuenta sombras 3)")
+(autor "E.L. James")
+(bestseller TRUE)
+)
+
+([Novela_9788425349867] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [Romantica])
+(paginas 592)
+(tipologia_sexual femenino)
+(titulo "Cincuenta sombras mas oscuras (version argentina) (Cincuenta sombras 2)")
+(autor "E.L. James")
+(bestseller TRUE)
+)
+
+([Novela_8420638978] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 313)
+(tipologia_sexual indiferente)
+(titulo "La tierra de Canaan")
+(autor "Isaac Asimov")
 (bestseller FALSE)
 )
 
-([Novela_8433920235] of  Novela
-(complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 206)
+([Novela_8420635340] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 263)
 (tipologia_sexual indiferente)
-(titulo "Historias extraordinarias")
-(autor "Roald Dahl")
+(titulo "La Republica Romana")
+(autor "Isaac Asimov")
 (bestseller FALSE)
 )
 
-([Novela_8420466859] of  Novela
-(complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 72)
+([Novela_8440644183] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 507)
 (tipologia_sexual indiferente)
-(titulo "Agu Trot")
-(autor "Roald Dahl")
+(titulo "La Ultima pregunta y otros cuentos")
+(autor "Isaac Asimov")
 (bestseller FALSE)
 )
 
-([Novela_8420465887] of  Novela
-(complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 94)
+([Novela_9788490324752] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 488)
 (tipologia_sexual indiferente)
-(titulo "La jirafa, el pelicano y el mono")
-(autor "Roald Dahl")
+(titulo "Suenos de robot")
+(autor "Isaac Asimov")
 (bestseller FALSE)
 )
 
-([Novela_6073136560] of  Novela
-(complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 248)
+([Novela_9681803213] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 203)
 (tipologia_sexual indiferente)
-(titulo "Las Brujas (the Witches)")
-(autor "Roald Dahl")
+(titulo "El rio viviente")
+(autor "Isaac Asimov")
 (bestseller FALSE)
 )
 
-([Novela_8420447846] of  Novela
-(complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 80)
+([Novela_8420602825] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 536)
 (tipologia_sexual indiferente)
-(titulo "El dedo magico")
-(autor "Roald Dahl")
+(titulo "La mente errabunda")
+(autor "Isaac Asimov")
 (bestseller FALSE)
 )
 
-([Novela_6070115864] of  Novela
-(complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 188)
+([Novela_8427254709] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 54)
 (tipologia_sexual indiferente)
-(titulo "Danny el campen del mundo / Danny The Champion of the World")
-(autor "Roald Dahl")
+(titulo "Como descubrimos los germenes")
+(autor "Isaac Asimov")
 (bestseller FALSE)
 )
 
-([Novela_8481470406] of  Novela
-(complejidad dificil)
-(edad infantil)
-(genero [Fantasia])
-(paginas 160)
+([Novela_9788490325360] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 464)
 (tipologia_sexual indiferente)
-(titulo "CHARLIE ETA TXOKOLATE-LANTEGIA - ZUBIA")
-(autor "Roald Dahl")
+(titulo "Nemesis")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8420635375] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 291)
+(tipologia_sexual indiferente)
+(titulo "La formacion de Inglaterra")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8420657654] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 296)
+(tipologia_sexual indiferente)
+(titulo "Cuentos de los viudos negros")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8420674257] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 176)
+(tipologia_sexual indiferente)
+(titulo "Momentos estelares de la ciencia")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8420602086] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 352)
+(tipologia_sexual indiferente)
+(titulo "Opus 200 1c Isaac Asimov")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8420635332] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 313)
+(tipologia_sexual indiferente)
+(titulo "Constantinopla")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_9788490323519] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 512)
+(tipologia_sexual indiferente)
+(titulo "Robots e Imperio (Saga de la Fundacion 5)")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8498890586] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 496)
+(tipologia_sexual indiferente)
+(titulo "El robot completo")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8434452146] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 1106)
+(tipologia_sexual indiferente)
+(titulo "Historia y cronologia del mundo")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8420675547] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 304)
+(tipologia_sexual indiferente)
+(titulo "El electron es zurdo y otros ensayos cientificos")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_9788490622148] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 288)
+(tipologia_sexual indiferente)
+(titulo "El fin de la eternidad")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8420602345] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 320)
+(tipologia_sexual indiferente)
+(titulo "Enciclopedia biografica de ciencia y tecnologia")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_9788499084367] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 496)
+(tipologia_sexual indiferente)
+(titulo "Trilogia de la Fundacion")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8435014274] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 338)
+(tipologia_sexual indiferente)
+(titulo "Sobre la ciencia ficcion")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8420673315] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 200)
+(tipologia_sexual indiferente)
+(titulo "Los lagartos terribles y otros ensayos cientificos")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8497934369] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 416)
+(tipologia_sexual indiferente)
+(titulo "Anochecer")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8401803209] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 149)
+(tipologia_sexual indiferente)
+(titulo "El cometa Halley")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8434453444] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 913)
+(tipologia_sexual indiferente)
+(titulo "Historia y cronologia de la ciencia y los descubrimientos")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8498006120] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 378)
+(tipologia_sexual indiferente)
+(titulo "Hacia la fundacion / Forward the Foundation")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_OCLC733955852] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 313)
+(tipologia_sexual indiferente)
+(titulo "Historia Universal Asimov")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_9788490322826] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [CienciaFiccion])
+(paginas 560)
+(tipologia_sexual indiferente)
+(titulo "Visiones de robot (Saga de la Fundacion 1)")
+(autor "Isaac Asimov")
+(bestseller FALSE)
+)
+
+([Novela_8498721016] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 475)
+(tipologia_sexual indiferente)
+(titulo "Mis Rincones Oscuros")
+(autor "James Ellroy")
+(bestseller FALSE)
+)
+
+([Novela_9788439726258] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 240)
+(tipologia_sexual indiferente)
+(titulo "A la caza de la mujer")
+(autor "James Ellroy")
+(bestseller FALSE)
+)
+
+([Novela_8440699662] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 880)
+(tipologia_sexual indiferente)
+(titulo "Seis de Los Grandes")
+(autor "James Ellroy")
+(bestseller FALSE)
+)
+
+([Novela_846663844X] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 288)
+(tipologia_sexual indiferente)
+(titulo "Noches en Hollywood/ Hollywood Nocturnes")
+(autor "James Ellroy")
+(bestseller FALSE)
+)
+
+([Novela_8498721229] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 544)
+(tipologia_sexual indiferente)
+(titulo "L.A CONFIDENTIAL")
+(autor "James Ellroy")
+(bestseller FALSE)
+)
+
+([Novela_8466602445] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 411)
+(tipologia_sexual indiferente)
+(titulo "Clandestino")
+(autor "James Ellroy")
+(bestseller FALSE)
+)
+
+([Novela_8466600817] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 276)
+(tipologia_sexual indiferente)
+(titulo "Tierras fronterizas")
+(autor "James Ellroy")
 (bestseller FALSE)
 )
 
 ([Novela_9580443823] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 232)
@@ -1080,7 +1635,7 @@
 )
 
 ([Novela_0613645820] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 122)
@@ -1091,7 +1646,7 @@
 )
 
 ([Novela_842043633X] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 152)
@@ -1102,7 +1657,7 @@
 )
 
 ([Novela_8427900899] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 240)
@@ -1113,7 +1668,7 @@
 )
 
 ([Novela_9703511449] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 52)
@@ -1121,6 +1676,50 @@
 (titulo "Abrir O Cerrar Mundos/ Opening and Closing Worlds")
 (autor "Katherine Paterson")
 (bestseller FALSE)
+)
+
+([Novela_1512378666] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 148)
+(tipologia_sexual indiferente)
+(titulo "Harry Potter")
+(autor "J.K. Rowling")
+(bestseller TRUE)
+)
+
+([Novela_8498381959] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 118)
+(tipologia_sexual indiferente)
+(titulo "Los cuentos de Beedle el Bardo")
+(autor "J.K. Rowling")
+(bestseller TRUE)
+)
+
+([Novela_8498381452] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 638)
+(tipologia_sexual indiferente)
+(titulo "Harry Potter and the deathly hallows")
+(autor "J.K. Rowling")
+(bestseller TRUE)
+)
+
+([Novela_8478889019] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Fantasia])
+(paginas 893)
+(tipologia_sexual indiferente)
+(titulo "Harry Potter")
+(autor "J.K. Rowling")
+(bestseller TRUE)
 )
 
 ([Novela_9788432214233] of  Novela
@@ -1376,800 +1975,184 @@
 (bestseller FALSE)
 )
 
-([Novela_8435015955] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 262)
-(tipologia_sexual indiferente)
-(titulo "Blade runner")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_9788445001332] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 256)
-(tipologia_sexual indiferente)
-(titulo "Esperando el ano pasado")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_1517251052] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 268)
-(tipologia_sexual indiferente)
-(titulo "Deus Irae")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_8445076353] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 240)
-(tipologia_sexual indiferente)
-(titulo "Los tres estigmas de Palmer Eldritch")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_844507623X] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 480)
-(tipologia_sexual indiferente)
-(titulo "Cuentos completos / Beyond Lies the Wub")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_9505815824] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 292)
-(tipologia_sexual indiferente)
-(titulo "La Mente Alien")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_8445077740] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 304)
-(tipologia_sexual indiferente)
-(titulo "El hombre en el castillo")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_8445076329] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 224)
-(tipologia_sexual indiferente)
-(titulo "Simulacra")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_1517250226] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 226)
-(tipologia_sexual indiferente)
-(titulo "Planetas Morales")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_151724966X] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 374)
-(tipologia_sexual indiferente)
-(titulo "Radio Libre Albemuth")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_1517244080] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 350)
-(tipologia_sexual indiferente)
-(titulo "La Penultima Verdad")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_9788445000502] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 224)
-(tipologia_sexual indiferente)
-(titulo "Tiempo desarticulado")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_8435022072] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 288)
-(tipologia_sexual indiferente)
-(titulo "Un Ojo en el Cielo")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_9788445001356] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 256)
-(tipologia_sexual indiferente)
-(titulo "La invasion divina")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_9788445001189] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 272)
-(tipologia_sexual indiferente)
-(titulo "Dr. Bloodmoney : o como nos las apanamos despues de la bomba")
-(autor "Philip K. Dick")
-(bestseller FALSE)
-)
-
-([Novela_8441410666] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 256)
-(tipologia_sexual indiferente)
-(titulo "La sombra sobre Onnsmouth")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8420643343] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 736)
-(tipologia_sexual indiferente)
-(titulo "Los mitos de Cthulhu")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8478339787] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 120)
-(tipologia_sexual indiferente)
-(titulo "Lovecraft: Desde el mas alla")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_9789635230792] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 42)
-(tipologia_sexual indiferente)
-(titulo "El Horror de Dunwich")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8415530188] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 128)
-(tipologia_sexual indiferente)
-(titulo "En las montanas de la locura")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8498851394] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 112)
-(tipologia_sexual indiferente)
-(titulo "La guarida del horror")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_849283739X] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 128)
-(tipologia_sexual indiferente)
-(titulo "La llamada de Cthulhu")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8420691917] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 307)
-(tipologia_sexual indiferente)
-(titulo "Dagon y otros cuentos macabros")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8495994135] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 157)
-(tipologia_sexual indiferente)
-(titulo "El color surgido del espacio; dagon; la sombra sobre innsmouth")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8441413789] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 96)
-(tipologia_sexual indiferente)
-(titulo "La Casa Maldita")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_OCLC3354339] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 207)
-(tipologia_sexual indiferente)
-(titulo "Viajes al otro mundo")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_9788441422841] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 328)
-(tipologia_sexual indiferente)
-(titulo "La llamada de Cthulhu y otros cuentos de terror")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_9509546844] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 115)
-(tipologia_sexual indiferente)
-(titulo "El horror sobrenatural en la literatura")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8492837756] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 184)
-(tipologia_sexual indiferente)
-(titulo "La busqueda en suenos de Kadath la desconocida")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8441414548] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 96)
-(tipologia_sexual indiferente)
-(titulo "Polaris")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8476409869] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 368)
-(tipologia_sexual indiferente)
-(titulo "El intruso")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8476407548] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 552)
-(tipologia_sexual indiferente)
-(titulo "Los que acechan en el abismo")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_9788026802266] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 480)
-(tipologia_sexual indiferente)
-(titulo "La Llamada de Cthulhu (texto completo, con indice activo)")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8441414998] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 96)
-(tipologia_sexual indiferente)
-(titulo "La busqueda Onirica de la Desconocida Kadath")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8441408955] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 264)
-(tipologia_sexual indiferente)
-(titulo "El que susurra en la oscuridad")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8476404778] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 176)
-(tipologia_sexual indiferente)
-(titulo "Noche del oceano y otros escritos ineditos")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8420672564] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 232)
-(tipologia_sexual indiferente)
-(titulo "La habitacion cerrada y otros cuentos de terror")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8477025878] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 960)
-(tipologia_sexual indiferente)
-(titulo "Narrativa completa")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8441413762] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 96)
-(tipologia_sexual indiferente)
-(titulo "La llave de plata")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8441413797] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 96)
-(tipologia_sexual indiferente)
-(titulo "La ultima prueba")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_1517329744] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 60)
-(tipologia_sexual indiferente)
-(titulo "Herber West Reanimador")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_8490721963] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 136)
-(tipologia_sexual indiferente)
-(titulo "LAS ALAS DE LA DIOSA")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_9781497691728] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 196)
-(tipologia_sexual indiferente)
-(titulo "Relatos de los mitos de Cthulhu")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_1517329825] of  Novela
-(complejidad alta)
-(edad adulto)
-(genero [Terror])
-(paginas 64)
-(tipologia_sexual indiferente)
-(titulo "Encerrado con los faraones")
-(autor "H.P. Lovecraft")
-(bestseller FALSE)
-)
-
-([Novela_OCLC55311681] of  Novela
+([Novela_8467531096] of  Novela
 (complejidad mediana)
-(edad adulto)
+(edad infantil)
 (genero [Fantasia])
-(paginas 610)
+(paginas 395)
 (tipologia_sexual indiferente)
-(titulo "El retorno de la sombra")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
+(titulo "Pack Molly Moon")
+(autor "Georgia Byng")
+(bestseller FALSE)
 )
 
-([Novela_8445075748] of  Novela
+([Novela_8467518456] of  Novela
 (complejidad mediana)
-(edad adulto)
+(edad infantil)
 (genero [Fantasia])
-(paginas 476)
+(paginas 62)
 (tipologia_sexual indiferente)
-(titulo "El Senor de los anillos")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
+(titulo "Las vacaciones hipnoticas de Molly Moon")
+(autor "Georgia Byng")
+(bestseller FALSE)
 )
 
-([Novela_0061756776] of  Novela
+([Novela_8467547146] of  Novela
 (complejidad mediana)
-(edad adulto)
+(edad infantil)
 (genero [Fantasia])
-(paginas 608)
+(paginas 354)
 (tipologia_sexual indiferente)
-(titulo "El senor de los anillos: El retorno del rey")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
+(titulo "Molly Moon y el increible libro del hipnotismo / Molly Moon's Incredible Book of Hypnotism")
+(autor "Georgia Byng")
+(bestseller FALSE)
 )
 
-([Novela_844507430X] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 476)
-(tipologia_sexual indiferente)
-(titulo "El senor de los anillos 2")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_OCLC11706289] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 201)
-(tipologia_sexual indiferente)
-(titulo "El Senor de los anillos")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8445074857] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 360)
-(tipologia_sexual indiferente)
-(titulo "El Hobbit, o, Historia de una Ida y de una Vuelta")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_9505470673] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 547)
-(tipologia_sexual indiferente)
-(titulo "El Senor De Los Anillos : LA Comunidad Del Anillo / Lord of the Rings : The Fellowship of the Ring")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_844507248X] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 158)
-(tipologia_sexual indiferente)
-(titulo "Egidio, el granjero de Ham / Hoja de Niggle / El herrero de Wootton Mayor")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8445071416] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 309)
-(tipologia_sexual indiferente)
-(titulo "El hobbit")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_9788445001462] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 258)
-(tipologia_sexual indiferente)
-(titulo "La caida de Arturo")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_0606244263] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 309)
-(tipologia_sexual indiferente)
-(titulo "El Hobbit / the Hobbit")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8445071386] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 362)
-(tipologia_sexual indiferente)
-(titulo "El libro de los cuentos perdidos")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8445072978] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 144)
-(tipologia_sexual indiferente)
-(titulo "Roverandom")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_0606244255] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 413)
-(tipologia_sexual indiferente)
-(titulo "El Senor De Los Anillos / the Lord of the Rings")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8435002608] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 461)
-(tipologia_sexual indiferente)
-(titulo "El Senor de los Anillos. 2, Las dos torres")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_0606305645] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 461)
-(tipologia_sexual indiferente)
-(titulo "DOS Torres (Two Towers)")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8435002799] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 413)
-(tipologia_sexual indiferente)
-(titulo "El Senor de los Anillos. 3, El retorno del Rey")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8445072919] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 574)
-(tipologia_sexual indiferente)
-(titulo "Cuentos inconclusos de Numenor y la Tierra Media")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8476697619] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 111)
-(tipologia_sexual indiferente)
-(titulo "Cartas de Papa Noel")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8445072064] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 96)
-(tipologia_sexual indiferente)
-(titulo "Poemas")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8445077503] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 480)
-(tipologia_sexual indiferente)
-(titulo "El Senor de los Anillos II. Las Dos Torres")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_9788445073971] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 249)
-(tipologia_sexual indiferente)
-(titulo "La Lengua de los Elfos")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8445000659] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 309)
-(tipologia_sexual indiferente)
-(titulo "El hobbit")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8466609792] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 298)
-(tipologia_sexual indiferente)
-(titulo "Tolkien")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8445077279] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 336)
-(tipologia_sexual indiferente)
-(titulo "Los hijos de Hurin")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_844507637X] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 350)
-(tipologia_sexual indiferente)
-(titulo "Narn i chin Hurin")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8445071726] of  Novela
-(complejidad mediana)
-(edad adulto)
-(genero [Fantasia])
-(paginas 540)
-(tipologia_sexual indiferente)
-(titulo "La Guerra Del Anillo")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
-)
-
-([Novela_8445077821] of  Novela
-(complejidad mediana)
-(edad adulto)
+([Novela_842040554X] of  Novela
+(complejidad facil)
+(edad infantil)
 (genero [Fantasia])
 (paginas 40)
 (tipologia_sexual indiferente)
-(titulo "La ultima cancion de Bilbo")
-(autor "J.R.R. Tolkien")
-(bestseller TRUE)
+(titulo "DONDE VIVEN LOS MONSTRUOS RUSTICA")
+(autor "Maurice Sendak")
+(bestseller FALSE)
+)
+
+([Novela_8484648583] of  Novela
+(complejidad facil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 48)
+(tipologia_sexual indiferente)
+(titulo "Donde viven los monstruos")
+(autor "Maurice Sendak")
+(bestseller FALSE)
+)
+
+([Novela_STANFORD36105043083208] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 181)
+(tipologia_sexual indiferente)
+(titulo "Cuando uno esta de suerte")
+(autor "Dashiell Hammett")
+(bestseller FALSE)
+)
+
+([Novela_8420653594] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 384)
+(tipologia_sexual indiferente)
+(titulo "El agente de la Continental")
+(autor "Dashiell Hammett")
+(bestseller FALSE)
+)
+
+([Novela_STANFORD36105002255300] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 182)
+(tipologia_sexual indiferente)
+(titulo "Muerte y Cia")
+(autor "Dashiell Hammett")
+(bestseller FALSE)
+)
+
+([Novela_STANFORD36105024222080] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 180)
+(tipologia_sexual indiferente)
+(titulo "Ciudad de pesadilla")
+(autor "Dashiell Hammett")
+(bestseller FALSE)
+)
+
+([Novela_8420637572] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 238)
+(tipologia_sexual indiferente)
+(titulo "El hombre delgado")
+(autor "Dashiell Hammett")
+(bestseller FALSE)
+)
+
+([Novela_8420684732] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 314)
+(tipologia_sexual indiferente)
+(titulo "El halcon maltes")
+(autor "Dashiell Hammett")
+(bestseller FALSE)
+)
+
+([Novela_8420640875] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 256)
+(tipologia_sexual indiferente)
+(titulo "La maldicion de los Dain")
+(autor "Dashiell Hammett")
+(bestseller FALSE)
+)
+
+([Novela_STANFORD36105006065804] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 151)
+(tipologia_sexual indiferente)
+(titulo "El precio del delito")
+(autor "Dashiell Hammett")
+(bestseller FALSE)
+)
+
+([Novela_8420617024] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 242)
+(tipologia_sexual indiferente)
+(titulo "La maldicion de los Dain")
+(autor "Dashiell Hammett")
+(bestseller FALSE)
+)
+
+([Novela_STANFORD36105020310590] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 48)
+(tipologia_sexual indiferente)
+(titulo "La herradura dorada")
+(autor "Dashiell Hammett")
+(bestseller FALSE)
+)
+
+([Novela_UTEXAS059173023651931] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Policiaca])
+(paginas 99)
+(tipologia_sexual indiferente)
+(titulo "Quien mato a Bob Teal?")
+(autor "Dashiell Hammett")
+(bestseller FALSE)
 )
 
 ([Novela_9788499899275] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 656)
@@ -2180,7 +2163,7 @@
 )
 
 ([Novela_9788490322802] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 176)
@@ -2191,7 +2174,7 @@
 )
 
 ([Novela_8497931963] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 272)
@@ -2202,7 +2185,7 @@
 )
 
 ([Novela_9788401338090] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 736)
@@ -2213,7 +2196,7 @@
 )
 
 ([Novela_9788401338076] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 448)
@@ -2224,7 +2207,7 @@
 )
 
 ([Novela_9788490326169] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 376)
@@ -2235,7 +2218,7 @@
 )
 
 ([Novela_9788490326046] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 128)
@@ -2246,7 +2229,7 @@
 )
 
 ([Novela_9788499899558] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 144)
@@ -2257,7 +2240,7 @@
 )
 
 ([Novela_9788490326091] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 496)
@@ -2268,7 +2251,7 @@
 )
 
 ([Novela_8499086306] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 528)
@@ -2279,7 +2262,7 @@
 )
 
 ([Novela_8499082351] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 160)
@@ -2290,7 +2273,7 @@
 )
 
 ([Novela_9788499899541] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 192)
@@ -2301,7 +2284,7 @@
 )
 
 ([Novela_8499083382] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 329)
@@ -2312,7 +2295,7 @@
 )
 
 ([Novela_9788490326237] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 272)
@@ -2323,7 +2306,7 @@
 )
 
 ([Novela_9780743280792] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 512)
@@ -2334,7 +2317,7 @@
 )
 
 ([Novela_9788490326107] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 496)
@@ -2345,7 +2328,7 @@
 )
 
 ([Novela_9788490326121] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 272)
@@ -2356,7 +2339,7 @@
 )
 
 ([Novela_9788490326152] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero [Terror])
 (paginas 448)
@@ -2367,7 +2350,7 @@
 )
 
 ([Novela_9788446019954] of  Novela
-(complejidad media)
+(complejidad dificil)
 (edad infantil)
 (genero [Fantasia])
 (paginas 272)
@@ -2378,7 +2361,7 @@
 )
 
 ([Novela_8441420580] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 224)
@@ -2389,7 +2372,7 @@
 )
 
 ([Novela_8472810585] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 128)
@@ -2400,7 +2383,7 @@
 )
 
 ([Novela_9786074532760] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 80)
@@ -2411,7 +2394,7 @@
 )
 
 ([Novela_8441421021] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 64)
@@ -2422,7 +2405,7 @@
 )
 
 ([Novela_8473396944] of  Novela
-(complejidad media)
+(complejidad dificil)
 (edad infantil)
 (genero [Fantasia])
 (paginas 328)
@@ -2433,7 +2416,7 @@
 )
 
 ([Novela_8496974472] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 69)
@@ -2444,7 +2427,7 @@
 )
 
 ([Novela_9788499893501] of  Novela
-(complejidad dificil)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 384)
@@ -2455,7 +2438,7 @@
 )
 
 ([Novela_8468200395] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 216)
@@ -2466,7 +2449,7 @@
 )
 
 ([Novela_8498676916] of  Novela
-(complejidad media)
+(complejidad dificil)
 (edad infantil)
 (genero [Fantasia])
 (paginas 256)
@@ -2477,7 +2460,7 @@
 )
 
 ([Novela_849577609X] of  Novela
-(complejidad media)
+(complejidad dificil)
 (edad infantil)
 (genero [Fantasia])
 (paginas 165)
@@ -2499,7 +2482,7 @@
 )
 
 ([Novela_8497855612] of  Novela
-(complejidad dificil)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 144)
@@ -2510,7 +2493,7 @@
 )
 
 ([Novela_9780307745149] of  Novela
-(complejidad media)
+(complejidad dificil)
 (edad infantil)
 (genero [Fantasia])
 (paginas 382)
@@ -2521,7 +2504,7 @@
 )
 
 ([Novela_8483106418] of  Novela
-(complejidad media)
+(complejidad dificil)
 (edad infantil)
 (genero [Fantasia])
 (paginas 240)
@@ -2532,7 +2515,7 @@
 )
 
 ([Novela_9505812736] of  Novela
-(complejidad dificil)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 164)
@@ -2543,7 +2526,7 @@
 )
 
 ([Novela_1514250543] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 94)
@@ -2554,7 +2537,7 @@
 )
 
 ([Novela_8495599333] of  Novela
-(complejidad media)
+(complejidad dificil)
 (edad infantil)
 (genero [Fantasia])
 (paginas 192)
@@ -2565,7 +2548,7 @@
 )
 
 ([Novela_8435040119] of  Novela
-(complejidad media)
+(complejidad dificil)
 (edad infantil)
 (genero [Fantasia])
 (paginas 366)
@@ -2576,7 +2559,7 @@
 )
 
 ([Novela_8439282036] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 235)
@@ -2587,7 +2570,7 @@
 )
 
 ([Novela_849373960X] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 120)
@@ -2598,7 +2581,7 @@
 )
 
 ([Novela_8493739642] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 144)
@@ -2609,7 +2592,7 @@
 )
 
 ([Novela_STANFORD36105038791005] of  Novela
-(complejidad dificil)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 213)
@@ -2620,7 +2603,7 @@
 )
 
 ([Novela_8420691739] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 526)
@@ -2631,7 +2614,7 @@
 )
 
 ([Novela_8466786899] of  Novela
-(complejidad dificil)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 312)
@@ -2642,13 +2625,200 @@
 )
 
 ([Novela_8496867803] of  Novela
-(complejidad dificil)
+(complejidad mediana)
 (edad infantil)
 (genero [Fantasia])
 (paginas 216)
 (tipologia_sexual indiferente)
 (titulo "A traves del espejo y lo que Alicia encontro alli.")
 (autor "Lewis Carroll")
+(bestseller FALSE)
+)
+
+([Novela_9788420403410] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 920)
+(tipologia_sexual indiferente)
+(titulo "Cuentos completos de Roald Dahl")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_8498256690] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 20)
+(tipologia_sexual indiferente)
+(titulo "Charlie y la Fabrica de Chocolate")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_9788420498423] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 248)
+(tipologia_sexual indiferente)
+(titulo "Matilda")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_9788420411781] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 96)
+(tipologia_sexual indiferente)
+(titulo "Los mimpins")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_9788420490168] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 184)
+(tipologia_sexual indiferente)
+(titulo "James y el melocoton gigante")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_8433920863] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 316)
+(tipologia_sexual indiferente)
+(titulo "Relatos de lo inesperado")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_8420401439] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 202)
+(tipologia_sexual indiferente)
+(titulo "El gran gigante bonachon")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_8420444707] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 285)
+(tipologia_sexual indiferente)
+(titulo "Los mejores relatos de Roald Dahl")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_8434856840] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 48)
+(tipologia_sexual indiferente)
+(titulo "El vicario que hablaba al reves")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_9788420490762] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 96)
+(tipologia_sexual indiferente)
+(titulo "El Superzorro")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_8433920235] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 206)
+(tipologia_sexual indiferente)
+(titulo "Historias extraordinarias")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_8420466859] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 72)
+(tipologia_sexual indiferente)
+(titulo "Agu Trot")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_8420465887] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 94)
+(tipologia_sexual indiferente)
+(titulo "La jirafa, el pelicano y el mono")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_6073136560] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 248)
+(tipologia_sexual indiferente)
+(titulo "Las Brujas (the Witches)")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_8420447846] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 80)
+(tipologia_sexual indiferente)
+(titulo "El dedo magico")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_6070115864] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 188)
+(tipologia_sexual indiferente)
+(titulo "Danny el campen del mundo / Danny The Champion of the World")
+(autor "Roald Dahl")
+(bestseller FALSE)
+)
+
+([Novela_8481470406] of  Novela
+(complejidad dificil)
+(edad infantil)
+(genero [Fantasia])
+(paginas 160)
+(tipologia_sexual indiferente)
+(titulo "CHARLIE ETA TXOKOLATE-LANTEGIA - ZUBIA")
+(autor "Roald Dahl")
 (bestseller FALSE)
 )
 
@@ -2971,316 +3141,190 @@
 (bestseller FALSE)
 )
 
-([Novela_8420638978] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 313)
-(tipologia_sexual indiferente)
-(titulo "La tierra de Canaan")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8420635340] of  Novela
+([Novela_843397310X] of  Novela
 (complejidad facil)
 (edad adulto)
-(genero [CienciaFiccion])
-(paginas 263)
-(tipologia_sexual indiferente)
-(titulo "La Republica Romana")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8440644183] of  Novela
-(complejidad facil)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 507)
-(tipologia_sexual indiferente)
-(titulo "La Ultima pregunta y otros cuentos")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_9788490324752] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 488)
-(tipologia_sexual indiferente)
-(titulo "Suenos de robot")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_9681803213] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 203)
-(tipologia_sexual indiferente)
-(titulo "El rio viviente")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8420602825] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 536)
-(tipologia_sexual indiferente)
-(titulo "La mente errabunda")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8427254709] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 54)
-(tipologia_sexual indiferente)
-(titulo "Como descubrimos los germenes")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_9788490325360] of  Novela
-(complejidad facil)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 464)
-(tipologia_sexual indiferente)
-(titulo "Nemesis")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8420635375] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 291)
-(tipologia_sexual indiferente)
-(titulo "La formacion de Inglaterra")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8420657654] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
+(genero 
+[CienciaFiccion]
+[Comedia])
 (paginas 296)
 (tipologia_sexual indiferente)
-(titulo "Cuentos de los viudos negros")
-(autor "Isaac Asimov")
+(titulo "Guia del autoestopista galactico")
+(autor "Douglas Adams")
 (bestseller FALSE)
 )
 
-([Novela_8420674257] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 176)
-(tipologia_sexual indiferente)
-(titulo "Momentos estelares de la ciencia")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8420602086] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 352)
-(tipologia_sexual indiferente)
-(titulo "Opus 200 1c Isaac Asimov")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8420635332] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 313)
-(tipologia_sexual indiferente)
-(titulo "Constantinopla")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_9788490323519] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 512)
-(tipologia_sexual indiferente)
-(titulo "Robots e Imperio (Saga de la Fundacion 5)")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8498890586] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 496)
-(tipologia_sexual indiferente)
-(titulo "El robot completo")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8434452146] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 1106)
-(tipologia_sexual indiferente)
-(titulo "Historia y cronologia del mundo")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8420675547] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 304)
-(tipologia_sexual indiferente)
-(titulo "El electron es zurdo y otros ensayos cientificos")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_9788490622148] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 288)
-(tipologia_sexual indiferente)
-(titulo "El fin de la eternidad")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8420602345] of  Novela
+([Novela_9788433935922] of  Novela
 (complejidad facil)
 (edad adulto)
-(genero [CienciaFiccion])
-(paginas 320)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 192)
 (tipologia_sexual indiferente)
-(titulo "Enciclopedia biografica de ciencia y tecnologia")
-(autor "Isaac Asimov")
+(titulo "La vida, el universo y todo lo demas")
+(autor "Douglas Adams")
 (bestseller FALSE)
 )
 
-([Novela_9788499084367] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 496)
-(tipologia_sexual indiferente)
-(titulo "Trilogia de la Fundacion")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8435014274] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [CienciaFiccion])
-(paginas 338)
-(tipologia_sexual indiferente)
-(titulo "Sobre la ciencia ficcion")
-(autor "Isaac Asimov")
-(bestseller FALSE)
-)
-
-([Novela_8420673315] of  Novela
+([Novela_8433973282] of  Novela
 (complejidad facil)
 (edad adulto)
-(genero [CienciaFiccion])
-(paginas 200)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 203)
 (tipologia_sexual indiferente)
-(titulo "Los lagartos terribles y otros ensayos cientificos")
-(autor "Isaac Asimov")
+(titulo "El restaurante del fin del mundo")
+(autor "Douglas Adams")
 (bestseller FALSE)
 )
 
-([Novela_8497934369] of  Novela
+([Novela_843397680X] of  Novela
 (complejidad facil)
 (edad adulto)
-(genero [CienciaFiccion])
-(paginas 416)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 160)
 (tipologia_sexual indiferente)
-(titulo "Anochecer")
-(autor "Isaac Asimov")
+(titulo "Hasta luego, y gracias por el pescado")
+(autor "Douglas Adams")
 (bestseller FALSE)
 )
 
-([Novela_8401803209] of  Novela
+([Novela_9789682323973] of  Novela
 (complejidad facil)
 (edad adulto)
-(genero [CienciaFiccion])
-(paginas 149)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 221)
 (tipologia_sexual indiferente)
-(titulo "El cometa Halley")
-(autor "Isaac Asimov")
+(titulo "Democracia radical")
+(autor "Douglas Adams")
 (bestseller FALSE)
 )
 
-([Novela_8434453444] of  Novela
+([Novela_UTEXAS059173006307077] of  Novela
 (complejidad facil)
 (edad adulto)
-(genero [CienciaFiccion])
-(paginas 913)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 422)
 (tipologia_sexual indiferente)
-(titulo "Historia y cronologia de la ciencia y los descubrimientos")
-(autor "Isaac Asimov")
+(titulo "Memoria Critica")
+(autor "Douglas Adams")
 (bestseller FALSE)
 )
 
-([Novela_8498006120] of  Novela
+([Novela_UCALB2791455] of  Novela
 (complejidad facil)
 (edad adulto)
-(genero [CienciaFiccion])
-(paginas 378)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 113)
 (tipologia_sexual indiferente)
-(titulo "Hacia la fundacion / Forward the Foundation")
-(autor "Isaac Asimov")
+(titulo "Los problemas de la comunicacion publica en el Peru")
+(autor "Douglas Adams")
 (bestseller FALSE)
 )
 
-([Novela_OCLC733955852] of  Novela
+([Novela_UTEXAS059173023446852] of  Novela
 (complejidad facil)
 (edad adulto)
-(genero [CienciaFiccion])
-(paginas 313)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 325)
 (tipologia_sexual indiferente)
-(titulo "Historia Universal Asimov")
-(autor "Isaac Asimov")
+(titulo "Promoviendo la democracia")
+(autor "Douglas Adams")
 (bestseller FALSE)
 )
 
-([Novela_9788490322826] of  Novela
-(complejidad media)
+([Novela_0373684177] of  Novela
+(complejidad facil)
 (edad adulto)
-(genero [CienciaFiccion])
-(paginas 560)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 156)
 (tipologia_sexual indiferente)
-(titulo "Visiones de robot (Saga de la Fundacion 1)")
-(autor "Isaac Asimov")
+(titulo "Angel de Amor")
+(autor "Douglas Adams")
+(bestseller FALSE)
+)
+
+([Novela_UTEXAS059172131566371] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 128)
+(tipologia_sexual indiferente)
+(titulo "Pintura venezolana en la coleccion de La Casona")
+(autor "Douglas Adams")
+(bestseller FALSE)
+)
+
+([Novela_UCSC32106018072014] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 394)
+(tipologia_sexual indiferente)
+(titulo "Globalizacion y drogas")
+(autor "Douglas Adams")
+(bestseller FALSE)
+)
+
+([Novela_UTEXAS059173024153226] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 334)
+(tipologia_sexual indiferente)
+(titulo "Teorias del desarrollo nacional")
+(autor "Douglas Adams")
+(bestseller FALSE)
+)
+
+([Novela_UTEXAS059173018611520] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 236)
+(tipologia_sexual indiferente)
+(titulo "Tilantongo")
+(autor "Douglas Adams")
+(bestseller FALSE)
+)
+
+([Novela_STANFORD36105008548948] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Comedia])
+(paginas 397)
+(tipologia_sexual indiferente)
+(titulo "Los Ausentes")
+(autor "Douglas Adams")
 (bestseller FALSE)
 )
 
 ([Novela_8401336112] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero 
 [Fantasia]
@@ -3293,7 +3337,7 @@
 )
 
 ([Novela_9788499086439] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero 
 [Fantasia]
@@ -3306,7 +3350,7 @@
 )
 
 ([Novela_9788499086460] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero 
 [Fantasia]
@@ -3319,7 +3363,7 @@
 )
 
 ([Novela_9788401353147] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero 
 [Fantasia]
@@ -3332,7 +3376,7 @@
 )
 
 ([Novela_9788401354465] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero 
 [Fantasia]
@@ -3345,7 +3389,7 @@
 )
 
 ([Novela_9788499084374] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero 
 [Fantasia]
@@ -3358,7 +3402,7 @@
 )
 
 ([Novela_8401336988] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero 
 [Fantasia]
@@ -3371,7 +3415,7 @@
 )
 
 ([Novela_9788499086446] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero 
 [Fantasia]
@@ -3384,7 +3428,7 @@
 )
 
 ([Novela_9788401353765] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero 
 [Fantasia]
@@ -3397,7 +3441,7 @@
 )
 
 ([Novela_9788415831174] of  Novela
-(complejidad baja)
+(complejidad facil)
 (edad adulto)
 (genero 
 [Fantasia]
@@ -3409,96 +3453,8 @@
 (bestseller TRUE)
 )
 
-([Novela_1514148110] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero [Aventuras])
-(paginas 282)
-(tipologia_sexual indiferente)
-(titulo "La Conspiracion: Dan Brown (Novela de Suspenso)")
-(autor "Dan Brown")
-(bestseller TRUE)
-)
-
-([Novela_0345806492] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero [Aventuras])
-(paginas 576)
-(tipologia_sexual indiferente)
-(titulo "Inferno: En Espanol")
-(autor "Dan Brown")
-(bestseller TRUE)
-)
-
-([Novela_8496924696] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero [Aventuras])
-(paginas 320)
-(tipologia_sexual indiferente)
-(titulo "Las Mentiras de la Ciencia")
-(autor "Dan Brown")
-(bestseller TRUE)
-)
-
-([Novela_9781633395770] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero [Aventuras])
-(paginas 255)
-(tipologia_sexual indiferente)
-(titulo "35 Fabulosas Recetas Que Quisieras Que Tu Madre Cocinara")
-(autor "Dan Brown")
-(bestseller TRUE)
-)
-
-([Novela_8496746364] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero [Aventuras])
-(paginas 576)
-(tipologia_sexual indiferente)
-(titulo "El Apostol de Satan")
-(autor "Dan Brown")
-(bestseller TRUE)
-)
-
-([Novela_8477227977] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero [Aventuras])
-(paginas 360)
-(tipologia_sexual indiferente)
-(titulo "Dracula Insolito")
-(autor "Dan Brown")
-(bestseller TRUE)
-)
-
-([Novela_8484603547] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero [Aventuras])
-(paginas 652)
-(tipologia_sexual indiferente)
-(titulo "Toda la verdad sobre el Codigo Da Vinci")
-(autor "Dan Brown")
-(bestseller TRUE)
-)
-
-([Novela_8484607437] of  Novela
-(complejidad baja)
-(edad adulto)
-(genero [Aventuras])
-(paginas 576)
-(tipologia_sexual indiferente)
-(titulo "Toda la verdad sobre Angeles y demonios")
-(autor "Dan Brown")
-(bestseller TRUE)
-)
-
 ([Novela_9788441422407] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 272)
@@ -3509,7 +3465,7 @@
 )
 
 ([Novela_9580467447] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 110)
@@ -3520,7 +3476,7 @@
 )
 
 ([Novela_8446022117] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 504)
@@ -3531,7 +3487,7 @@
 )
 
 ([Novela_9788026810049] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 1230)
@@ -3542,7 +3498,7 @@
 )
 
 ([Novela_9788026802129] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 350)
@@ -3553,7 +3509,7 @@
 )
 
 ([Novela_8478448543] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 256)
@@ -3564,7 +3520,7 @@
 )
 
 ([Novela_9783734787454] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 24)
@@ -3575,7 +3531,7 @@
 )
 
 ([Novela_9681903552] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 175)
@@ -3586,7 +3542,7 @@
 )
 
 ([Novela_8441417288] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 100)
@@ -3597,7 +3553,7 @@
 )
 
 ([Novela_9783734787461] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 17)
@@ -3607,8 +3563,19 @@
 (bestseller FALSE)
 )
 
+([Novela_9783734787409] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 8)
+(tipologia_sexual indiferente)
+(titulo "El retrato oval")
+(autor "Edgar Allan Poe")
+(bestseller FALSE)
+)
+
 ([Novela_9501112829] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 71)
@@ -3619,7 +3586,7 @@
 )
 
 ([Novela_9789635238439] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 4)
@@ -3630,7 +3597,7 @@
 )
 
 ([Novela_8496509958] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 116)
@@ -3641,7 +3608,7 @@
 )
 
 ([Novela_8441417296] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 248)
@@ -3652,7 +3619,7 @@
 )
 
 ([Novela_8437625904] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 350)
@@ -3663,7 +3630,7 @@
 )
 
 ([Novela_6074154309] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 446)
@@ -3674,7 +3641,7 @@
 )
 
 ([Novela_8481094935] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 488)
@@ -3685,7 +3652,7 @@
 )
 
 ([Novela_8448829395] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 32)
@@ -3696,7 +3663,7 @@
 )
 
 ([Novela_9501112845] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 70)
@@ -3707,7 +3674,7 @@
 )
 
 ([Novela_8483086034] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 73)
@@ -3718,7 +3685,7 @@
 )
 
 ([Novela_UTEXAS059173023651126] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 86)
@@ -3728,19 +3695,8 @@
 (bestseller FALSE)
 )
 
-([Novela_LCCN33025586] of  Novela
-(complejidad media)
-(edad adulto)
-(genero [Terror])
-(paginas 118)
-(tipologia_sexual indiferente)
-(titulo "Cuentos de Edgard Allan Poe")
-(autor "Edgar Allan Poe")
-(bestseller FALSE)
-)
-
 ([Novela_8497934008] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 782)
@@ -3751,7 +3707,7 @@
 )
 
 ([Novela_9788497405492] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 334)
@@ -3762,7 +3718,7 @@
 )
 
 ([Novela_847702541X] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 280)
@@ -3772,8 +3728,19 @@
 (bestseller FALSE)
 )
 
+([Novela_OCLC457936286] of  Novela
+(complejidad mediana)
+(edad adulto)
+(genero [Terror])
+(paginas 246)
+(tipologia_sexual indiferente)
+(titulo "Cuentos clasicos del norte, primera serie, por Edgar Allan Poe, traduccion de Carmen Torres Calderon de Pinillos")
+(autor "Edgar Allan Poe")
+(bestseller FALSE)
+)
+
 ([Novela_8441416443] of  Novela
-(complejidad media)
+(complejidad mediana)
 (edad adulto)
 (genero [Terror])
 (paginas 136)
@@ -3783,20 +3750,237 @@
 (bestseller FALSE)
 )
 
-([Novela_8441406286] of  Novela
-(complejidad media)
+([Novela_1514148110] of  Novela
+(complejidad facil)
 (edad adulto)
-(genero [Terror])
-(paginas 203)
+(genero [Aventuras])
+(paginas 282)
 (tipologia_sexual indiferente)
-(titulo "Cuentos de Horror")
-(autor "Edgar Allan Poe")
-(bestseller FALSE)
+(titulo "La Conspiracion: Dan Brown (Novela de Suspenso)")
+(autor "Dan Brown")
+(bestseller TRUE)
+)
+
+([Novela_0345806492] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [Aventuras])
+(paginas 576)
+(tipologia_sexual indiferente)
+(titulo "Inferno: En Espanol")
+(autor "Dan Brown")
+(bestseller TRUE)
+)
+
+([Novela_8496924696] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [Aventuras])
+(paginas 320)
+(tipologia_sexual indiferente)
+(titulo "Las Mentiras de la Ciencia")
+(autor "Dan Brown")
+(bestseller TRUE)
+)
+
+([Novela_9781633395770] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [Aventuras])
+(paginas 255)
+(tipologia_sexual indiferente)
+(titulo "35 Fabulosas Recetas Que Quisieras Que Tu Madre Cocinara")
+(autor "Dan Brown")
+(bestseller TRUE)
+)
+
+([Novela_8496746364] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [Aventuras])
+(paginas 576)
+(tipologia_sexual indiferente)
+(titulo "El Apostol de Satan")
+(autor "Dan Brown")
+(bestseller TRUE)
+)
+
+([Novela_8477227977] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [Aventuras])
+(paginas 360)
+(tipologia_sexual indiferente)
+(titulo "Dracula Insolito")
+(autor "Dan Brown")
+(bestseller TRUE)
+)
+
+([Novela_8484603547] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [Aventuras])
+(paginas 652)
+(tipologia_sexual indiferente)
+(titulo "Toda la verdad sobre el Codigo Da Vinci")
+(autor "Dan Brown")
+(bestseller TRUE)
+)
+
+([Novela_8484607437] of  Novela
+(complejidad facil)
+(edad adulto)
+(genero [Aventuras])
+(paginas 576)
+(tipologia_sexual indiferente)
+(titulo "Toda la verdad sobre Angeles y demonios")
+(autor "Dan Brown")
+(bestseller TRUE)
 )
 
 
+([Novela_8497594320] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Fantasia])
+(paginas 544)
+(tipologia_sexual indiferente)
+(titulo "Hijos de Dune")
+(autor "Frank Herbert")
+(bestseller FALSE)
+)
 
+([Novela_8497597702] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Fantasia])
+(paginas 638)
+(tipologia_sexual indiferente)
+(titulo "Casa capitular Dune")
+(autor "Frank Herbert")
+(bestseller FALSE)
+)
 
+([Novela_1517548489] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Fantasia])
+(paginas 52)
+(tipologia_sexual indiferente)
+(titulo "Operacion Almiar")
+(autor "Frank Herbert")
+(bestseller FALSE)
+)
+
+([Novela_1400059429] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Fantasia])
+(paginas 640)
+(tipologia_sexual indiferente)
+(titulo "Dune")
+(autor "Frank Herbert")
+(bestseller FALSE)
+)
+
+([Novela_UOM39076006262906] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Fantasia])
+(paginas 1278)
+(tipologia_sexual indiferente)
+(titulo "Obras escogidas")
+(autor "Frank Herbert")
+(bestseller FALSE)
+)
+
+([Novela_STANFORD36105047916411] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Fantasia])
+(paginas 278)
+(tipologia_sexual indiferente)
+(titulo "City block")
+(autor "Frank Herbert")
+(bestseller FALSE)
+)
+
+([Novela_UTEXAS059173024237280] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Fantasia])
+(paginas 476)
+(tipologia_sexual indiferente)
+(titulo "Vivencias de un Hombre")
+(autor "Frank Herbert")
+(bestseller FALSE)
+)
+
+([Novela_9788492695379] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Fantasia])
+(paginas 296)
+(tipologia_sexual indiferente)
+(titulo "El profesor")
+(autor "Frank Herbert")
+(bestseller FALSE)
+)
+
+([Novela_8400092406] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Fantasia])
+(paginas 723)
+(tipologia_sexual indiferente)
+(titulo "Historia de la Republica Dominicana")
+(autor "Frank Herbert")
+(bestseller FALSE)
+)
+
+([Novela_8485436504] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Fantasia])
+(paginas 204)
+(tipologia_sexual indiferente)
+(titulo "El Acuerdo de los euromisiles de Reikiavik a Washington")
+(autor "Frank Herbert")
+(bestseller FALSE)
+)
+
+([Novela_UCALB3334613] of  Novela
+(complejidad dificil)
+(edad adulto)
+(genero 
+[CienciaFiccion]
+[Fantasia])
+(paginas 386)
+(tipologia_sexual indiferente)
+(titulo "En la selva americana, 1925-1936")
+(autor "Frank Herbert")
+(bestseller FALSE)
+)
 
 
 
@@ -3943,8 +4127,9 @@
         (printout t "5. Policiaca" crlf) 
         (printout t "6. Fantasia" crlf) 
         (printout t "7. Romantica" crlf)    
-        (printout t "8. Aventuras" crlf)      
-	(bind ?respuesta (pregunta-numerica "Que genero prefieres: " 1 8))
+        (printout t "8. Aventuras" crlf)   
+        (printout t "9. Drama" crlf)    
+	(bind ?respuesta (pregunta-numerica "Que genero prefieres: " 1 9))
 	(if (eq ?respuesta 1)
             then 
 			(bind ?lista (create$ 
@@ -3964,7 +4149,9 @@
             then (assert (genero Romantica))
         else (if (eq ?respuesta 8)
             then (assert (genero Aventuras))
-        ))))))))
+        else (if (eq ?respuesta 9)
+            then (assert (genero Drama))
+        )))))))))
         (focus hacer_preguntas)
 )
 
